@@ -1,0 +1,193 @@
+<html>
+  <head>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;700;900&family=Public+Sans:wght@400;700;900"
+    />
+
+    <title>AFFAGRIPPEL</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <style>
+      .slider {
+        transition: transform 0.6s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#f8f9fc] font-['Public_Sans','Noto_Sans',sans-serif]">
+    <!-- NAVBAR -->
+     {% load static %}
+    <header class="w-full border-b bg-white fixed top-0 left-0 z-50">
+    <div class="w-full bg-white border-b">
+        <!-- Première partie : Logo + Texte ministériel (centrés horizontalement + verticalement) -->
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-center space-x-4 h-20 py-3 ">
+          <!-- Logo -->
+          <img src="{% static 'images/logo_affagripel.png' %}" alt="Logo" class="h-20 w-20 object-contain">
+
+          <!-- Texte superposé -->
+          <div class="flex flex-col text-[#0d121b] font-bold text-sm md:text-base leading-tight">
+              <span>MINISTERE PROVINCIAL DES AFFAIRES FONCIERES,</span>
+              <span>AGRICULTURE, PÊCHE ET ELEVAGE &</span>
+              <span>DEVELOPPEMENT RURAL</span>
+        </div>
+</div>
+
+    </div>
+
+        <!-- Deuxième partie : Menu -->
+    <div class="w-full bg-white">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-14">
+            
+            <!-- Menu desktop (les 4 premiers liens) -->
+            <nav class="hidden md:block"> 
+                <ul class="flex space-x-8 text-sm font-medium text-gray-700">
+                    <li><a class="hover:text-blue-600" href="{% url 'home' %}">Accueil</a></li>
+                    
+                    <li><a class="hover:text-blue-600" href="{% url 'agriculture' %}">Agriculture</a></li>
+                    <li><a class="hover:text-blue-600" href="{% url 'peche_et_elevage' %}">Peche et Élevage</a></li>
+                    <li><a class="hover:text-blue-600" href="{% url 'devRural' %}">Développement rural</a></li>
+                    <li><a class="hover:text-blue-600" href="{% url 'aff_fonciere' %}">Affaires foncières</a></li>
+                </ul>
+            </nav>
+
+            <!-- "À propos" seul à l'extrême droite -->
+            <div class="hidden md:block">
+                <a class="text-sm font-medium text-gray-700 hover:text-blue-600" href="{% url 'demandeAudience' %}">
+                    Demande d'audience
+                </a>
+                <a class="text-sm font-medium text-gray-700 hover:text-blue-600" href="{% url 'apropos' %}">
+                    À propos
+                </a>
+            </div>
+
+            <!-- Toggle mobile -->
+            <button id="menu-btn" class="md:hidden text-3xl">
+                ☰
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Menu mobile -->
+    <div
+        id="mobile-menu"
+        class="hidden flex-col bg-white w-full border-t p-4 space-y-4 text-gray-700"
+    >
+        <a href="home" class="block hover:text-blue-600">home</a>
+       
+        <a href="agriculture" class="block hover:text-blue-600">Agriculture</a>
+        <a href="peche_et_elevage" class="block hover:text-blue-600">Peche et Élevage</a>
+        <a href="devRural" class="block hover:text-blue-600">Développement rural</a>
+         <a href="aff_fonciere" class="block hover:text-blue-600">Affaires foncières</a>
+
+        
+        <a href="demandeAudience" class="block hover:text-blue-600">Demande d'audience</a>
+        <a href="apropos" class="block hover:text-blue-600">À propos</a>
+    </div>
+</header>
+
+    <div class="pt-20"></div>
+
+    {% comment %} ROUTING DE PAGES {% endcomment %}
+
+
+    <main class="flex-1 p-6">
+        {% if content == 'home' %}
+          {% include 'slide.html' %}
+        {% elif content == 'agriculture' %}
+          {% include 'agriculture.html' %}
+        {% elif content == 'devRural' %}
+          {% include 'devRural.html' %}
+        {% elif content == 'pecheElevage' %}
+          {% include 'pecheElevage.html' %}
+        {% elif content == 'apropos' %}
+          {% include 'apropos.html' %}
+        {% elif content == 'devMode' %}
+          {% include 'devMode.html' %}
+        {% else %}
+          <p class="text-red-500 font-semibold">Erreur : contenu inconnu ou manquant.</p>
+        {% endif %}
+       
+        
+    </main>
+
+    <!-- CONTENU DE LA PAGE (Actualité / Solutions / Audience) -->
+    <!-- (Ton contenu actuel reste exactement comme il est, pour que rien ne casse) -->
+
+    <!-- FOOTER VERT -->
+    <footer class="bg-[#0f8f39] text-white mt-16 pt-12 pb-8">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-bold text-lg mb-4">Contact</h3>
+          <ul class="space-y-3 text-sm">
+            <li>Localisation</li>
+            <li><a class="hover:underline" href="#">Instagram</a></li>
+            <li><a class="hover:underline" href="#">Facebook</a></li>
+            <li><a class="hover:underline" href="#">LinkedIn</a></li>
+            <li><a class="hover:underline" href="#">X</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4">Informations</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a class="hover:underline" href="#">Ministère des affaires foncières</a></li>
+            <li><a class="hover:underline" href="#">Ministère de l’agriculture</a></li>
+            <li><a class="hover:underline" href="#">Moniteur des affaires foncières</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-4">Newsletter</h3>
+          <form class="flex flex-col sm:flex-row gap-2">
+            <input
+              class="w-full px-4 py-2 rounded-md text-black"
+              type="email"
+              placeholder="Entrer votre email"
+            />
+            <button
+              class="bg-white text-green-700 px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition"
+              type="submit"
+            >
+              S'inscrire
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <p class=" bg-blue text-center text-sm mt-12 pt-6 border-t border-white/40">
+        © Copyright 2025 MINISTERE DES AFFAIRES FONCIERES ET AGRIPEL LUALABA
+      </p>
+    </footer>
+
+    <!-- JS: Slider + Toggle Menu -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Slider
+      let index = 0;
+      const slider = document.getElementById("slider");
+      const slides = slider.children;
+
+      function showSlide(i) {
+        index = (i + slides.length) % slides.length;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      document.getElementById("prev").onclick = () => showSlide(index - 1);
+      document.getElementById("next").onclick = () => showSlide(index + 1);
+
+      setInterval(() => showSlide(index + 1), 5000);
+    </script>
+  </body>
+</html>

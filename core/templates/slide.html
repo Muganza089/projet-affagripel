@@ -1,0 +1,48 @@
+<!-- SLIDER SECTION -->
+{% load static %}
+<section class="w-full max-w-6xl mx-auto px-6 py-6">
+  <div class="overflow-hidden relative rounded-xl shadow-lg">
+    <div id="slider" class="flex slider">
+
+      <!-- Slide 1 -->
+      <div
+        class="min-w-full h-[450px] bg-cover bg-center flex flex-col justify-end p-8 text-white"
+        style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMmPPpjFcfMK0Y-5t06XmvFBA6yw3NOI4BX2q40RZzwBYCe2wT2FX9qjzw7Ro-42bh5m4WbHkGN8cNqNkwOsU-LksdMctkqnvi7XfSG3PEG0zefj1_HCtWc0gDVKTBa1HStn1Dfn0ARrvxNAcdLcRaEzyQ-7MYXBEEDCmZqbedY5rKV71levcVckuJMHthvtiKMSvhcRb-tmPEQX6a6ofNV991sJfAugMa3uURXMCzM0pxR4uk4cq1QnhlEUUZFJYe9GHAFYCVRecc');"
+      >
+        <h1 class="text-4xl font-extrabold mb-3">
+          PROJETS AGRICOLES AU LUALABA
+        </h1>
+        <p class="max-w-xl text-lg">
+          Le développement agricole au Lualaba s’accélère avec de nouveaux projets durables au service des communautés rurales.
+        </p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="min-w-full h-[450px] bg-cover bg-center flex flex-col justify-end p-8 text-white"
+        style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url('{% static 'images/ministre.png' %}');"
+      >
+        <h1 class="text-4xl font-extrabold mb-3">Expropriation des terres à Katebi</h1>
+        <p class="max-w-xl text-lg">
+          Le Ministre Jean-Pierre Kalenga apaise les tensions et dément formellement les rumeurs d’expropriation arbitraire.
+        </p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div
+        class="min-w-full h-[450px] bg-cover bg-center flex flex-col justify-end p-8 text-white"
+        style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url('{% static 'images/poisson.png' %}');"
+      >
+        <h1 class="text-4xl font-extrabold mb-3">Arrêté ministériel</h1>
+        <p class="max-w-xl text-lg">
+          À partir du 1er décembre et jusqu’au mois de février, interdiction formelle de pratiquer la pêche.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Slider controls -->
+    <button id="prev" class="absolute left-2 top-1/2 text-white text-3xl">❮</button>
+    <button id="next" class="absolute right-2 top-1/2 text-white text-3xl">❯</button>
+  </div>
+</section>

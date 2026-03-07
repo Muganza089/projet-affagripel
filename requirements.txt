@@ -3,7 +3,6 @@ certifi==2026.1.4
 charset-normalizer==3.4.4
 dj-database-url==3.1.2
 Django==5.2.8
-django-browser-reload==1.21.0
 django-distill==3.2.7
 django-tailwind==3.8.0
 gunicorn==25.1.0
@@ -17,3 +16,4 @@ tailwindcss==0.0.1
 typing_extensions==4.15.0
 tzdata==2025.2
 urllib3==2.6.3
+whitenoise==6.7.0

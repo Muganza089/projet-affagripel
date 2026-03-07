@@ -11,9 +11,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    ".ondigitalocean.app",
+    "162.254.37.75",
     "affagripel-lualaba.com",
     "www.affagripel-lualaba.com",
 ]
@@ -96,8 +94,8 @@ USE_I18N = True
 USE_TZ = True
 
 # STATIC FILES
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

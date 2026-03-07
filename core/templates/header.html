@@ -1,0 +1,108 @@
+{% load static %}
+<header class="w-full border-b bg-white fixed top-0 left-0 z-50">
+
+    <!-- TOP : Logo + Texte -->
+    <div class="w-full bg-white border-b">
+        <div class="max-w-7xl mx-auto px-6 flex items-center space-x-4 h-20 py-3">
+
+            <!-- LOGO à gauche -->
+            <img src="{% static 'images/logo_affagripel.png' %}" 
+                 class="h-20 w-20 object-contain"
+                 alt="Logo">
+
+            <!-- TEXTES DU MINISTÈRE sur 2 lignes -->
+            <div class="ministere-container overflow-hidden h-16 flex flex-col justify-center">
+                <span class="animated-line">MINISTÈRE PROVINCIAL DES AFFAIRES FONCIÈRES, AGRICULTURE,</span>
+                <span class="animated-line">PÊCHE, ÉLEVAGE & DÉVELOPPEMENT RURAL</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="w-full bg-white">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-14">
+
+            <!-- Menu desktop -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-medium">
+                    <li>
+                        <a href="{% url 'home' %}" class="px-3 py-1 transition-all duration-300
+                           {% if request.resolver_match.url_name == 'home' %} bg-blue-600 text-white {% else %} text-gray-700 hover:text-blue-600 {% endif %}">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'agriculture' %}" class="px-3 py-1 transition-all duration-300
+                           {% if request.resolver_match.url_name == 'agriculture' %} bg-blue-600 text-white {% else %} text-gray-700 hover:text-blue-600 {% endif %}">Agriculture</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'peche_et_elevage' %}" class="px-3 py-1 transition-all duration-300
+                           {% if request.resolver_match.url_name == 'peche_et_elevage' %} bg-blue-600 text-white {% else %} text-gray-700 hover:text-blue-600 {% endif %}">Pêche et Élevage</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'devRural' %}" class="px-3 py-1 transition-all duration-300
+                           {% if request.resolver_match.url_name == 'devRural' %} bg-blue-600 text-white {% else %} text-gray-700 hover:text-blue-600 {% endif %}">Développement rural</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'aff_fonciere' %}" class="px-3 py-1 transition-all duration-300
+                           {% if request.resolver_match.url_name == 'aff_fonciere' %} bg-blue-600 text-white {% else %} text-gray-700 hover:text-blue-600 {% endif %}">Affaires foncières</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- À droite : Demande Audience + À propos -->
+            <div class="hidden md:flex space-x-6">
+                <a href="{% url 'demandeAudience' %}" class="px-3 py-1 transition-all duration-300
+                   {% if request.resolver_match.url_name == 'demandeAudience' %} bg-blue-600 text-white {% else %} text-gray-700 hover:text-blue-600 {% endif %}">Demande d'audience</a>
+                <a href="{% url 'apropos' %}" class="px-3 py-1 transition-all duration-300
+                   {% if request.resolver_match.url_name == 'apropos' %} bg-blue-600 text-white {% else %} text-gray-700 hover:text-blue-600 {% endif %}">À propos</a>
+            </div>
+
+            <!-- Menu mobile toggle -->
+            <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+        </div>
+    </div>
+
+    <!-- MENU MOBILE -->
+    <div id="mobile-menu" class="hidden flex-col bg-white border-t p-4 space-y-4 text-gray-700">
+        <a href="{% url 'home' %}" class="block px-3 py-2">Accueil</a>
+        <a href="{% url 'agriculture' %}" class="block px-3 py-2">Agriculture</a>
+        <a href="{% url 'peche_et_elevage' %}" class="block px-3 py-2">Pêche et Élevage</a>
+        <a href="{% url 'devRural' %}" class="block px-3 py-2">Développement rural</a>
+        <a href="{% url 'aff_fonciere' %}" class="block px-3 py-2">Affaires foncières</a>
+        <a href="{% url 'demandeAudience' %}" class="block px-3 py-2">Demande d'audience</a>
+        <a href="{% url 'apropos' %}" class="block px-3 py-2">À propos</a>
+    </div>
+
+</header>
+
+<style>
+/* Texte ministère : animation écriture + rebond */
+.animated-line span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: writeBounce 0.6s ease forwards;
+}
+
+@keyframes writeBounce {
+    0% { opacity: 0; transform: translateY(10px); }
+    50% { opacity: 1; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+// Animation écriture lettre par lettre (une seule fois) pour chaque ligne
+document.querySelectorAll('.animated-line').forEach(line => {
+    const text = line.textContent;
+    line.textContent = '';
+    [...text].forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char === ' ' ? '\u00A0' : char; // espace non-sécable
+        // délai : commence après 3s + décalage lettre par lettre
+        span.style.animationDelay = `${0 + index * 0.05}s`;
+        line.appendChild(span);
+    });
+});
+</script>
+

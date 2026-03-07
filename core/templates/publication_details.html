@@ -1,0 +1,13 @@
+{% load static %}
+<section class="max-w-6xl mx-auto px-6 py-12">
+  <div class="bg-white rounded-lg shadow-md overflow-hidden">
+    <img src="{{ publication.image.url }}" alt="{{ publication.titre }}" class="w-full h-96 object-cover">
+    <div class="p-8">
+      <h1 class="text-3xl font-bold mb-4">{{ publication.titre }}</h1>
+      <p class="text-gray-500 mb-6">Publiée le {{ publication.date_publication|date:"d M Y" }}</p>
+      <div class="text-gray-700 leading-relaxed">
+        {{ publication.description|linebreaks }}
+      </div>
+    </div>
+  </div>
+</section>

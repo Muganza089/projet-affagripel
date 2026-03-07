@@ -1,9 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
+from .models import Publication
 
 def home(request):
-     return render(request, "index.html", {
-        'content': 'home',
-    })
+    publications = Publication.objects.order_by('-date_publication')  # Les plus récentes en premier
+    return render(request, 'index.html', {'publications': publications,'content': 'home'})
+
+def publication_detail(request, pk):
+    publication = get_object_or_404(Publication, pk=pk)
+    return render(request, 'index.html', {'publication': publication, 'content': 'publication' })
+
 def peche_et_elevage(request):
     return render(request, 'index.html', {
         'content': 'pecheElevage',
@@ -22,10 +27,10 @@ def apropos(request):
     })
 def demandeAudience(request):
     return render(request, 'index.html', {
-        'content': 'devMode',
+        'content': 'demandeAudience',
     })
 def aff_fonciere(request):
     return render(request, 'index.html', {
-        'content': 'devMode',
+        'content': 'aff_fonciere',
     })
 

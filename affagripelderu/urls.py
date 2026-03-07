@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from core.views import*
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
   
@@ -14,4 +16,5 @@ urlpatterns = [
     
 
     path('admin/', admin.site.urls),
-]
+    path('publication/<int:pk>/', publication_detail, name='publication_detail'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

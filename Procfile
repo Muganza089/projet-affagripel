@@ -1,1 +1,1 @@
-web: gunicorn affagripelderu.wsgi
+web: python manage.py migrate --noinput && gunicorn affagripelderu.wsgi

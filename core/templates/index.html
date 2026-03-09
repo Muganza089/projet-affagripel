@@ -2,6 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:image" content="https://affagripel-lualaba.com/static/images/logo_affagripel.png">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
         <link
@@ -9,8 +10,10 @@
           onload="this.rel='stylesheet'"
           href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;700;900&family=Public+Sans:wght@400;700;900"
         />
+        <link rel="icon" href="{% static 'images/logo_affagripel.png' %}" type="image/png">
 
         <title>AFFAGRIPPEL</title>
+        
 
         <!-- Tailwind -->
         <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -127,6 +130,15 @@
       document.getElementById("next").onclick = () => showSlide(index + 1);
 
       setInterval(() => showSlide(index + 1), 5000);
+    </script>
+    <script type="application/ld+json">
+      {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Affagripel Lualaba",
+      "url": "https://affagripel-lualaba.com",
+      "logo": "https://affagripel.com/static/images/logo_affagripel.png"
+      }
     </script>
   </body>
 </html>

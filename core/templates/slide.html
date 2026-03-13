@@ -2,33 +2,61 @@
 
 <section class="w-full max-w-6xl mx-auto px-6 py-6">
   <div class="overflow-hidden relative rounded-xl shadow-lg">
+
     <div id="slider" class="flex slider">
 
+      <!-- SLIDE VIDEO -->
+      <div class="min-w-full h-[220px] sm:h-[300px] md:h-[380px] lg:h-[450px] relative">
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute inset-0 w-full h-full object-cover">
+
+          <source src="https://res.cloudinary.com/dmrimzhwq/video/upload/v1772785055/lv_0_20260306101544_zvmkrb.mp4" type="video/mp4">
+
+        </video>
+
+      </div>
+
+      <!-- SLIDES PUBLICATIONS -->
       {% for pub in publications %}
       <div
-        class="min-w-full h-[450px] bg-cover bg-center flex flex-col justify-end p-8 text-white"
-        style="background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url('{{ pub.image.url }}');"
+        class="min-w-full h-[220px] sm:h-[300px] md:h-[380px] lg:h-[450px] bg-cover bg-center flex flex-col justify-end p-6 text-white relative"
+        style="background-image: url('{{ pub.image.url }}');"
       >
-        <h1 class="text-4xl font-extrabold mb-3">
+
+        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2">
           <a href="{% url 'publication_detail' pub.pk %}" class="hover:underline">
             {{ pub.titre }}
           </a>
         </h1>
 
-        <!-- Extrait de la description avec Voir plus inline -->
-        <p class="max-w-xl text-lg mb-0">
-          {{ pub.description|truncatewords:20 }}<a href="{% url 'publication_detail' pub.pk %}" class="text-sm text-white underline hover:text-gray-200 ml-1">Voir plus</a>
+        <p class="max-w-xl text-sm sm:text-base">
+          {{ pub.description|truncatewords:20 }}
+          <a href="{% url 'publication_detail' pub.pk %}"
+             class="text-sm underline ml-1">
+            Voir plus
+          </a>
         </p>
 
       </div>
       {% empty %}
-      <p class="text-gray-700">Aucune publication disponible pour le moment.</p>
+      <p class="text-gray-700 p-4">Aucune publication disponible pour le moment.</p>
       {% endfor %}
 
     </div>
 
     <!-- Slider controls -->
-    <button id="prev" class="absolute left-2 top-1/2 text-white text-3xl">❮</button>
-    <button id="next" class="absolute right-2 top-1/2 text-white text-3xl">❯</button>
+    <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 text-white text-3xl z-20">
+      ❮
+    </button>
+
+    <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 text-white text-3xl z-20">
+      ❯
+    </button>
+
   </div>
 </section>

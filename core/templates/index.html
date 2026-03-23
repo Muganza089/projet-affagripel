@@ -1,123 +1,123 @@
+{% load static %}
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-        <link
-          rel="stylesheet"
-          onload="this.rel='stylesheet'"
-          href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;700;900&family=Public+Sans:wght@400;700;900"
-        />
 
-        <title>AFFAGRIPPEL</title>
-        
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Tailwind -->
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="stylesheet" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;700;900&family=Public+Sans:wght@400;700;900" />
 
-        <style>
-          .slider {
-            transition: transform 0.6s ease-in-out;
-          }
-        </style>
-    </head>
+  <title>AFFAGRIPPEL</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+</head>
 
 
-  <body class="bg-[#f8f9fc] font-['Public_Sans','Noto_Sans',sans-serif]">
-    <!-- NAVBAR -->
-     {% include 'header.html' %}
+<body class="font-['Public_Sans','Noto_Sans',sans-serif]">
+  <!-- NAVBAR -->
+  {% include 'header.html' %}
 
-    <div class="pt-20"></div>
+  <div class="pt-32"></div>
 
-    {% comment %} ROUTING DE PAGES {% endcomment %}
-
-
-    <main class="flex-1 p-6">
-        {% if content == 'home' %}
-          {% include 'slide.html' %}
-        {% elif content == 'publication' %}
-          {% include 'publication_details.html' %}
-        {% elif content == 'agriculture' %}
-          {% include 'agriculture.html' %}
-        {% elif content == 'devRural' %}
-          {% include 'devRural.html' %}
-        {% elif content == 'pecheElevage' %}
-          {% include 'pecheElevage.html' %}
-        {% elif content == 'apropos' %}
-          {% include 'apropos.html' %}
-        {% elif content == 'demandeAudience' %}
-          {% include 'form_audience.html' %}
-        {% elif content == 'aff_fonciere' %}
-          {% include 'aff_fonciere.html' %}
-        {% else %}
-          <p class="text-red-500 font-semibold">Erreur : contenu inconnu ou manquant.</p>
-        {% endif %}
+  {% comment %} ROUTING DE PAGES {% endcomment %}
 
 
-    </main>
+  <main class="flex-1 p-6">
+    {% if content == 'home' %}
+    {% include 'slide.html' %}
+    {% elif content == 'publication' %}
+    {% include 'publication_details.html' %}
+    {% elif content == 'agriculture' %}
+    {% include 'agriculture.html' %}
+    {% elif content == 'devRural' %}
+    {% include 'devRural.html' %}
+    {% elif content == 'pecheElevage' %}
+    {% include 'pecheElevage.html' %}
+    {% elif content == 'apropos' %}
+    {% include 'apropos.html' %}
+    {% elif content == 'demandeAudience' %}
+    {% include 'form_audience.html' %}
+    {% elif content == 'aff_fonciere' %}
+    {% include 'aff_fonciere.html' %}
+    {% else %}
+    <p class="text-red-500 font-semibold">Erreur : contenu inconnu ou manquant.</p>
+    {% endif %}
 
-    <!-- CONTENU DE LA PAGE (Actualité / Solutions / Audience) -->
-    <!-- (Ton contenu actuel reste exactement comme il est, pour que rien ne casse) -->
 
-    <!-- FOOTER VERT -->
-    <footer class="bg-[#0f8f39] text-white mt-16 pt-12 pb-8">
-      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="font-bold text-lg mb-4">Contact</h3>
-          <ul class="space-y-3 text-sm">
-            <li>Localisation</li>
-            <li><a class="hover:underline" href="#">Instagram</a></li>
-            <li><a class="hover:underline" href="#">Facebook</a></li>
-            <li><a class="hover:underline" href="#">LinkedIn</a></li>
-            <li><a class="hover:underline" href="#">X</a></li>
-          </ul>
-        </div>
+  </main>
 
-        <div>
-          <h3 class="font-bold text-lg mb-4">Informations</h3>
-          <ul class="space-y-3 text-sm">
-            <li><a class="hover:underline" href="#">Ministère des affaires foncières</a></li>
-            <li><a class="hover:underline" href="#">Ministère de l’agriculture</a></li>
-            <li><a class="hover:underline" href="#">Moniteur des affaires foncières</a></li>
-          </ul>
-        </div>
+  <!-- CONTENU DE LA PAGE (Actualité / Solutions / Audience) -->
+  <!-- (Ton contenu actuel reste exactement comme il est, pour que rien ne casse) -->
 
-        <div>
-          <h3 class="font-bold text-lg mb-4">Newsletter</h3>
-          <form class="flex flex-col sm:flex-row gap-2">
-            <input
-              class="w-full px-4 py-2 rounded-md text-black"
-              type="email"
-              placeholder="Entrer votre email"
-            />
-            <button
-              class="bg-white text-green-700 px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition"
-              type="submit"
-            >
-              S'inscrire
-            </button>
-          </form>
-        </div>
+  <!-- FOOTER VERT -->
+  <footer class="bg-green-900 text-white mt-16 pt-12 pb-8">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-bold text-lg mb-4">Contact</h3>
+        <ul class="space-y-4 text-sm">
+          <li><i class="fa-solid fa-location-dot w-5 text-center mr-1"></i> Localisation</li>
+          <li><a class="hover:underline flex items-center gap-2 w-max" href="#"><i
+                class="fa-brands fa-instagram text-lg w-5 text-center"></i> Instagram</a></li>
+          <li><a class="hover:underline flex items-center gap-2 w-max" href="#"><i
+                class="fa-brands fa-facebook text-lg w-5 text-center"></i> Facebook</a></li>
+          <li><a class="hover:underline flex items-center gap-2 w-max" href="#"><i
+                class="fa-brands fa-linkedin text-lg w-5 text-center"></i> LinkedIn</a></li>
+          <li><a class="hover:underline flex items-center gap-2 w-max" href="#"><i
+                class="fa-brands fa-x-twitter text-lg w-5 text-center"></i> X</a></li>
+        </ul>
       </div>
 
-      <p class=" bg-blue text-center text-sm mt-12 pt-6 border-t border-white/40">
-        © Copyright 2025 MINISTERE DES AFFAIRES FONCIERES ET AGRIPEL LUALABA
-      </p>
-    </footer>
+      <div>
+        <h3 class="font-bold text-lg mb-4">Informations</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a class="hover:underline block hover:text-gray-200" href="https://affairesfoncieres.gouv.cd/"
+              target="_blank">Ministère des Affaires Foncières</a></li>
+          <li><a class="hover:underline block hover:text-gray-200" href="https://agriculture.gouv.cd/"
+              target="_blank">Ministère de l'Agriculture, Pêche et Élevage</a></li>
+          <li><a class="hover:underline block hover:text-gray-200" href="#">Moniteur des affaires foncières</a></li>
+        </ul>
+      </div>
 
-    <!-- JS: Slider + Toggle Menu -->
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
+      <div>
+        <h3 class="font-bold text-lg mb-4">Newsletter</h3>
+        <form class="flex flex-col sm:flex-row gap-2">
+          <input class="w-full px-4 py-2 rounded-none text-black focus:outline-none focus:ring-2 focus:ring-green-400"
+            type="email" placeholder="Entrer votre email" />
+          <button class="bg-white text-green-700 px-4 py-2 rounded-none font-semibold hover:bg-gray-200 transition"
+            type="submit">
+            S'inscrire
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <p class=" bg-blue text-center text-sm mt-12 pt-6 border-t border-white/40">
+      © Copyright 2026 MINISTERE DES AFFAIRES FONCIERES ET AGRIPEL LUALABA
+    </p>
+  </footer>
+
+  <!-- JS: Toggle Menu -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuBtn && mobileMenu) {
       menuBtn.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
+    }
 
-      // Slider
+    // Slider (only if slider elements exist on the page)
+    const slider = document.getElementById("slider");
+    if (slider) {
       let index = 0;
-      const slider = document.getElementById("slider");
       const slides = slider.children;
 
       function showSlide(i) {
@@ -125,10 +125,14 @@
         slider.style.transform = `translateX(-${index * 100}%)`;
       }
 
-      document.getElementById("prev").onclick = () => showSlide(index - 1);
-      document.getElementById("next").onclick = () => showSlide(index + 1);
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      if (prevBtn) prevBtn.onclick = () => showSlide(index - 1);
+      if (nextBtn) nextBtn.onclick = () => showSlide(index + 1);
 
       setInterval(() => showSlide(index + 1), 5000);
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>

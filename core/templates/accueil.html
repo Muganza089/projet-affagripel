@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#eceeef",
+                        "on-primary-container": "#799dd6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#cbe7f5",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#341100",
+                        "secondary-container": "#cbe7f5",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#3a5f94",
+                        "tertiary-fixed": "#ffdbca",
+                        "on-secondary-fixed-variant": "#304a55",
+                        "outline-variant": "#c3c6d1",
+                        "inverse-on-surface": "#eff1f2",
+                        "surface-container-low": "#f2f4f5",
+                        "surface-container-high": "#e6e8e9",
+                        "surface": "#f8fafb",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#723610",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "on-secondary-container": "#4e6874",
+                        "background": "#f8fafb",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "primary": "#001e40",
+                        "on-tertiary-container": "#d8885c",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#592300",
+                        "on-surface": "#191c1d",
+                        "inverse-primary": "#a7c8ff",
+                        "on-secondary-fixed": "#021f29",
+                        "surface-dim": "#d8dadb",
+                        "on-background": "#191c1d",
+                        "surface-bright": "#f8fafb",
+                        "error": "#ba1a1a",
+                        "secondary": "#48626e",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#381300",
+                        "primary-container": "#003366",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed": "#d5e3ff",
+                        "secondary-fixed-dim": "#afcbd8",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface-variant": "#43474f",
+                        "outline": "#737780"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand-font {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopAppBar Navigation -->
+    <header class="bg-[#f8fafb]/80 dark:bg-[#191c1d]/80 backdrop-blur-xl fixed top-0 w-full z-50">
+        <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-xl font-black text-[#001e40] dark:text-[#f8fafb] tracking-tighter brand-font uppercase">
+                Ministère des Affaires Foncières
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-xs uppercase tracking-widest font-bold text-[#001e40] dark:text-[#d5e3ff] border-b-2 border-[#001e40] dark:border-[#d5e3ff] pb-1"
+                    href="#">Accueil</a>
+                <a class="text-xs uppercase tracking-widest font-medium text-slate-500 dark:text-slate-400 hover:text-[#001e40] dark:hover:text-[#f8fafb] transition-colors"
+                    href="#">Cadastre</a>
+                <a class="text-xs uppercase tracking-widest font-medium text-slate-500 dark:text-slate-400 hover:text-[#001e40] dark:hover:text-[#f8fafb] transition-colors"
+                    href="#">Titres Fonciers</a>
+                <a class="text-xs uppercase tracking-widest font-medium text-slate-500 dark:text-slate-400 hover:text-[#001e40] dark:hover:text-[#f8fafb] transition-colors"
+                    href="#">Lois</a>
+                <a class="text-xs uppercase tracking-widest font-medium text-slate-500 dark:text-slate-400 hover:text-[#001e40] dark:hover:text-[#f8fafb] transition-colors"
+                    href="#">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200">
+                    <span class="material-symbols-outlined text-[#001e40] dark:text-[#d5e3ff]">notifications</span>
+                </button>
+                <button
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200">
+                    <span class="material-symbols-outlined text-[#001e40] dark:text-[#d5e3ff]">account_circle</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="pt-24 pb-20">
+        <!-- Actualités Section -->
+        <section class="max-w-7xl mx-auto px-8">
+            <div class="mb-16">
+                <h2 class="text-5xl font-extrabold text-primary tracking-tight mb-4">Actualités</h2>
+                <p class="text-lg text-on-surface-variant max-w-2xl font-body">
+                    Restez informés des dernières nouvelles et développements du cadastre.
+                </p>
+            </div>
+            <!-- Bento-style Grid for News -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Article 1 -->
+                <article
+                    class="flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img alt="Official meeting"
+                            class="w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-500"
+                            data-alt="Institutional meeting room with officials in formal attire discussing papers around a mahogany table, soft overhead lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEg8P9gAvtGZ5_Y95J55OvI-YyL1o2guI-6fGf_eTZBrN42_iOBBnBNZeF0dPFYCPeLrYdp7k7RzWWvBE8DLjCXwGsjDinKr_HS8lb7DTuPjQdspJzpURzWHejj9uYQInGbGUnvmFatz-ek0dKaEavsTeNKuZgHs4jsa3iu3lZcjBERWLd6o0LOAef0cbhQIJA1vlRcfS1UxNDzPQ-Ikf5uSSZX8yFNhsLcH26OUtpRZ8NHTzSJbNVc87xBsfKRjjiz5Rwc0N7D5o" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span
+                            class="text-xs font-bold text-primary-container mb-2 font-label uppercase tracking-widest">26
+                            février 2026</span>
+                        <h3 class="text-lg font-bold leading-snug text-primary mb-3 line-clamp-3">Échanges avec
+                            l'Administration Foncière | S.E. Mme O'Neige N'Sele resserre les rangs et place 2026 so...
+                        </h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-3 mb-6 font-body">La Ministre des Affaires
+                            Foncières, Son Excellence Madame O'Neige N'Sele, a échangé ce jeudi 26 février 2026 avec les
+                            agents et cadres de...</p>
+                        <a class="mt-auto inline-flex items-center text-sm font-bold text-primary group" href="#">
+                            Lire l'article
+                            <span
+                                class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Article 2 -->
+                <article
+                    class="flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img alt="Diplomatic handshake"
+                            class="w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-500"
+                            data-alt="Professional handshake between two people in business attire in a bright, modern glass-walled office, midday natural light"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_AV424pbBqCQ6nebSA59K7EIA1OcaHX07i5jtD8qwhNK2q57ISSb4kJ6s9-D1BGQXJ9thJhK47e0OF3BlUEzhVyPjajSknuShVYO1PcNogDlenZUUcAMAGr2jjO8tEGeDfpjF3ZC1mik8TTHCSO020VXu_6jiZMWfzIEIWfndCdDfrPs1iuRdZdvZcLJ993jQOr_2SNccCOBRSfptlzqAgUicvRNqd_tr2LNwmczscxOoNp_JbLnhBdbd_jYEVfUSTV0fmFqYBuI" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span
+                            class="text-xs font-bold text-primary-container mb-2 font-label uppercase tracking-widest">29
+                            janvier 2026</span>
+                        <h3 class="text-lg font-bold leading-snug text-primary mb-3 line-clamp-3">Réforme Foncière |
+                            S.E. Mme O'Neige N'Sele échange avec le PNUD sur la mise en œuvre de la...</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-3 mb-6 font-body">Son Excellence Madame
+                            O'Neige N'Sele, Ministre des Affaires Foncières, a reçu en audience ce jeudi 29 janvier, le
+                            Représentant Résident du...</p>
+                        <a class="mt-auto inline-flex items-center text-sm font-bold text-primary group" href="#">
+                            Lire l'article
+                            <span
+                                class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Article 3 -->
+                <article
+                    class="flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img alt="Justice building"
+                            class="w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-500"
+                            data-alt="The scales of justice on a wooden desk with a leather-bound book, dramatic lighting coming from a side window in a courtroom"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9jEssAWkWCaxP6f-9m3ZnNZOxFrceSfa-YL1QQWq-ys3wqMWzzcqu9q9EeWLVVlAXyORnpAtceSdst_VZkIMX52umTrL01VnUDyYVPj_v_bkaMEEk6PLyQsqVUhRHFOL8slVBwnYRhsilje9RmWaYaZYmEbOQmvxoFVWAlqaqhjCSl-zV4CUSjMJkKgwp3Qfjsc-9IQKARqZZzW24VfTPF9DvGTNXq1-FagzPX8BUfeTY2aB7Dhgy1DCJpFJMcgCiZYHGVWu9rDq" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span
+                            class="text-xs font-bold text-primary-container mb-2 font-label uppercase tracking-widest">27
+                            janvier 2026</span>
+                        <h3 class="text-lg font-bold leading-snug text-primary mb-3 line-clamp-3">Phénomène « Folio » |
+                            S.E. Mme O'Neige N'Sele expose les verrous juridiques de la Loi Foncière à la...</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-3 mb-6 font-body">Son Excellence Madame
+                            O'Neige N'Sele, Ministre des Affaires Foncières, est intervenue ce mardi 27 janvier 2026 à
+                            la Cour de cassation à Kinshasa, à...</p>
+                        <a class="mt-auto inline-flex items-center text-sm font-bold text-primary group" href="#">
+                            Lire l'article
+                            <span
+                                class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Article 4 -->
+                <article
+                    class="flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img alt="Official documents"
+                            class="w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-500"
+                            data-alt="Stacked architectural blueprints and official government documents on a clean white desk, professional and organized aesthetic, soft morning light"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGrE60SDJnb8dzwTRkvA94S7fGzZ_M8G9MO1b_yrDeEh8MSQpKoHFWmNyWf5elIruvqYZBRR-6onLsBjfdTMG__THcOR2-LZByJcAecHS1fYe1JR5ca6kZGgFNs9EHQQ-GwfXVVqi6Iwsp_qumFgAKEt_GZzHJcXDA1eIi0YIJ8TM9H3WkdHQitduyiuUkPsD2V5denqMlDKXq8Q2ixkOZqOm0WXMdiYg78sljtN38IYZIBOvD76i2_NSXHmtzugRlNygBumByC-c0Yq7RIs" />
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span
+                            class="text-xs font-bold text-primary-container mb-2 font-label uppercase tracking-widest">26
+                            janvier 2026</span>
+                        <h3 class="text-lg font-bold leading-snug text-primary mb-3 line-clamp-3">Réforme Foncière |
+                            L'Ambassadrice de la Belgique en RDC « encouragée par la Vision dynamique et...</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-3 mb-6 font-body">Son Excellence Madame
+                            O'Neige N'Sele, Ministre des Affaires Foncières, a reçu ce lundi 26 janvier, l'Ambassadrice
+                            du Royaume de Belgique en...</p>
+                        <a class="mt-auto inline-flex items-center text-sm font-bold text-primary group" href="#">
+                            Lire l'article
+                            <span
+                                class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            <!-- Global Action Button -->
+            <div class="mt-16 flex justify-center">
+                <button
+                    class="flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-md font-bold text-sm uppercase tracking-widest hover:bg-primary-container transition-colors shadow-lg shadow-primary/10 active:scale-95 duration-200">
+                    Voir tous les articles
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#001e40] dark:bg-[#000d1a] w-full py-12 px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+            <div class="mb-8 md:mb-0">
+                <div class="font-['Manrope'] font-bold text-white text-lg mb-2">Ministère des Affaires Foncières</div>
+                <div class="font-['Inter'] text-xs uppercase tracking-widest text-white/70">
+                    © 2024 Ministère des Affaires Foncières. Tous droits réservés.
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a class="font-['Inter'] text-xs uppercase tracking-widest text-white opacity-70 hover:opacity-100 transition-opacity"
+                    href="#">Mentions Légales</a>
+                <a class="font-['Inter'] text-xs uppercase tracking-widest text-white opacity-70 hover:opacity-100 transition-opacity"
+                    href="#">Politique de Confidentialité</a>
+                <a class="font-['Inter'] text-xs uppercase tracking-widest text-white opacity-70 hover:opacity-100 transition-opacity"
+                    href="#">Contactez-nous</a>
+                <a class="font-['Inter'] text-xs uppercase tracking-widest text-white opacity-70 hover:opacity-100 transition-opacity"
+                    href="#">Plan du site</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

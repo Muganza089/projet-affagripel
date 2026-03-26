@@ -1,70 +1,102 @@
 {% load static %}
 
+<!-- ================= HEADER ================= -->
+<div class="bg-primary px-6 py-8 flex items-center justify-center">
+
+  <div class="max-w-7xl w-full 
+              flex flex-col items-center text-center
+              lg:flex-row lg:items-center lg:text-left
+              gap-4 lg:gap-6 animate">
+
+    <!-- LOGO -->
+    <div class="flex-shrink-0 animate">
+      <img src="{% static 'images/logoclean.png' %}" class="h-40 sm:h-48 lg:h-64 object-contain mx-auto lg:mx-0">
+    </div>
+
+    <!-- TEXTE -->
+    <div class="flex flex-col justify-center text-white uppercase animate">
+
+      <span class="text-sm sm:text-lg lg:text-2xl brand-font font-extrabold tracking-tight leading-tight">
+        MINISTÈRE PROVINCIAL DES AFFAIRES FONCIÈRES, AGRICULTURE,
+      </span>
+
+      <span class="text-sm sm:text-lg lg:text-2xl brand-font font-extrabold tracking-tight leading-tight">
+        PÊCHE, ÉLEVAGE ET DÉVELOPPEMENT RURAL
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= SECTION ================= -->
 <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-6">
+
+  <!-- HEADER ACTUALITÉS -->
+  <div class="flex flex-col items-center justify-center mt-6 mb-6 animate">
+
+    <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary shadow-md 
+                transition transform hover:scale-110 animate">
+      <img src="{% static 'icones/newspaper.png' %}" class="w-7 h-7 filter brightness-0 invert">
+    </div>
+
+    <h2 class="mt-3 text-xl font-bold text-primary tracking-wide uppercase animate">
+      Actualités
+    </h2>
+
+  </div>
 
   {% if publications %}
 
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-1 mb-1">
+  <!-- GRID PRINCIPAL -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-2 mb-2">
 
     <!-- ARTICLE PRINCIPAL -->
     {% with pub=publications.0 %}
     <a href="{% url 'publication_detail' pub.pk %}"
-      class="group lg:col-span-6 relative overflow-hidden block bg-black rounded-md" style="min-height: 380px;">
+      class="group lg:col-span-6 relative overflow-hidden bg-black rounded-md animate" style="min-height: 380px;">
 
-      <!-- BADGE -->
       <div class="absolute top-3 left-3 z-10">
-        <span class="text-xs font-semibold px-3 py-1 rounded-full 
-                     bg-white/90 text-blue-900 border border-white">
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/90 text-blue-900">
           Actualité
         </span>
       </div>
 
-      <img src="{{ pub.image.url }}"
-        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition">
+      <img src="{{ pub.image.url }}" class="absolute inset-0 w-full h-full object-cover 
+                  transition duration-500 group-hover:scale-110">
 
       <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
 
       <div class="absolute bottom-0 p-6 text-white">
         <h2 class="text-xl font-bold">{{ pub.titre }}</h2>
       </div>
+
     </a>
     {% endwith %}
 
     <!-- ARTICLES MOYENS -->
-    <div class="lg:col-span-3 flex flex-col gap-1">
+    <div class="lg:col-span-3 flex flex-col gap-2">
       {% for pub in publications|slice:"1:3" %}
-      <a href="{% url 'publication_detail' pub.pk %}" class="group relative overflow-hidden bg-black flex-1 rounded-md">
+      <a href="{% url 'publication_detail' pub.pk %}"
+        class="group relative overflow-hidden bg-black flex-1 rounded-md animate">
 
-        <div class="absolute top-3 left-3 z-10">
-          <span class="text-[11px] px-2.5 py-1 rounded-full 
-                       bg-white/90 text-blue-900 border border-white">
-            Actualité
-          </span>
-        </div>
-
-        <img src="{{ pub.image.url }}"
-          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition">
+        <img src="{{ pub.image.url }}" class="absolute inset-0 w-full h-full object-cover 
+                    transition duration-500 group-hover:scale-110">
 
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+
       </a>
       {% endfor %}
     </div>
 
     <!-- ARTICLES PETITS -->
-    <div class="lg:col-span-3 flex flex-col gap-1">
+    <div class="lg:col-span-3 flex flex-col gap-2">
       {% for pub in publications|slice:"3:5" %}
-      <a href="{% url 'publication_detail' pub.pk %}"
-        class="group bg-white flex flex-col overflow-hidden rounded-md p-3">
+      <a href="{% url 'publication_detail' pub.pk %}" class="group bg-white flex flex-col overflow-hidden rounded-md p-3 
+                animate hover:shadow-lg transition">
 
         <div class="relative h-32 mb-2">
-
-          <div class="absolute top-2 left-2 z-10">
-            <span class="text-[10px] px-2 py-1 rounded-full 
-                         bg-white/90 text-blue-900 border border-white">
-              Actualité
-            </span>
-          </div>
-
           <img src="{{ pub.image.url }}" class="w-full h-full object-cover rounded-sm">
         </div>
 
@@ -72,115 +104,112 @@
           {{ pub.titre }}
         </h3>
 
-        <p class="text-gray-500 text-xs mb-2">
+        <p class="text-xs text-gray-500">
           {{ pub.description|truncatewords:12 }}
-          <span class="ml-1 px-2 py-0.5 border border-blue-900 text-blue-900 text-[10px] rounded">
-            Voir plus
-          </span>
         </p>
 
-        <span class="text-xs text-blue-900">
-          {{ pub.date_publication|date:"d/m/Y" }}
-        </span>
-
       </a>
       {% endfor %}
     </div>
 
   </div>
 
-  <!-- SECTION ACTUALITÉS -->
-  {% if publications|length > 5 %}
-  <div class="mt-8 grid lg:grid-cols-12 gap-6">
-
-    {% with pub=publications.5 %}
-    <a href="{% url 'publication_detail' pub.pk %}"
-      class="group lg:col-span-4 relative overflow-hidden bg-black rounded-md">
-
-      <div class="absolute top-3 left-3 z-10">
-        <span class="text-xs px-3 py-1 rounded-full bg-white/90 text-blue-900">
-          Actualité
-        </span>
-      </div>
-
-      <img src="{{ pub.image.url }}" class="absolute w-full h-full object-cover">
-    </a>
-    {% endwith %}
-
-    <!-- LISTE -->
-    <div class="lg:col-span-5">
-      {% for pub in publications|slice:"6:10" %}
-      <a href="{% url 'publication_detail' pub.pk %}" class="flex gap-3 py-3">
-
-        <img src="{{ pub.image.url }}" class="w-24 h-20 object-cover rounded-sm">
-
-        <div>
-          <h4 class="text-sm font-bold text-blue-900 mb-1">
-            {{ pub.titre }}
-          </h4>
-
-          <p class="text-xs text-gray-500">
-            {{ pub.description|truncatewords:10 }}
-            <span class="ml-1 px-2 py-0.5 border border-blue-900 text-blue-900 text-[10px] rounded">
-              Voir plus
-            </span>
-          </p>
-
-          <span class="text-xs text-blue-900">
-            {{ pub.date_publication|date:"d/m/Y" }}
-          </span>
-        </div>
-
-      </a>
-      {% endfor %}
-    </div>
-
-  </div>
-  {% endif %}
-
-  <!-- GRILLE RESTANTE -->
-  {% if publications|length > 14 %}
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-
-    {% for pub in publications|slice:"14:" %}
-    <a href="{% url 'publication_detail' pub.pk %}" class="group bg-white rounded-md p-3">
-
-      <div class="relative h-32 mb-2">
-
-        <div class="absolute top-2 left-2 z-10">
-          <span class="text-xs px-2 py-1 rounded bg-white/90 text-blue-900">
-            Actualité
-          </span>
-        </div>
-
-        <img src="{{ pub.image.url }}" class="w-full h-full object-cover rounded-sm">
-      </div>
-
-      <h3 class="text-sm font-bold text-blue-900 mb-1">
-        {{ pub.titre }}
-      </h3>
-
-      <p class="text-xs text-gray-500 mb-2">
-        {{ pub.description|truncatewords:12 }}
-        <span class="ml-1 px-2 py-0.5 border border-blue-900 text-blue-900 text-[10px] rounded">
-          Voir plus
-        </span>
-      </p>
-
-      <span class="text-xs text-blue-900">
-        {{ pub.date_publication|date:"d/m/Y" }}
-      </span>
-
-    </a>
-    {% endfor %}
-
-  </div>
-  {% endif %}
-
-  {% else %}
-  <div class="text-center py-20">
-    <p class="text-gray-500">Aucune publication disponible</p>
-  </div>
   {% endif %}
 
 </section>
+
+<!-- ================= CSS ANIMATIONS ================= -->
+<style>
+  .animate {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* 1 */
+  .fade-up {
+    transform: translateY(60px);
+  }
+
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 2 */
+  .fade-left {
+    transform: translateX(-60px);
+  }
+
+  .fade-left.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* 3 */
+  .fade-right {
+    transform: translateX(60px);
+  }
+
+  .fade-right.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* 4 */
+  .zoom-in {
+    transform: scale(0.8);
+  }
+
+  .zoom-in.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* 5 */
+  .rotate-in {
+    transform: rotate(-10deg) scale(0.9);
+  }
+
+  .rotate-in.show {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+</style>
+
+<!-- ================= JS ANIMATIONS ================= -->
+<script>
+
+  const elements = document.querySelectorAll('.animate');
+
+  const animations = [
+    'fade-up',
+    'fade-left',
+    'fade-right',
+    'zoom-in',
+    'rotate-in'
+  ];
+
+  // Animation aléatoire
+  elements.forEach(el => {
+    const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+    el.classList.add(randomAnim);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+
+        const delay = Math.random() * 300 + index * 120;
+
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, delay);
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  elements.forEach(el => observer.observe(el));
+
+</script>

@@ -1,24 +1,29 @@
 {% load static %}
 
-<header class="w-full fixed top-0 left-0 z-50">
+<header class="w-full fixed mb-1 top-0 left-0 z-50">
 
   <!-- TOP BAR -->
   <div class="w-full bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center space-x-4 h-16 sm:h-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 
+            flex items-center space-x-4 h-16 sm:h-20
+            lg:justify-center">
 
       <a href="{% url 'home' %}">
         <img src="{% static 'images/logo_affagripel.png' %}" class="h-12 w-12 sm:h-16 sm:w-16 object-contain">
       </a>
 
-      <div class="ministere-container overflow-hidden h-16 flex flex-col justify-center">
-        <span class="animated-line">MINISTÈRE PROVINCIAL DES AFFAIRES FONCIÈRES, AGRICULTURE,</span>
-        <span class="animated-line">PÊCHE, ÉLEVAGE & DÉVELOPPEMENT RURAL</span>
+      <div
+        class="ministere-container overflow-hidden h-16 flex flex-col justify-center text-md font-black text-[#001e40] dark:text-[#f8fafb] tracking-tighter brand-font uppercase text-center lg:text-left">
+
+        <span class="animated-line">AFFAGRIPEL-LUALABA.COM</span>
+        <span class="animated-line"></span>
+
       </div>
 
     </div>
   </div>
 
-  <div class="w-full h-1 bg-blue-900"></div>
+  <div class="w-full h-1 bg-primary"></div>
 
   <!-- NAVBAR -->
   <nav id="navbar" class="w-full bg-white border-b border-gray-300 transition-all duration-300">
@@ -26,8 +31,8 @@
     <div class="max-w-7xl mx-auto">
 
       <!-- DESKTOP -->
-      <div class="hidden md:flex items-center h-11">
-        <ul class="flex text-sm font-semibold">
+      <div class="hidden md:flex items-center justify-center h-11">
+        <ul class="flex justify-center text-sm font-semibold">
 
           <li>
             <a href="{% url 'home' %}"
@@ -39,42 +44,42 @@
           <li>
             <a href="{% url 'agriculture' %}"
               class="nav-link px-4 h-11 flex items-center {% if request.resolver_match.url_name == 'agriculture' %}active-link{% endif %}">
-              Agriculture
+              AGRICULTURE
             </a>
           </li>
 
           <li>
             <a href="{% url 'peche_et_elevage' %}"
               class="nav-link px-4 h-11 flex items-center {% if request.resolver_match.url_name == 'peche_et_elevage' %}active-link{% endif %}">
-              Pêche & Élevage
+              PECHE ET ELEVAGE
             </a>
           </li>
 
           <li>
             <a href="{% url 'devRural' %}"
               class="nav-link px-4 h-11 flex items-center {% if request.resolver_match.url_name == 'devRural' %}active-link{% endif %}">
-              Dév. Rural
+              DEV. RURAL
             </a>
           </li>
 
           <li>
             <a href="{% url 'aff_fonciere' %}"
               class="nav-link px-4 h-11 flex items-center {% if request.resolver_match.url_name == 'aff_fonciere' %}active-link{% endif %}">
-              Aff. Foncières
+              AFFAIRES FONCIERES
             </a>
           </li>
 
           <li>
             <a href="{% url 'demandeAudience' %}"
               class="nav-link px-4 h-11 flex items-center {% if request.resolver_match.url_name == 'demandeAudience' %}active-link{% endif %}">
-              Audience
+              AUDIENCE
             </a>
           </li>
 
           <li>
             <a href="{% url 'apropos' %}"
               class="nav-link px-4 h-11 flex items-center {% if request.resolver_match.url_name == 'apropos' %}active-link{% endif %}">
-              À propos
+              A PROPOS
             </a>
           </li>
 
@@ -107,7 +112,7 @@
 <style>
   .nav-link {
     transition: all 0.3s ease;
-    color: #111827;
+    color: #3e4555;
     /* gray-900 */
   }
 
@@ -118,16 +123,12 @@
 
   /* 🔥 ACTIVE NORMAL */
   .active-link {
-    background: #1e3a8a;
+    background: #001e40;
     /* blue-900 */
     color: white !important;
   }
 
-  /* 🔥 ACTIVE SCROLL (glass style) */
-  #navbar.scrolled .active-link {
-    background: rgba(30, 58, 138, 0.7);
-    backdrop-filter: blur(6px);
-  }
+  
 </style>
 
 <!-- SCRIPT -->

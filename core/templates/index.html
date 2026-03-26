@@ -2,24 +2,101 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link rel="stylesheet" onload="this.rel='stylesheet'"
-    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;700;900&family=Public+Sans:wght@400;700;900" />
-
-  <title>AFFAGRIPPEL</title>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <!-- Tailwind -->
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>AFFAGRIPPEL</title>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container": "#eceeef",
+            "on-primary-container": "#799dd6",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#cbe7f5",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#341100",
+            "secondary-container": "#cbe7f5",
+            "error-container": "#ffdad6",
+            "surface-tint": "#3a5f94",
+            "tertiary-fixed": "#ffdbca",
+            "on-secondary-fixed-variant": "#304a55",
+            "outline-variant": "#c3c6d1",
+            "inverse-on-surface": "#eff1f2",
+            "surface-container-low": "#f2f4f5",
+            "surface-container-high": "#e6e8e9",
+            "surface": "#f8fafb",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#723610",
+            "tertiary-fixed-dim": "#ffb690",
+            "surface-variant": "#e1e3e4",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#001b3c",
+            "on-secondary-container": "#4e6874",
+            "background": "#f8fafb",
+            "primary-fixed-dim": "#a7c8ff",
+            "primary": "#001e40",
+            "on-tertiary-container": "#d8885c",
+            "on-error": "#ffffff",
+            "tertiary-container": "#592300",
+            "on-surface": "#191c1d",
+            "inverse-primary": "#a7c8ff",
+            "on-secondary-fixed": "#021f29",
+            "surface-dim": "#d8dadb",
+            "on-background": "#191c1d",
+            "surface-bright": "#f8fafb",
+            "error": "#ba1a1a",
+            "secondary": "#48626e",
+            "on-error-container": "#93000a",
+            "tertiary": "#381300",
+            "primary-container": "#003366",
+            "inverse-surface": "#2e3132",
+            "primary-fixed": "#d5e3ff",
+            "secondary-fixed-dim": "#afcbd8",
+            "on-primary-fixed-variant": "#1f477b",
+            "surface-container-highest": "#e1e3e4",
+            "on-surface-variant": "#43474f",
+            "outline": "#737780"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
 
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .brand-font {
+      font-family: 'Manrope', sans-serif;
+    }
+  </style>
 </head>
-
 
 <body class="font-['Public_Sans','Noto_Sans',sans-serif]">
   <!-- NAVBAR -->
@@ -30,7 +107,7 @@
   {% comment %} ROUTING DE PAGES {% endcomment %}
 
 
-  <main class="flex-1 p-6">
+  <main class="flex-1">
     {% if content == 'home' %}
     {% include 'slide.html' %}
     {% elif content == 'publication' %}
@@ -76,13 +153,15 @@
       </div>
 
       <div>
-        <h3 class="font-bold text-lg mb-4">Informations</h3>
+        <h3 class="font-bold text-lg mb-4">Liens utiles</h3>
         <ul class="space-y-3 text-sm">
           <li><a class="hover:underline block hover:text-gray-200" href="https://affairesfoncieres.gouv.cd/"
               target="_blank">Ministère des Affaires Foncières</a></li>
-          <li><a class="hover:underline block hover:text-gray-200" href="https://agriculture.gouv.cd/"
-              target="_blank">Ministère de l'Agriculture, Pêche et Élevage</a></li>
-          <li><a class="hover:underline block hover:text-gray-200" href="#">Moniteur des affaires foncières</a></li>
+          <li><a class="hover:underline block hover:text-gray-200"
+              href="https://agriculture.gouv.cd/actualites.php">Ministère de l'Agriculture, Pêche et Élevage</a></li>
+          <li><a class="hover:underline block hover:text-gray-200"
+              href="https://fr.wikipedia.org/wiki/Ministre_du_D%C3%A9veloppement_rural_(r%C3%A9publique_d%C3%A9mocratique_du_Congo)">Ministère
+              de developpement rural</a></li>
         </ul>
       </div>
 
@@ -99,7 +178,7 @@
       </div>
     </div>
 
-    <p class=" bg-blue text-center text-sm mt-12 pt-6 border-t border-white/40">
+    <p class="font-['Manrope'] font-bold text-white mb-2 text-center text-sm mt-12 pt-6 border-t border-white/40">
       © Copyright 2026 MINISTERE DES AFFAIRES FONCIERES ET AGRIPEL LUALABA
     </p>
   </footer>

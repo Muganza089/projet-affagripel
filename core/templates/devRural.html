@@ -1,110 +1,126 @@
-<section class="max-w-6xl mx-auto px-6 py-12">
+{% load static %}
 
-  <!-- TITRE PRINCIPAL -->
-  <h1 class="text-3xl md:text-4xl font-bold text-[#0d121b] mb-8">
-    Développement Rural
-  </h1>
+<section class="max-w-7xl mx-auto px-6 py-16 bg-[#f4f7fb]">
 
-  <!-- ETAT DES LIEUX -->
-  <div class="bg-white p-8 rounded-lg shadow-sm border space-y-6">
+  <!-- ================= HEADER ================= -->
+  <div class="mb-12 ">
+    <h1 class="text-4xl font-bold text-[#0d121b] mb-4 animate">
+      Développement Rural
+    </h1>
+    <p class="text-gray-600 max-w-2xl animate">
+      Amélioration des conditions de vie en milieu rural à travers les infrastructures,
+      l’accès à l’eau, la santé et l’éducation.
+    </p>
+  </div>
 
-    <h2 class="text-2xl font-bold text-green-700">1. État des lieux</h2>
+  <!-- ================= STATS ================= -->
+  <div class="grid md:grid-cols-4 gap-6 mb-12">
 
-    <p class="text-gray-700 leading-relaxed">
+    <div class="bg-white p-6 rounded-2xl shadow-sm border text-center animate">
+      <h2 class="text-3xl font-bold counter" data-target="21">0</h2>
+      <p class="text-gray-500">Puits construits</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-sm border text-center animate">
+      <h2 class="text-3xl font-bold counter" data-target="51">0</h2>
+      <p class="text-gray-500">Écoles construites</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-sm border text-center animate">
+      <h2 class="text-3xl font-bold counter" data-target="21">0</h2>
+      <p class="text-gray-500">Centres de santé</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-sm border text-center animate">
+      <h2 class="text-3xl font-bold counter" data-target="15">0</h2>
+      <p class="text-gray-500">Sources aménagées</p>
+    </div>
+
+  </div>
+
+  <!-- ================= HERO IMAGE ================= -->
+  <div class="mb-12 animate">
+    <img src="{% static 'developpement/programme.png' %}" class="w-full h-[400px] object-cover rounded-2xl shadow-md">
+  </div>
+
+  <!-- ================= ETAT DES LIEUX ================= -->
+  <div class="bg-white p-8 rounded-2xl shadow-sm border space-y-6 mb-12 ">
+
+    <h2 class="text-2xl font-bold text-green-700 animate">1. État des lieux</h2>
+
+    <img src="{% static 'developpement/etat.png' %}" class="w-full h-64 object-cover rounded-lg animate">
+
+    <p class="text-gray-700 leading-relaxed animate">
       Le Développement rural en République Démocratique du Congo trouve son origine
-      dans le <strong>Fonds du Bien-être Indigène</strong> (1956–1959), créé à l’époque coloniale. 
-      Ce fonds a permis la réalisation de plusieurs infrastructures socio-économiques 
+      dans le <strong>Fonds du Bien-être Indigène</strong> (1956–1959), créé à l’époque coloniale.
+      Ce fonds a permis la réalisation de plusieurs infrastructures socio-économiques
       en milieux rural et périurbain, notamment :
     </p>
 
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
+    <ul class="list-disc list-inside text-gray-700 space-y-2 animate">
       <li>la construction d’écoles et de centres de santé ;</li>
       <li>l’instauration du cantonnage manuel pour l’entretien des routes ;</li>
       <li>le forage de puits équipés de pompes manuelles.</li>
     </ul>
 
-    <p class="text-gray-700 leading-relaxed mt-4">
-      En 1977, la RDC se dote officiellement d’un 
-      <strong>Ministère du Développement Rural</strong> (Ordonnance n°77-342 du 2 décembre 1977).
+    <p class="text-gray-700 animate">
+      En 1977, la RDC se dote officiellement d’un
+      <strong>Ministère du Développement Rural</strong>.
     </p>
 
-    <p class="text-gray-700 leading-relaxed mt-4">
-      Au niveau provincial, le <strong>Ministère du Développement rural du Lualaba</strong> est créé 
-      en 2016. Sa mission principale est l’amélioration du cadre de vie des populations rurales. 
-      Il travaille en collaboration avec les autorités territoriales, les services techniques 
-      (Direction provinciale de Développement, inspections provinciales de Développement rural, 
-      Agriculture, Pêche et Élevage), le SNHR, l’Office des Routes, les autorités coutumières, 
-      les partenaires techniques et financiers et la société civile.
+    <p class="text-gray-700 animate">
+      Au niveau provincial, le Ministère du Développement rural du Lualaba est créé en 2016,
+      avec pour mission l’amélioration du cadre de vie des populations rurales.
     </p>
 
   </div>
 
-  <!-- REALISATIONS 2019–2023 -->
-  <div class="mt-12 bg-white p-8 border rounded-lg shadow-sm">
-    <h2 class="text-2xl font-bold text-green-700 mb-4">
+  <!-- ================= REALISATIONS ================= -->
+  <div class="bg-white p-8 rounded-2xl shadow-sm border mb-12 ">
+
+    <h2 class="text-2xl font-bold text-green-700 mb-4 animate">
       1.1. Réalisations 2019–2023
     </h2>
 
-    <p class="text-gray-700 leading-relaxed mb-4">
-      Durant la période 2019–2023, le Ministère provincial du Développement rural a enregistré 
-      plusieurs avancées significatives :
-    </p>
+    <img src="{% static 'developpement/realisations.png' %}" class="w-full h-64 object-cover rounded-lg mb-4 animate">
 
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Forage de <strong>16 puits d’eau potable</strong> dans les cinq territoires et <strong>5 puits</strong> dans la périphérie de Kolwezi.</li>
-      <li>Aménagement de <strong>15 sources d’eau</strong> dans les cinq territoires.</li>
-      <li>Réhabilitation et entretien des routes de desserte agricole via le cantonnage manuel.</li>
-      <li>Subvention d’intrants et semences agricoles au profit des ménages ruraux.</li>
-      <li>Construction de marchés ruraux (hangars, étalages, bureaux administratifs, installations sanitaires).</li>
-      <li>Construction et équipement de plusieurs centres communautaires.</li>
+    <ul class="list-disc list-inside text-gray-700 space-y-2 animate">
+      <li>Forage de 16 puits d’eau potable et 5 à Kolwezi.</li>
+      <li>Aménagement de 15 sources d’eau.</li>
+      <li>Réhabilitation des routes agricoles.</li>
+      <li>Distribution d’intrants agricoles.</li>
+      <li>Construction de marchés ruraux.</li>
+      <li>Création de centres communautaires.</li>
     </ul>
+
   </div>
 
-  <!-- PROGRAMME PDL-145T -->
-  <div class="mt-12 bg-white p-8 border rounded-lg shadow-sm">
-    <h2 class="text-2xl font-bold text-green-700 mb-6">
-      1.2. Programme de Développement Local des 145 Territoires (PDL-145T)
-    </h2>
+  <!-- ================= PROGRAMME ================= -->
+  <div class="bg-white p-8 rounded-2xl shadow-sm border ">
 
-    <p class="text-gray-700 leading-relaxed mb-6">
-      Le Gouvernement congolais a lancé le <strong>PDL-145T</strong> afin d’améliorer durablement les 
-      conditions de vie des populations rurales. Ce programme s'inscrit dans la vision du Président 
-      de la République visant à réduire la pauvreté et les inégalités.
+    <h2 class="text-2xl font-bold text-green-700 mb-6 animate">
+      1.2. Programme PDL-145T
+    </h2>
+    <p class="text-gray-700 mb-6 animate">
+      Le Gouvernement congolais a lancé le PDL-145T pour améliorer durablement
+      les conditions de vie des populations rurales.
     </p>
 
-    <!-- TABLEAU DES REALISATIONS -->
     <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- ÉCOLES -->
-      <div class="bg-green-50 p-6 rounded-lg border">
-        <h3 class="font-semibold text-green-800 mb-3">Écoles (51)</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>7 à Lubudi</li>
-          <li>12 à Dilolo</li>
-          <li>17 à Sandoa</li>
-          <li>8 à Kapanga</li>
-          <li>7 à Mutshatsha</li>
-        </ul>
+      <div class="bg-green-50 p-6 rounded-xl border animate">
+        <h3 class="font-semibold text-green-800 mb-2">Écoles (51)</h3>
+        <p class="text-sm text-gray-600">Réparties dans plusieurs territoires.</p>
       </div>
 
-      <!-- BUREAUX -->
-      <div class="bg-blue-50 p-6 rounded-lg border">
-        <h3 class="font-semibold text-blue-800 mb-3">Bureaux administratifs (5)</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>1 par chef-lieu territorial</li>
-        </ul>
+      <div class="bg-blue-50 p-6 rounded-xl border animate">
+        <h3 class="font-semibold text-blue-800 mb-2">Bureaux (5)</h3>
+        <p class="text-sm text-gray-600">1 par territoire.</p>
       </div>
 
-      <!-- CENTRES DE SANTÉ -->
-      <div class="bg-yellow-50 p-6 rounded-lg border">
-        <h3 class="font-semibold text-yellow-800 mb-3">Centres de santé (21)</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>5 à Lubudi</li>
-          <li>5 à Mutshatsha</li>
-          <li>5 à Sandoa</li>
-          <li>2 à Kapanga</li>
-          <li>4 à Dilolo</li>
-        </ul>
+      <div class="bg-yellow-50 p-6 rounded-xl border animate">
+        <h3 class="font-semibold text-yellow-800 mb-2">Centres de santé (21)</h3>
+        <p class="text-sm text-gray-600">Renforcement du système sanitaire.</p>
       </div>
 
     </div>
@@ -112,3 +128,123 @@
   </div>
 
 </section>
+
+<!-- ================= STYLE ================= -->
+
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const elements = document.querySelectorAll('.animate');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+
+    // compteur
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      const update = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 50;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(update, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    });
+
+  });
+</script>
+
+<!-- ================= ANIMATIONS ================= -->
+<style>
+  .animate {
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .fade-up {
+    transform: translateY(60px);
+  }
+
+  .fade-left {
+    transform: translateX(-60px);
+  }
+
+  .fade-right {
+    transform: translateX(60px);
+  }
+
+  .zoom-in {
+    transform: scale(0.8);
+  }
+
+  .rotate-in {
+    transform: rotate(-10deg) scale(0.9);
+  }
+
+  .show {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* effet image premium */
+  img {
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+  }
+
+  img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  /* cards hover */
+  .bg-white:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+  }
+</style>
+
+<script>
+  const elements = document.querySelectorAll('.animate');
+
+  const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in', 'rotate-in'];
+
+  // assign random animation
+  elements.forEach(el => {
+    const anim = animations[Math.floor(Math.random() * animations.length)];
+    el.classList.add(anim);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+
+        const delay = Math.random() * 400 + index * 120;
+
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, delay);
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  elements.forEach(el => observer.observe(el));
+</script>

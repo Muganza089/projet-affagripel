@@ -1,118 +1,345 @@
-<section class="max-w-6xl mx-auto px-6 py-12 bg-[#f8f9fc]">
+{% load static %}
 
-  <!-- TITRE PRINCIPAL -->
-  <h1 class="text-3xl md:text-4xl font-bold text-[#0d121b] mb-8">
-    À propos de nous
-  </h1>
+<!-- ================= HERO BANNER (LOGO CENTRÉ) ================= -->
+<div class="bg-primary px-6 py-10 flex items-center justify-center">
+  <div class="flex flex-col items-center text-center gap-4 animate">
 
-  <!-- NOTRE MISSION ET HISTOIRE -->
-  <div class="space-y-12 bg-white p-8 rounded-lg shadow-sm border">
+    <!-- LOGO AVEC FLIP -->
+    <img src="{% static 'images/logoclean.png' %}"
+         class="h-40 sm:h-48 lg:h-56 object-contain logo-flip-apropos">
 
-    <!-- NOTRE HISTOIRE -->
-    <div>
-      <h2 class="text-2xl font-bold text-blue-700 mb-4">1. Notre histoire</h2>
-      <p class="text-gray-700 leading-relaxed">
-        Fondée en 2010, notre organisation s'engage à promouvoir le développement durable
-        et l’innovation dans les secteurs agricoles et technologiques. Au fil des années,
-        nous avons consolidé notre expertise et étendu notre présence à travers plusieurs
-        provinces.
-      </p>
+    <!-- Ligne décorative -->
+    <div class="w-24 h-1 bg-green-500 rounded-full animate"></div>
 
-      <p class="text-gray-700 leading-relaxed mt-4">
-        Grâce à nos partenariats locaux et internationaux, nous avons pu soutenir
-        des initiatives visant à améliorer la productivité, la formation et l’accès aux
-        ressources pour les communautés rurales.
-      </p>
+  </div>
+</div>
+
+<section class="max-w-6xl mx-auto px-6 py-16 bg-[#f8f9fc]">
+
+  <!-- ================= TITRE PRINCIPAL ================= -->
+  <div class="text-center mb-16 animate">
+    <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] text-green-700 mb-3
+                 bg-green-100 px-4 py-1 rounded-full">Qui sommes-nous</span>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-[#001e40] font-['Manrope'] leading-tight">
+      À propos de l'AFFAGRIPEL
+    </h1>
+    <p class="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+      Ministère Provincial des Affaires Foncières, Agriculture, Pêche, Élevage
+      et Développement Rural — Province du Lualaba
+    </p>
+  </div>
+
+  <!-- ================= NOTRE HISTOIRE ================= -->
+  <div class="relative bg-white p-8 md:p-12 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+              border border-gray-100 mb-12 animate overflow-hidden">
+
+    <!-- Décor gradient bar -->
+    <div class="absolute top-0 left-0 right-0 h-1
+                bg-gradient-to-r from-[#001e40] via-[#003366] to-green-600"></div>
+
+    <div class="flex items-center gap-3 mb-6">
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                   bg-gradient-to-br from-[#001e40] to-green-700 text-white font-bold text-sm">
+        01
+      </span>
+      <h2 class="text-2xl font-extrabold text-[#001e40] font-['Manrope']">Notre histoire</h2>
     </div>
 
+    <p class="text-gray-600 leading-relaxed text-[15px]">
+      Fondée en 2010, notre organisation s'engage à promouvoir le développement durable
+      et l'innovation dans les secteurs agricoles et technologiques. Au fil des années,
+      nous avons consolidé notre expertise et étendu notre présence à travers plusieurs
+      provinces.
+    </p>
+
+    <p class="text-gray-600 leading-relaxed mt-4 text-[15px]">
+      Grâce à nos partenariats locaux et internationaux, nous avons pu soutenir
+      des initiatives visant à améliorer la productivité, la formation et l'accès aux
+      ressources pour les communautés rurales.
+    </p>
+  </div>
+
+  <!-- ================= MISSION + VALEURS (GRID) ================= -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
     <!-- NOTRE MISSION -->
-    <div>
-      <h2 class="text-2xl font-bold text-blue-700 mb-4">2. Notre mission</h2>
-      <p class="text-gray-700 leading-relaxed">
-        Nous visons à renforcer l’autonomie des communautés en développant des solutions
-        durables et innovantes dans les domaines de l’agriculture, de l’élevage et de la
+    <div class="relative bg-white p-8 md:p-10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+                border border-gray-100 animate overflow-hidden group
+                hover:-translate-y-1 transition-all duration-300">
+
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#003366] to-blue-400"></div>
+
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                     bg-gradient-to-br from-[#003366] to-blue-500 text-white font-bold text-sm">
+          02
+        </span>
+        <h2 class="text-2xl font-extrabold text-[#001e40] font-['Manrope']">Notre mission</h2>
+      </div>
+
+      <p class="text-gray-600 leading-relaxed text-[15px]">
+        Nous visons à renforcer l'autonomie des communautés en développant des solutions
+        durables et innovantes dans les domaines de l'agriculture, de l'élevage et de la
         transformation des produits locaux.
       </p>
 
-      <p class="text-gray-700 leading-relaxed mt-4">
+      <p class="text-gray-600 leading-relaxed mt-4 text-[15px]">
         Notre objectif est de créer un impact durable en combinant expertise technique,
         accompagnement des acteurs locaux et sensibilisation aux bonnes pratiques
         environnementales.
       </p>
+
+      <!-- Icône décorative -->
+      <div class="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-blue-50 opacity-50
+                  group-hover:scale-150 transition-transform duration-500"></div>
     </div>
 
     <!-- NOS VALEURS -->
-    <div>
-      <h2 class="text-2xl font-bold text-blue-700 mb-4">3. Nos valeurs</h2>
-      <p class="text-gray-700 leading-relaxed">
+    <div class="relative bg-white p-8 md:p-10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+                border border-gray-100 animate overflow-hidden group
+                hover:-translate-y-1 transition-all duration-300">
+
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-600 to-emerald-400"></div>
+
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                     bg-gradient-to-br from-green-700 to-emerald-500 text-white font-bold text-sm">
+          03
+        </span>
+        <h2 class="text-2xl font-extrabold text-[#001e40] font-['Manrope']">Nos valeurs</h2>
+      </div>
+
+      <p class="text-gray-600 leading-relaxed text-[15px] mb-6">
         Intégrité, innovation et collaboration sont au cœur de toutes nos actions. Nous
         croyons en un développement inclusif où chaque membre de la communauté peut
         contribuer et bénéficier des résultats.
       </p>
+
+      <!-- Tags de valeurs -->
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 text-xs font-bold rounded-full bg-green-100 text-green-800
+                     hover:bg-green-200 transition">
+          <i class="fa-solid fa-shield-halved mr-1"></i> Intégrité
+        </span>
+        <span class="px-3 py-1.5 text-xs font-bold rounded-full bg-blue-100 text-blue-800
+                     hover:bg-blue-200 transition">
+          <i class="fa-solid fa-lightbulb mr-1"></i> Innovation
+        </span>
+        <span class="px-3 py-1.5 text-xs font-bold rounded-full bg-amber-100 text-amber-800
+                     hover:bg-amber-200 transition">
+          <i class="fa-solid fa-handshake mr-1"></i> Collaboration
+        </span>
+        <span class="px-3 py-1.5 text-xs font-bold rounded-full bg-purple-100 text-purple-800
+                     hover:bg-purple-200 transition">
+          <i class="fa-solid fa-leaf mr-1"></i> Durabilité
+        </span>
+      </div>
+
+      <div class="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-green-50 opacity-50
+                  group-hover:scale-150 transition-transform duration-500"></div>
     </div>
 
   </div>
 
-  <!-- OPPORTUNITÉS & DÉFIS -->
-  <div class="mt-12 grid md:grid-cols-2 gap-8">
+  <!-- ================= STATISTIQUES CLÉS ================= -->
+  <div class="bg-gradient-to-br from-[#001e40] via-[#003366] to-green-800
+              rounded-2xl p-10 md:p-14 mb-12 animate text-white">
+
+    <h2 class="text-2xl md:text-3xl font-extrabold text-center font-['Manrope'] mb-10">
+      Nos chiffres clés
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+      <div class="animate">
+        <div class="stat-counter text-4xl md:text-5xl font-extrabold mb-2" data-target="15">0</div>
+        <p class="text-white/70 text-sm font-medium">Années d'expérience</p>
+      </div>
+
+      <div class="animate">
+        <div class="stat-counter text-4xl md:text-5xl font-extrabold mb-2" data-target="5">0</div>
+        <p class="text-white/70 text-sm font-medium">Territoires couverts</p>
+      </div>
+
+      <div class="animate">
+        <div class="stat-counter text-4xl md:text-5xl font-extrabold mb-2" data-target="120">0</div>
+        <p class="text-white/70 text-sm font-medium">Projets réalisés</p>
+      </div>
+
+      <div class="animate">
+        <div class="stat-counter text-4xl md:text-5xl font-extrabold mb-2" data-target="50000">0</div>
+        <p class="text-white/70 text-sm font-medium">Bénéficiaires</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= OPPORTUNITÉS & DÉFIS ================= -->
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
 
     <!-- OPPORTUNITÉS -->
-    <div class="bg-white p-8 border rounded-lg shadow-sm">
-      <h3 class="text-xl font-bold text-green-700 mb-4">Opportunités</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Partenariats stratégiques avec acteurs locaux et internationaux.</li>
-        <li>Innovation technologique au service du développement rural.</li>
-        <li>Potentiel de financement de projets durables.</li>
-        <li>Sensibilisation et formation des communautés.</li>
+    <div class="relative bg-white p-8 md:p-10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+                border border-gray-100 animate overflow-hidden
+                hover:-translate-y-1 transition-all duration-300">
+
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-400"></div>
+
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                     bg-green-100 text-green-700">
+          <i class="fa-solid fa-arrow-trend-up text-lg"></i>
+        </span>
+        <h3 class="text-xl font-extrabold text-green-800 font-['Manrope']">Opportunités</h3>
+      </div>
+
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>
+          <span>Partenariats stratégiques avec acteurs locaux et internationaux.</span>
+        </li>
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>
+          <span>Innovation technologique au service du développement rural.</span>
+        </li>
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>
+          <span>Potentiel de financement de projets durables.</span>
+        </li>
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>
+          <span>Sensibilisation et formation des communautés.</span>
+        </li>
       </ul>
     </div>
 
     <!-- DÉFIS -->
-    <div class="bg-white p-8 border rounded-lg shadow-sm">
-      <h3 class="text-xl font-bold text-red-700 mb-4">Défis</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Changements climatiques impactant l’agriculture.</li>
-        <li>Accès limité aux ressources et infrastructures.</li>
-        <li>Besoin constant de formation et de renforcement des capacités.</li>
+    <div class="relative bg-white p-8 md:p-10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+                border border-gray-100 animate overflow-hidden
+                hover:-translate-y-1 transition-all duration-300">
+
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-orange-400"></div>
+
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                     bg-red-100 text-red-700">
+          <i class="fa-solid fa-triangle-exclamation text-lg"></i>
+        </span>
+        <h3 class="text-xl font-extrabold text-red-800 font-['Manrope']">Défis</h3>
+      </div>
+
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <i class="fa-solid fa-circle-exclamation text-red-400 mt-1 flex-shrink-0"></i>
+          <span>Changements climatiques impactant l'agriculture.</span>
+        </li>
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <i class="fa-solid fa-circle-exclamation text-red-400 mt-1 flex-shrink-0"></i>
+          <span>Accès limité aux ressources et infrastructures.</span>
+        </li>
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <i class="fa-solid fa-circle-exclamation text-red-400 mt-1 flex-shrink-0"></i>
+          <span>Besoin constant de formation et de renforcement des capacités.</span>
+        </li>
       </ul>
     </div>
 
   </div>
 
-  <!-- ANALYSE STRATÉGIQUE -->
-  <div class="mt-12 bg-white p-8 border rounded-lg shadow-sm">
-    <h3 class="text-xl font-bold text-blue-700 mb-6">Analyse stratégique</h3>
+  <!-- ================= ANALYSE STRATÉGIQUE (SWOT) ================= -->
+  <div class="relative bg-white p-8 md:p-12 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+              border border-gray-100 animate overflow-hidden">
+
+    <div class="absolute top-0 left-0 right-0 h-1
+                bg-gradient-to-r from-[#001e40] via-blue-500 to-green-500"></div>
+
+    <div class="text-center mb-10">
+      <h3 class="text-2xl md:text-3xl font-extrabold text-[#001e40] font-['Manrope']">
+        Analyse stratégique
+      </h3>
+      <p class="text-gray-400 text-sm mt-2">Forces • Faiblesses • Défis</p>
+    </div>
 
     <div class="grid md:grid-cols-3 gap-8">
 
       <!-- FORCES -->
-      <div>
-        <h4 class="font-semibold text-green-800 mb-3">Forces</h4>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Expérience solide dans le développement rural.</li>
-          <li>Réseau étendu de partenaires et collaborateurs.</li>
-          <li>Expertise technique diversifiée.</li>
-          <li>Engagement envers l’innovation et la durabilité.</li>
+      <div class="animate group">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg
+                       bg-green-100 text-green-700 group-hover:bg-green-700 group-hover:text-white
+                       transition-colors duration-300">
+            <i class="fa-solid fa-bolt text-sm"></i>
+          </span>
+          <h4 class="font-extrabold text-green-800 font-['Manrope']">Forces</h4>
+        </div>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0"></span>
+            Expérience solide dans le développement rural.
+          </li>
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0"></span>
+            Réseau étendu de partenaires et collaborateurs.
+          </li>
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0"></span>
+            Expertise technique diversifiée.
+          </li>
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 flex-shrink-0"></span>
+            Engagement envers l'innovation et la durabilité.
+          </li>
         </ul>
       </div>
 
       <!-- FAIBLESSES -->
-      <div>
-        <h4 class="font-semibold text-yellow-800 mb-3">Faiblesses</h4>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Ressources limitées pour certains projets.</li>
-          <li>Dépendance aux financements externes.</li>
-          <li>Couverture géographique encore partielle.</li>
+      <div class="animate group">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg
+                       bg-amber-100 text-amber-700 group-hover:bg-amber-700 group-hover:text-white
+                       transition-colors duration-300">
+            <i class="fa-solid fa-link-slash text-sm"></i>
+          </span>
+          <h4 class="font-extrabold text-amber-800 font-['Manrope']">Faiblesses</h4>
+        </div>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></span>
+            Ressources limitées pour certains projets.
+          </li>
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></span>
+            Dépendance aux financements externes.
+          </li>
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></span>
+            Couverture géographique encore partielle.
+          </li>
         </ul>
       </div>
 
       <!-- DÉFIS -->
-      <div>
-        <h4 class="font-semibold text-red-800 mb-3">Défis</h4>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Adaptation aux évolutions climatiques et socio-économiques.</li>
-          <li>Renforcement continu des capacités locales.</li>
-          <li>Maintenir l’équilibre entre développement et durabilité.</li>
+      <div class="animate group">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg
+                       bg-red-100 text-red-700 group-hover:bg-red-700 group-hover:text-white
+                       transition-colors duration-300">
+            <i class="fa-solid fa-mountain text-sm"></i>
+          </span>
+          <h4 class="font-extrabold text-red-800 font-['Manrope']">Défis</h4>
+        </div>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 flex-shrink-0"></span>
+            Adaptation aux évolutions climatiques et socio-économiques.
+          </li>
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 flex-shrink-0"></span>
+            Renforcement continu des capacités locales.
+          </li>
+          <li class="flex items-start gap-2 text-gray-600 text-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 flex-shrink-0"></span>
+            Maintenir l'équilibre entre développement et durabilité.
+          </li>
         </ul>
       </div>
 
@@ -120,3 +347,133 @@
   </div>
 
 </section>
+
+<!-- ================= CSS ANIMATIONS ================= -->
+<style>
+  .animate {
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .fade-up { transform: translateY(60px); }
+  .fade-up.show { opacity: 1; transform: translateY(0); }
+
+  .fade-left { transform: translateX(-60px); }
+  .fade-left.show { opacity: 1; transform: translateX(0); }
+
+  .fade-right { transform: translateX(60px); }
+  .fade-right.show { opacity: 1; transform: translateX(0); }
+
+  .zoom-in { transform: scale(0.8); }
+  .zoom-in.show { opacity: 1; transform: scale(1); }
+
+  .rotate-in { transform: rotate(-10deg) scale(0.9); }
+  .rotate-in.show { opacity: 1; transform: rotate(0deg) scale(1); }
+
+  /* ================= LOGO FLIP ================= */
+  @keyframes smoothFlipApropos {
+    0%   { transform: rotateY(0deg); }
+    40%  { transform: rotateY(90deg); }
+    50%  { transform: rotateY(0deg); }
+    100% { transform: rotateY(0deg); }
+  }
+
+  .logo-flip-apropos {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  /* ================= COUNTER ANIMATION ================= */
+  .stat-counter {
+    font-variant-numeric: tabular-nums;
+  }
+</style>
+
+<!-- ================= JS: LOGO FLIP ================= -->
+<script>
+  const logoApropos = document.querySelector('.logo-flip-apropos');
+  if (logoApropos) {
+    setInterval(() => {
+      logoApropos.style.animation = 'smoothFlipApropos 1s ease-in-out';
+      setTimeout(() => {
+        logoApropos.style.animation = 'none';
+      }, 800);
+    }, 4000);
+  }
+</script>
+
+<!-- ================= JS: COUNTER ANIMATION ================= -->
+<script>
+  function animateCounters() {
+    const counters = document.querySelectorAll('.stat-counter');
+
+    counters.forEach(counter => {
+      const target = parseInt(counter.dataset.target);
+      const duration = 2000;
+      const startTime = Date.now();
+
+      function update() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // easeOutExpo
+        const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const current = Math.floor(eased * target);
+
+        if (target >= 1000) {
+          counter.textContent = current.toLocaleString('fr-FR') + '+';
+        } else {
+          counter.textContent = current + '+';
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      update();
+    });
+  }
+
+  // Déclencher quand la section stats devient visible
+  const statsSection = document.querySelector('.stat-counter');
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    statsObserver.observe(statsSection.closest('div'));
+  }
+</script>
+
+<!-- ================= JS: SCROLL ANIMATIONS ================= -->
+<script>
+  const elements = document.querySelectorAll('.animate');
+
+  const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in', 'rotate-in'];
+
+  // assign random animation
+  elements.forEach(el => {
+    const anim = animations[Math.floor(Math.random() * animations.length)];
+    el.classList.add(anim);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const delay = Math.random() * 400 + index * 120;
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  elements.forEach(el => observer.observe(el));
+</script>

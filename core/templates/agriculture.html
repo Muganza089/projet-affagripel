@@ -1,34 +1,30 @@
 {% load static %}
 
-<section class="max-w-6xl mx-auto px-6 py-12 bg-[#f8f9fc]">
+<section class="max-w-7xl mx-auto px-6 py-12 bg-[#f8f9fc]">
 
-  <!-- IMAGE HERO -->
-  <!-- HERO COVER -->
-  <div class="mb-10 relative animate overflow-hidden rounded-lg shadow-md">
+  <!-- ================= HERO COVER (EXISTANT PRESERVÉ) ================= -->
+  <div class="mb-16 relative animate overflow-hidden rounded-3xl shadow-lg">
 
     <!-- IMAGE -->
-    <img src="{% static 'agriculture/agriculture.png' %}" class="w-full h-[420px] object-cover">
+    <img src="{% static 'agriculture/agriculture.png' %}" class="w-full h-[450px] object-cover">
 
     <!-- OVERLAY GRADIENT -->
-    <div class="absolute inset-0 
-              bg-gradient-to-t from-primary/80 via-black/40 to-transparent">
-    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#001e40]/90 via-[#001e40]/40 to-transparent"></div>
 
     <!-- GLASS EFFECT -->
     <div class="absolute inset-0 backdrop-blur-[2px]"></div>
 
     <!-- CONTENU (TITRE) -->
-    <div class="absolute inset-0 flex items-end">
+    <div class="absolute inset-0 flex items-end pb-4 border-b-4 border-green-500">
 
-      <div class="p-6 md:p-10 max-w-4xl animate">
+      <div class="p-8 md:p-12 max-w-4xl animate">
 
-        <h1
-          class="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight drop-shadow-lg">
-          Secteur Agricole – État des lieux dans la Province du Lualaba
+        <h1 class="text-white text-3xl md:text-5xl lg:text-5xl font-extrabold font-['Manrope'] leading-tight tracking-tight drop-shadow-lg mb-4">
+          Secteur Agricole <br><span class="text-green-400">État des lieux au Lualaba</span>
         </h1>
 
         <!-- petite ligne décorative -->
-        <div class="animate mt-4 w-20 h-1 bg-green-500 rounded-full"></div>
+        <div class="animate mt-4 w-24 h-1.5 bg-green-500 rounded-full"></div>
 
       </div>
 
@@ -36,287 +32,355 @@
 
   </div>
 
-  <!-- 1. CONTEXTE GÉNÉRAL -->
-  <div class="bg-white p-8 rounded-lg shadow-sm border space-y-6 animate">
-    <h2 class="text-2xl font-bold text-green-700">1. Contexte général</h2>
+  <!-- ================= 1. CONTEXTE GÉNÉRAL ================= -->
+  <div class="bg-white p-8 md:p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] ring-1 ring-gray-100 mb-16 animate relative overflow-hidden">
+    
+    <div class="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
-    <p class="text-gray-700 leading-relaxed">
-      L’agriculture occupe une place centrale dans la sécurité alimentaire
-      de la Province du Lualaba, assurant la subsistance de plus de
-      <strong>80 % des ménages</strong>. Les terres arables représentent plus de
-      <strong>30 %</strong> de la superficie provinciale (121 309 km²).
-    </p>
+    <div class="relative z-10 grid lg:grid-cols-5 gap-10 items-center">
+      <div class="lg:col-span-3 space-y-6">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-700 text-xl">
+            <i class="fa-solid fa-leaf"></i>
+          </span>
+          <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope']">1. Contexte général</h2>
+        </div>
 
-    <p class="text-gray-700 leading-relaxed">
-      Le Lualaba connaît deux saisons principales : une saison des pluies
-      et une saison sèche. Cependant, le changement climatique provoque des
-      perturbations fréquentes du régime des pluies.
-    </p>
+        <p class="text-gray-600 leading-relaxed text-[15px]">
+          L’agriculture occupe une place centrale dans la sécurité alimentaire de la Province du Lualaba, assurant la subsistance de plus de
+          <strong class="text-green-700">80 % des ménages</strong>. Les terres arables représentent plus de
+          <strong class="text-green-700">30 %</strong> de la superficie provinciale (121 309 km²).
+        </p>
 
-    <p class="text-gray-700 leading-relaxed">
-      La Province bénéficie de plusieurs atouts naturels :
-    </p>
+        <p class="text-gray-600 leading-relaxed text-[15px]">
+          Bien que le changement climatique provoque des perturbations fréquentes du régime des pluies impactant les deux saisons principales (sèches et pluies), la Province bénéficie d'<strong>atouts naturels majeurs</strong> :
+        </p>
 
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Sols très fertiles favorables à l’agriculture ;</li>
-      <li>Vastes pâturages riches en graminées, propices à l’élevage ;</li>
-      <li>Hydrographie abondante favorable à la pêche, à la pisciculture et à l’irrigation.</li>
-    </ul>
-
-    <p class="text-gray-700 leading-relaxed">
-      Ces richesses constituent une base solide pour renforcer la sécurité
-      alimentaire, développer les exportations agricoles et soutenir une
-      agro-industrie en émergence.
-    </p>
-  </div>
-
-  <!-- 2 -->
-  <div class="mt-12 bg-white p-8 border rounded-lg shadow-sm animate">
-    <h2 class="text-2xl font-bold text-green-700 mb-4">2. Principaux défis du secteur</h2>
-
-    <p class="text-gray-700 leading-relaxed mb-4">
-      Malgré son potentiel, le secteur agricole du Lualaba fait face à plusieurs défis majeurs :
-    </p>
-
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Perturbations climatiques ;</li>
-      <li>Absence de banques de crédit agricole ;</li>
-      <li>Maladies et ravageurs affectant plantes et animaux ;</li>
-      <li>Insécurité foncière pour les activités agro-pastorales ;</li>
-      <li>Manque d’infrastructures de stockage ;</li>
-      <li>Dégradation des routes de desserte agricole.</li>
-    </ul>
-  </div>
-
-  <!-- 3 -->
-  <div class="mt-12 bg-white p-8 rounded-lg shadow-sm border space-y-8">
-    <h2 class="text-2xl font-bold text-green-700 animate">3. Production agricole : types de cultures</h2>
-
-    <p class="text-gray-700 leading-relaxed animate">
-      La production agricole du Lualaba se répartit en quatre catégories principales :
-    </p>
-
-    <!-- 🔥 IMAGES COTE A COTE -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-
-      <div class="overflow-hidden  animate">
-        <img src="{% static 'agriculture/culture1.png' %}"
-          class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+        <ul class="space-y-3 mt-4">
+          <li class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100">
+            <span class="text-green-500 mt-1"><i class="fa-solid fa-seedling"></i></span>
+            <span class="text-gray-700 text-sm">Sols très fertiles favorables à l’agriculture.</span>
+          </li>
+          <li class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100">
+            <span class="text-amber-500 mt-1"><i class="fa-solid fa-cow"></i></span>
+            <span class="text-gray-700 text-sm">Vastes pâturages riches en graminées, propices à l’élevage.</span>
+          </li>
+          <li class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100">
+            <span class="text-cyan-500 mt-1"><i class="fa-solid fa-water"></i></span>
+            <span class="text-gray-700 text-sm">Hydrographie abondante favorable à la pêche, à la pisciculture et à l’irrigation.</span>
+          </li>
+        </ul>
       </div>
-      <div class="overflow-hidden  animate">
-        <img src="{% static 'agriculture/culture2.png' %}"
-          class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+
+      <div class="lg:col-span-2">
+        <div class="bg-gradient-to-br from-[#001e40] to-green-900 p-8 rounded-2xl text-white text-center shadow-lg">
+          <i class="fa-solid fa-chart-pie text-5xl text-green-400 mb-4"></i>
+          <h3 class="text-4xl font-extrabold mb-2 text-white">30%</h3>
+          <p class="text-white/80 font-medium">De la superficie provinciale est constituée de terres arables (121 309 km²).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2. PRINCIPAUX DÉFIS ================= -->
+  <div class="mb-16">
+    <div class="text-center mb-10 animate">
+      <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope'] mb-4">
+        2. Principaux défis du secteur
+      </h2>
+      <p class="text-gray-500">Malgré son grand potentiel, l'agriculture fait face à plusieurs obstacles.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-red-50 hover:-translate-y-2 transition-transform duration-300 animate group">
+        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-cloud-bolt"></i>
+        </div>
+        <h4 class="font-bold text-[#001e40] mb-2">Climat & Maladies</h4>
+        <p class="text-sm text-gray-600">Perturbations climatiques, maladies et ravageurs affectant les plantes et animaux.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-50 hover:-translate-y-2 transition-transform duration-300 animate group delay-100">
+        <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-road-barrier"></i>
+        </div>
+        <h4 class="font-bold text-[#001e40] mb-2">Infrastructures</h4>
+        <p class="text-sm text-gray-600">Manque d’infrastructures de stockage et dégradation continue des routes de desserte agricole.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-yellow-50 hover:-translate-y-2 transition-transform duration-300 animate group delay-200">
+        <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+        <h4 class="font-bold text-[#001e40] mb-2">Structurel & Financier</h4>
+        <p class="text-sm text-gray-600">Absence de banques de crédit agricole et insécurité foncière pour les activités agro-pastorales.</p>
       </div>
 
     </div>
+  </div>
 
-    <div class="animate">
-      <h3 class="text-xl font-semibold text-green-800 mb-2">3.1. Cultures vivrières</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Soja, maïs, manioc, haricot, riz, arachide, patate douce, etc.</li>
-      </ul>
-      <p class="text-gray-700 mt-2">
-        <strong>Le manioc et le maïs</strong> sont les principales cultures et les plus consommées.
+  <!-- ================= 3. PRODUCTION AGRICOLE ================= -->
+  <div class="bg-white p-8 md:p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] ring-1 ring-gray-100 mb-16 relative overflow-hidden animate">
+    
+    <div class="absolute top-0 left-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+    
+    <div class="flex items-center gap-3 mb-8 relative z-10">
+      <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-700 text-xl">
+        <i class="fa-solid fa-wheat-awn"></i>
+      </span>
+      <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope']">3. Production agricole</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10">
+      
+      <!-- Types de cultures -->
+      <div class="space-y-6 relative z-10">
+        <div class="animate">
+          <h3 class="text-lg font-bold text-green-800 mb-2 border-l-4 border-green-500 pl-3">3.1. Cultures vivrières</h3>
+          <p class="text-gray-600 text-[15px] ml-4">
+            Soja, maïs, manioc, haricot, riz, arachide, patate douce. <br>
+            <span class="text-green-700 font-semibold bg-green-50 px-2 py-1 rounded mt-2 inline-block">Le manioc et le maïs sont les plus consommées.</span>
+          </p>
+        </div>
+
+        <div class="animate">
+          <h3 class="text-lg font-bold text-amber-600 mb-2 border-l-4 border-amber-500 pl-3">3.2. Cultures fruitières / pérennes</h3>
+          <p class="text-gray-600 text-[15px] ml-4">
+            Manguier, papayer, oranger, avocatier, pamplemoussier, citronnier, mandarinier, palmier à huile.
+          </p>
+        </div>
+
+        <div class="animate">
+          <h3 class="text-lg font-bold text-cyan-600 mb-2 border-l-4 border-cyan-500 pl-3">3.3. Cultures maraîchères</h3>
+          <p class="text-gray-600 text-[15px] ml-4">
+            Chou pommé, chou de Chine, amarante, gombo, tomate, oignon, piment, pomme de terre, aubergine, céleri.
+          </p>
+        </div>
+
+        <div class="animate">
+          <h3 class="text-lg font-bold text-purple-600 mb-2 border-l-4 border-purple-500 pl-3">3.4. Cultures de rente</h3>
+          <p class="text-gray-600 text-[15px] ml-4">
+            Coton, tabac, palmier à huile (actuellement en déclin).
+          </p>
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div class="grid grid-cols-2 gap-4 animate">
+        <div class="overflow-hidden rounded-2xl shadow-md h-[250px] lg:h-full relative group">
+          <img src="{% static 'agriculture/culture1.png' %}" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+        </div>
+        <div class="overflow-hidden rounded-2xl shadow-md h-[250px] lg:h-full relative group mt-8">
+          <img src="{% static 'agriculture/culture2.png' %}" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= GALERIE ================= -->
+  <div class="mb-16">
+    <div class="text-center mb-10 animate">
+      <h3 class="text-2xl font-extrabold text-[#001e40] font-['Manrope'] mb-2">
+        Galerie des principaux produits
+      </h3>
+      <div class="w-16 h-1 bg-green-500 rounded-full mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- ITEM -->
+      <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate hover:-translate-y-2 transition-all duration-300">
+        <div class="relative h-40 overflow-hidden">
+          <img src="{% static 'agriculture/manioc.png' %}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-[#001e40]">Manioc</h4>
+          <p class="text-xs text-gray-500 mt-1">Culture vivrière principale</p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate hover:-translate-y-2 transition-all duration-300">
+        <div class="relative h-40 overflow-hidden">
+          <img src="{% static 'agriculture/mais.png' %}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-[#001e40]">Maïs</h4>
+          <p class="text-xs text-gray-500 mt-1">Base alimentaire essentielle</p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate hover:-translate-y-2 transition-all duration-300">
+        <div class="relative h-40 overflow-hidden">
+          <img src="{% static 'agriculture/soja.png' %}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-[#001e40]">Soja</h4>
+          <p class="text-xs text-gray-500 mt-1">Culture vivrière et industrielle</p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate hover:-translate-y-2 transition-all duration-300">
+        <div class="relative h-40 overflow-hidden">
+          <img src="{% static 'agriculture/tomate.png' %}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-[#001e40]">Tomates</h4>
+          <p class="text-xs text-gray-500 mt-1">Culture maraîchère répandue</p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate hover:-translate-y-2 transition-all duration-300">
+        <div class="relative h-40 overflow-hidden">
+          <img src="{% static 'agriculture/oignon.png' %}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-[#001e40]">Oignons</h4>
+          <p class="text-xs text-gray-500 mt-1">Produit de base maraîcher</p>
+        </div>
+      </div>
+
+      <!-- ITEM -->
+      <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate hover:-translate-y-2 transition-all duration-300">
+        <div class="relative h-40 overflow-hidden">
+          <img src="{% static 'agriculture/mangue.png' %}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+        <div class="p-4 text-center">
+          <h4 class="font-bold text-[#001e40]">Mangues</h4>
+          <p class="text-xs text-gray-500 mt-1">Culture fruitière tropicale</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= 4 & 5. DÉGRADATION & INTERVENTIONS ================= -->
+  <div class="grid lg:grid-cols-2 gap-8 mb-12">
+
+    <!-- 4. DÉGRADATION -->
+    <div class="bg-red-50 p-8 md:p-10 rounded-3xl border border-red-100 animate relative overflow-hidden">
+      <!-- Decor -->
+      <i class="fa-solid fa-arrow-trend-down absolute -bottom-10 -right-10 text-9xl text-red-500 opacity-5"></i>
+      
+      <div class="flex items-center gap-3 mb-6 relative z-10">
+        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-red-700 text-xl">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </span>
+        <h2 class="text-2xl font-extrabold text-red-900 font-['Manrope']">4. Dégradations (Depuis 2017)</h2>
+      </div>
+
+      <div class="space-y-6 relative z-10">
+        <div>
+          <h3 class="text-red-800 font-bold mb-2 flex items-center gap-2"><i class="fa-solid fa-caret-right"></i> Chute du Manioc</h3>
+          <p class="text-red-900/80 text-sm bg-white/50 p-4 rounded-xl">
+            Passage de <strong>12 t/ha</strong> à seulement <strong>0,5 t/ha</strong> depuis 2020. Constatée à cause des pourritures racinaires, la mosaïque africaine et les acariens.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-red-800 font-bold mb-2 flex items-center gap-2"><i class="fa-solid fa-caret-right"></i> Baisse du Maïs</h3>
+          <p class="text-red-900/80 text-sm bg-white/50 p-4 rounded-xl">
+            Impacté lourdement depuis 2017 par l'invasion de la chenille légionnaire d'automne <em>(Spodoptera frugiperda)</em>, entrainant de grandes baisses de rendement.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. INTERVENTIONS -->
+    <div class="bg-blue-50 p-8 md:p-10 rounded-3xl border border-blue-100 animate relative overflow-hidden">
+      <!-- Decor -->
+      <i class="fa-solid fa-handshake absolute -bottom-10 -right-10 text-9xl text-blue-500 opacity-5"></i>
+
+      <div class="flex items-center gap-3 mb-6 relative z-10">
+        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-700 text-xl">
+          <i class="fa-solid fa-landmark"></i>
+        </span>
+        <h2 class="text-2xl font-extrabold text-blue-900 font-['Manrope']">5. Plan d'Intervention</h2>
+      </div>
+
+      <p class="text-blue-900/80 text-sm mb-4 bg-white/50 p-4 rounded-xl relative z-10">
+        Conscient de la dépendance aux ressources minières, l'agriculture devient un pilier stratégique (2024-2028).
       </p>
-    </div>
 
-    <div class="animate">
-      <h3 class="text-xl font-semibold text-green-800 mb-2">3.2. Cultures fruitières / pérennes</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Manguier, papayer, oranger, avocatier, pamplemoussier, citronnier, mandarinier, palmier à huile, etc.</li>
-      </ul>
-    </div>
-
-    <div class="animate">
-      <h3 class="text-xl font-semibold text-green-800 mb-2">3.3. Cultures maraîchères</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Chou pommé, chou de Chine, amarante, gombo, tomate, oignon, piment, pomme de terre, aubergine, céleri, etc.
+      <ul class="space-y-3 relative z-10">
+        <li class="flex items-start gap-2 text-blue-900 text-[15px] font-medium">
+          <i class="fa-solid fa-check-circle text-blue-600 mt-1 flex-shrink-0"></i>
+          Partenariats public-privé pour les producteurs de maïs.
+        </li>
+        <li class="flex items-start gap-2 text-blue-900 text-[15px] font-medium">
+          <i class="fa-solid fa-check-circle text-blue-600 mt-1 flex-shrink-0"></i>
+          Conventions de remboursement pour soutenir les ménages.
+        </li>
+        <li class="flex items-start gap-2 text-blue-900 text-[15px] font-medium">
+          <i class="fa-solid fa-check-circle text-blue-600 mt-1 flex-shrink-0"></i>
+          Introduction de nouvelles variétés de manioc résistantes.
         </li>
       </ul>
+
+      <div class="mt-6 p-4 border border-blue-200 bg-white/70 rounded-xl relative z-10">
+        <p class="text-sm text-blue-800">
+          <strong>Note :</strong> Malgré ces efforts, l’impact reste mitigé et l’insécurité alimentaire demeure élevée dans plusieurs zones rurales.
+        </p>
+      </div>
     </div>
 
-    <div class="animate">
-      <h3 class="text-xl font-semibold text-green-800 mb-2">3.4. Cultures de rente</h3>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Coton, tabac, palmier à huile (en déclin).</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- GALERIE -->
-  <div class="mt-8 animate">
-    <h3 class="text-xl font-bold text-green-800 mb-4">
-      Galerie des principaux produits agricoles
-    </h3>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-      <div class="group bg-white rounded-lg shadow-md overflow-hidden animate">
-        <img src="{% static 'agriculture/manioc.png' %}" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4>Manioc</h4>
-          <p>Culture vivrière principale en Afrique.</p>
-        </div>
-      </div>
-
-      <div class="group bg-white rounded-lg shadow-md overflow-hidden animate">
-        <img src="{% static 'agriculture/mais.png' %}" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4>Maïs</h4>
-          <p>Base alimentaire essentielle.</p>
-        </div>
-      </div>
-
-      <div class="group bg-white rounded-lg shadow-md overflow-hidden animate">
-        <img src="{% static 'agriculture/soja.png' %}" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4>Soja</h4>
-          <p>Culture vivrière et industrielle.</p>
-        </div>
-      </div>
-
-      <div class="group bg-white rounded-lg shadow-md overflow-hidden animate">
-        <img src="{% static 'agriculture/tomate.png' %}" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4>Tomates</h4>
-          <p>Culture maraîchère répandue.</p>
-        </div>
-      </div>
-
-      <div class="group bg-white rounded-lg shadow-md overflow-hidden animate">
-        <img src="{% static 'agriculture/oignon.png' %}" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4>Oignons</h4>
-          <p>Produit très utilisé.</p>
-        </div>
-      </div>
-
-      <div class="group bg-white rounded-lg shadow-md overflow-hidden animate">
-        <img src="{% static 'agriculture/mangue.png' %}" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h4>Mangues</h4>
-          <p>Fruit tropical courant.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <!-- 4. DÉGRADATION DE LA PRODUCTION -->
-  <div class="mt-12 bg-white p-8 border rounded-lg shadow-sm space-y-8 animate">
-    <h2 class="text-2xl font-bold text-green-700 animate">4. Dégradation de la production</h2>
-
-    <!-- 4.1 MANIOC -->
-    <div class="animate">
-      <h3 class="text-xl font-semibold text-red-700 mb-2">4.1. Manioc</h3>
-      <p class="text-gray-700 leading-relaxed">
-        Depuis 2020, la production de manioc connaît une chute alarmante :
-      </p>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>passage de <strong>12 t/ha</strong> à seulement <strong>0,5 t/ha</strong> ;</li>
-        <li>causée par les pourritures racinaires, la mosaïque africaine et les acariens.</li>
-      </ul>
-    </div>
-
-    <!-- 4.2 MAÏS -->
-    <div class="animate">
-      <h3 class="text-xl font-semibold text-red-700 mb-2">4.2. Maïs</h3>
-      <p class="text-gray-700 leading-relaxed">
-        Depuis 2017, la culture du maïs est fortement impactée par :
-      </p>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>l’invasion de la chenille légionnaire d’automne <em>(Spodoptera frugiperda)</em> ;</li>
-        <li>ayant entraîné des baisses de rendement importantes.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 5. INTERVENTIONS DU GOUVERNEMENT -->
-  <div class="mt-12 bg-white p-8 border rounded-lg shadow-sm animate">
-    <h2 class="text-2xl font-bold text-green-700 mb-4 animate">
-      5. Interventions du Gouvernement Provincial (2024–2028)
-    </h2>
-
-    <p class="text-gray-700 leading-relaxed mb-4 animate">
-      Conscient de la dépendance excessive aux ressources minières, le Gouvernement provincial
-      a fait de l’agriculture un pilier stratégique de sa vision de croissance.
-    </p>
-
-    <p class="text-gray-700 leading-relaxed mb-4 font-semibold animate">
-      Mesures prioritaires :
-    </p>
-
-    <ul class="list-disc list-inside text-gray-700 space-y-2 animate">
-      <li>Mise en place de partenariats public-privé pour les fermiers producteurs de maïs.</li>
-      <li>Conventions de remboursement pour soutenir les ménages agricoles.</li>
-      <li>Introduction de nouvelles variétés de manioc résistantes.</li>
-    </ul>
-
-    <p class="text-gray-700 leading-relaxed mt-4 animate">
-      Malgré ces efforts, l’impact reste <strong>mitigé</strong> et l’insécurité alimentaire demeure
-      <strong>élevée</strong> dans plusieurs zones rurales.
-    </p>
   </div>
 
 </section>
 
-<!-- ================= ANIMATIONS ================= -->
+<!-- ================= CSS ANIMATIONS ================= -->
 <style>
   .animate {
     opacity: 0;
     transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .fade-up {
-    transform: translateY(60px);
-  }
+  .fade-up { transform: translateY(60px); }
+  .fade-up.show { opacity: 1; transform: translateY(0); }
 
-  .fade-left {
-    transform: translateX(-60px);
-  }
+  .fade-left { transform: translateX(-60px); }
+  .fade-left.show { opacity: 1; transform: translateX(0); }
 
-  .fade-right {
-    transform: translateX(60px);
-  }
+  .fade-right { transform: translateX(60px); }
+  .fade-right.show { opacity: 1; transform: translateX(0); }
 
-  .zoom-in {
-    transform: scale(0.8);
-  }
-
-  .rotate-in {
-    transform: rotate(-10deg) scale(0.9);
-  }
-
-  .show {
-    opacity: 1;
-    transform: none;
-  }
+  .zoom-in { transform: scale(0.8); }
+  .zoom-in.show { opacity: 1; transform: scale(1); }
 </style>
 
+<!-- ================= JS SCRIPTS ================= -->
 <script>
+  // ================= SCROLL ANIMATIONS =================
   const elements = document.querySelectorAll('.animate');
+  const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in'];
 
-  const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in', 'rotate-in'];
-
-  // assign random animation
   elements.forEach(el => {
-    const anim = animations[Math.floor(Math.random() * animations.length)];
-    el.classList.add(anim);
+    // skip the hero image it shouldn't randomly slide in weirdly, default 'fade-up'
+    if(el.classList.contains('absolute') || el.closest('.absolute')) {
+       el.classList.add('fade-up');
+    } else {
+       const anim = animations[Math.floor(Math.random() * animations.length)];
+       el.classList.add(anim);
+    }
   });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-
-        const delay = Math.random() * 400 + index * 120;
-
+        const delay = Math.random() * 200 + index * 100;
         setTimeout(() => {
           entry.target.classList.add('show');
         }, delay);
-
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
 
   elements.forEach(el => observer.observe(el));
 </script>

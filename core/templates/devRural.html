@@ -1,176 +1,271 @@
 {% load static %}
 
-<section class="max-w-7xl mx-auto px-6 py-16 bg-[#f4f7fb]">
+<!-- ================= HERO BANNER ================= -->
 
-  <!-- ================= HEADER ================= -->
-  <div class="mb-12 ">
-    <h1 class="text-4xl font-bold text-[#0d121b] mb-4 animate">
+
+<section class="max-w-6xl mx-auto px-6 py-16 bg-[#f8f9fc]">
+
+  <!-- ================= TITRE PRINCIPAL ================= -->
+  <div class="text-center mb-16 animate">
+    <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] text-yellow-700 mb-3
+                 bg-yellow-100 px-4 py-1 rounded-full">Secteur clé</span>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-[#001e40] font-['Manrope'] leading-tight">
       Développement Rural
     </h1>
-    <p class="text-gray-600 max-w-2xl animate">
+    <p class="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
       Amélioration des conditions de vie en milieu rural à travers les infrastructures,
-      l’accès à l’eau, la santé et l’éducation.
+      l’accès à l’eau, la santé et l’éducation dans la Province du Lualaba.
     </p>
-  </div>
-
-  <!-- ================= STATS ================= -->
-  <div class="grid md:grid-cols-4 gap-6 mb-12">
-
-    <div class="bg-white p-6 rounded-2xl shadow-sm border text-center animate">
-      <h2 class="text-3xl font-bold counter" data-target="21">0</h2>
-      <p class="text-gray-500">Puits construits</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-2xl shadow-sm border text-center animate">
-      <h2 class="text-3xl font-bold counter" data-target="51">0</h2>
-      <p class="text-gray-500">Écoles construites</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-2xl shadow-sm border text-center animate">
-      <h2 class="text-3xl font-bold counter" data-target="21">0</h2>
-      <p class="text-gray-500">Centres de santé</p>
-    </div>
-
-    <div class="bg-white p-6 rounded-2xl shadow-sm border text-center animate">
-      <h2 class="text-3xl font-bold counter" data-target="15">0</h2>
-      <p class="text-gray-500">Sources aménagées</p>
-    </div>
-
-  </div>
-
-  <!-- ================= HERO IMAGE ================= -->
-  <div class="mb-12 animate">
-    <img src="{% static 'developpement/programme.png' %}" class="w-full h-[400px] object-cover rounded-2xl shadow-md">
   </div>
 
   <!-- ================= ETAT DES LIEUX ================= -->
-  <div class="bg-white p-8 rounded-2xl shadow-sm border space-y-6 mb-12 ">
+  <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+    <div class="relative animate group rounded-2xl overflow-hidden shadow-lg">
+      <img src="{% static 'developpement/etat.png' %}"
+        class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#001e40]/80 to-transparent"></div>
+      <div class="absolute bottom-6 left-6 right-6">
+        <h3 class="text-2xl font-bold text-white font-['Manrope']">Le milieu rural au Lualaba</h3>
+      </div>
+    </div>
 
-    <h2 class="text-2xl font-bold text-green-700 animate">1. État des lieux</h2>
+    <div class="animate space-y-6">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                     bg-yellow-100 text-yellow-700 text-lg">
+          <i class="fa-solid fa-map"></i>
+        </span>
+        <h2 class="text-2xl font-extrabold text-[#001e40] font-['Manrope']">1. État des lieux</h2>
+      </div>
 
-    <img src="{% static 'developpement/etat.png' %}" class="w-full h-64 object-cover rounded-lg animate">
+      <p class="text-gray-600 leading-relaxed text-[15px]">
+        Le Développement rural en République Démocratique du Congo trouve son origine
+        dans le <strong>Fonds du Bien-être Indigène</strong> (1956–1959), créé à l’époque coloniale.
+        Ce fonds a permis la réalisation de plusieurs infrastructures socio-économiques
+        en milieux rural et périurbain, notamment :
+      </p>
 
-    <p class="text-gray-700 leading-relaxed animate">
-      Le Développement rural en République Démocratique du Congo trouve son origine
-      dans le <strong>Fonds du Bien-être Indigène</strong> (1956–1959), créé à l’époque coloniale.
-      Ce fonds a permis la réalisation de plusieurs infrastructures socio-économiques
-      en milieux rural et périurbain, notamment :
-    </p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <span
+            class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mt-0.5">
+            <i class="fa-solid fa-check text-xs"></i>
+          </span>
+          <span>La construction d’écoles et de centres de santé.</span>
+        </li>
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <span
+            class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mt-0.5">
+            <i class="fa-solid fa-check text-xs"></i>
+          </span>
+          <span>L’instauration du cantonnage manuel pour l’entretien des routes.</span>
+        </li>
+        <li class="flex items-start gap-3 text-gray-600 text-[15px]">
+          <span
+            class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mt-0.5">
+            <i class="fa-solid fa-check text-xs"></i>
+          </span>
+          <span>Le forage de puits équipés de pompes manuelles.</span>
+        </li>
+      </ul>
 
-    <ul class="list-disc list-inside text-gray-700 space-y-2 animate">
-      <li>la construction d’écoles et de centres de santé ;</li>
-      <li>l’instauration du cantonnage manuel pour l’entretien des routes ;</li>
-      <li>le forage de puits équipés de pompes manuelles.</li>
-    </ul>
-
-    <p class="text-gray-700 animate">
-      En 1977, la RDC se dote officiellement d’un
-      <strong>Ministère du Développement Rural</strong>.
-    </p>
-
-    <p class="text-gray-700 animate">
-      Au niveau provincial, le Ministère du Développement rural du Lualaba est créé en 2016,
-      avec pour mission l’amélioration du cadre de vie des populations rurales.
-    </p>
-
+      <div class="p-5 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
+        <p class="text-sm text-blue-800 font-medium italic">
+          Au niveau provincial, le Ministère du Développement rural du Lualaba a été créé en 2016, avec pour mission
+          principale l’amélioration du cadre de vie des populations rurales.
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- ================= REALISATIONS ================= -->
-  <div class="bg-white p-8 rounded-2xl shadow-sm border mb-12 ">
+  <div
+    class="relative bg-white p-8 md:p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.06)] mb-16 overflow-hidden animate">
 
-    <h2 class="text-2xl font-bold text-green-700 mb-4 animate">
-      1.1. Réalisations 2019–2023
-    </h2>
+    <div class="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+    </div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2">
+    </div>
 
-    <img src="{% static 'developpement/realisations.png' %}" class="w-full h-64 object-cover rounded-lg mb-4 animate">
+    <div class="relative z-10 grid lg:grid-cols-5 gap-10 items-center">
 
-    <ul class="list-disc list-inside text-gray-700 space-y-2 animate">
-      <li>Forage de 16 puits d’eau potable et 5 à Kolwezi.</li>
-      <li>Aménagement de 15 sources d’eau.</li>
-      <li>Réhabilitation des routes agricoles.</li>
-      <li>Distribution d’intrants agricoles.</li>
-      <li>Construction de marchés ruraux.</li>
-      <li>Création de centres communautaires.</li>
-    </ul>
+      <div class="lg:col-span-2 order-2 lg:order-1">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full
+                       bg-green-100 text-green-700 text-lg">
+            <i class="fa-solid fa-hammer"></i>
+          </span>
+          <h2 class="text-2xl font-extrabold text-[#001e40] font-['Manrope']">1.1. Réalisations (2019-2023)</h2>
+        </div>
 
-  </div>
-
-  <!-- ================= PROGRAMME ================= -->
-  <div class="bg-white p-8 rounded-2xl shadow-sm border ">
-
-    <h2 class="text-2xl font-bold text-green-700 mb-6 animate">
-      1.2. Programme PDL-145T
-    </h2>
-    <p class="text-gray-700 mb-6 animate">
-      Le Gouvernement congolais a lancé le PDL-145T pour améliorer durablement
-      les conditions de vie des populations rurales.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <div class="bg-green-50 p-6 rounded-xl border animate">
-        <h3 class="font-semibold text-green-800 mb-2">Écoles (51)</h3>
-        <p class="text-sm text-gray-600">Réparties dans plusieurs territoires.</p>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all">
+            <div
+              class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <span class="text-gray-700 text-[15px] font-medium">Forage de 16 puits d'eau (dont 5 à Kolwezi)</span>
+          </li>
+          <li class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all">
+            <div
+              class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-water"></i>
+            </div>
+            <span class="text-gray-700 text-[15px] font-medium">Aménagement de 15 sources d'eau potable</span>
+          </li>
+          <li class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all">
+            <div
+              class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-road"></i>
+            </div>
+            <span class="text-gray-700 text-[15px] font-medium">Réhabilitation des routes de desserte agricole</span>
+          </li>
+          <li class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all">
+            <div
+              class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <span class="text-gray-700 text-[15px] font-medium">Distribution des intrants agricoles</span>
+          </li>
+          <li class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-white hover:shadow-md transition-all">
+            <div
+              class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-store"></i>
+            </div>
+            <span class="text-gray-700 text-[15px] font-medium">Construction de marchés ruraux et centres comm.</span>
+          </li>
+        </ul>
       </div>
 
-      <div class="bg-blue-50 p-6 rounded-xl border animate">
-        <h3 class="font-semibold text-blue-800 mb-2">Bureaux (5)</h3>
-        <p class="text-sm text-gray-600">1 par territoire.</p>
-      </div>
-
-      <div class="bg-yellow-50 p-6 rounded-xl border animate">
-        <h3 class="font-semibold text-yellow-800 mb-2">Centres de santé (21)</h3>
-        <p class="text-sm text-gray-600">Renforcement du système sanitaire.</p>
+      <div class="lg:col-span-3 order-1 lg:order-2">
+        <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+          <img src="{% static 'developpement/programme.png' %}"
+            class="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+            <p class="text-white font-semibold text-lg drop-shadow-md border-l-4 border-green-500 pl-3">Des
+              infrastructures pour transformer le quotidien.</p>
+          </div>
+        </div>
       </div>
 
     </div>
+  </div>
 
+  <!-- ================= STATISTIQUES GLOBALES ================= -->
+  <div class="bg-gradient-to-br from-[#001e40] via-[#003366] to-cyan-900
+              rounded-3xl p-10 md:p-14 mb-16 animate text-white shadow-xl relative overflow-hidden">
+
+    <!-- Pattern background -->
+    <div class="absolute inset-0 opacity-10"
+      style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+    <h2 class="text-2xl md:text-3xl font-extrabold text-center font-['Manrope'] mb-12 relative z-10">
+      Impact en chiffres
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
+      <div class="animate group cursor-default">
+        <div
+          class="w-16 h-16 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+          <i class="fa-solid fa-droplet text-2xl text-cyan-300 group-hover:scale-110 transition-transform"></i>
+        </div>
+        <div class="stat-counter text-4xl md:text-5xl font-extrabold mb-2 text-cyan-100" data-target="21">0</div>
+        <p class="text-white/80 text-sm font-medium">Puits construits</p>
+      </div>
+
+      <div class="animate group cursor-default">
+        <div
+          class="w-16 h-16 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+          <i class="fa-solid fa-school text-2xl text-yellow-300 group-hover:scale-110 transition-transform"></i>
+        </div>
+        <div class="stat-counter text-4xl md:text-5xl font-extrabold mb-2 text-yellow-100" data-target="51">0</div>
+        <p class="text-white/80 text-sm font-medium">Écoles construites</p>
+      </div>
+
+      <div class="animate group cursor-default">
+        <div
+          class="w-16 h-16 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+          <i class="fa-solid fa-house-medical text-2xl text-red-300 group-hover:scale-110 transition-transform"></i>
+        </div>
+        <div class="stat-counter text-4xl md:text-5xl font-extrabold mb-2 text-red-100" data-target="21">0</div>
+        <p class="text-white/80 text-sm font-medium">Centres de santé</p>
+      </div>
+
+      <div class="animate group cursor-default">
+        <div
+          class="w-16 h-16 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+          <i class="fa-solid fa-water text-2xl text-blue-300 group-hover:scale-110 transition-transform"></i>
+        </div>
+        <div class="stat-counter text-4xl md:text-5xl font-extrabold mb-2 text-blue-100" data-target="15">0</div>
+        <p class="text-white/80 text-sm font-medium">Sources aménagées</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PROGRAMME PDL-145T ================= -->
+  <div class="mb-12">
+    <div class="text-center max-w-3xl mx-auto mb-12 animate">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-700 mb-4">
+        <i class="fa-solid fa-city text-xl"></i>
+      </div>
+      <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope'] mb-4">
+        1.2. Programme PDL-145T
+      </h2>
+      <p class="text-gray-600 text-lg">
+        Le Programme de Développement Local des 145 Territoires a été mis en place par le Gouvernement congolais pour
+        améliorer durablement les conditions de vie des populations rurales de la province.
+      </p>
+    </div>
+
+    <!-- Image + Cards -->
+    <div class="relative rounded-3xl overflow-hidden shadow-xl animate mb-10 h-[300px] md:h-[400px]">
+      <img src="{% static 'developpement/realisations.png' %}" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-[#001e40]/70 backdrop-blur-[2px]"></div>
+
+      <div class="absolute inset-0 flex items-center justify-center p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+
+          <!-- Card 1 -->
+          <div
+            class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-center transform hover:-translate-y-2 transition-transform duration-300">
+            <div
+              class="w-14 h-14 mx-auto rounded-full bg-yellow-400 text-[#001e40] flex items-center justify-center mb-4 shadow-lg text-xl">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-white mb-1">51 Écoles</h3>
+            <p class="text-white/80 text-sm">Construites et réparties stratégiquement dans plusieurs territoires.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-center transform hover:-translate-y-2 transition-transform duration-300 delay-100">
+            <div
+              class="w-14 h-14 mx-auto rounded-full bg-blue-400 text-[#001e40] flex items-center justify-center mb-4 shadow-lg text-xl">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-white mb-1">5 Bureaux</h3>
+            <p class="text-white/80 text-sm">Bureaux administratifs flambant neufs, à raison de 1 par territoire.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-center transform hover:-translate-y-2 transition-transform duration-300 delay-200">
+            <div
+              class="w-14 h-14 mx-auto rounded-full bg-red-400 text-[#001e40] flex items-center justify-center mb-4 shadow-lg text-xl">
+              <i class="fa-solid fa-house-medical"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-white mb-1">21 Centres</h3>
+            <p class="text-white/80 text-sm">Centres de santé équipés pour le renforcement du système sanitaire.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
 </section>
 
-<!-- ================= STYLE ================= -->
-
-
-<!-- ================= SCRIPT ================= -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-    const elements = document.querySelectorAll('.animate');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    elements.forEach(el => observer.observe(el));
-
-    // compteur
-    const counters = document.querySelectorAll('.counter');
-
-    counters.forEach(counter => {
-      const update = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / 50;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(update, 20);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      update();
-    });
-
-  });
-</script>
-
-<!-- ================= ANIMATIONS ================= -->
+<!-- ================= CSS ANIMATIONS ================= -->
 <style>
   .animate {
     opacity: 0;
@@ -181,51 +276,95 @@
     transform: translateY(60px);
   }
 
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .fade-left {
     transform: translateX(-60px);
+  }
+
+  .fade-left.show {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .fade-right {
     transform: translateX(60px);
   }
 
+  .fade-right.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   .zoom-in {
     transform: scale(0.8);
+  }
+
+  .zoom-in.show {
+    opacity: 1;
+    transform: scale(1);
   }
 
   .rotate-in {
     transform: rotate(-10deg) scale(0.9);
   }
 
-  .show {
+  .rotate-in.show {
     opacity: 1;
-    transform: none;
+    transform: rotate(0deg) scale(1);
   }
 
-  /* effet image premium */
-  img {
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
+  /* ================= LOGO FLIP ================= */
+  @keyframes smoothFlipDev {
+    0% {
+      transform: rotateY(0deg);
+    }
+
+    40% {
+      transform: rotateY(90deg);
+    }
+
+    50% {
+      transform: rotateY(0deg);
+    }
+
+    100% {
+      transform: rotateY(0deg);
+    }
   }
 
-  img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  .logo-flip-dev {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
   }
 
-  /* cards hover */
-  .bg-white:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
+  /* ================= COUNTER ANIMATION ================= */
+  .stat-counter {
+    font-variant-numeric: tabular-nums;
   }
 </style>
 
+<!-- ================= JS SCRIPTS ================= -->
 <script>
+  // ================= LOGO FLIP =================
+  const logoDev = document.querySelector('.logo-flip-dev');
+  if (logoDev) {
+    setInterval(() => {
+      logoDev.style.animation = 'smoothFlipDev 1s ease-in-out';
+      setTimeout(() => {
+        logoDev.style.animation = 'none';
+      }, 800);
+    }, 4000);
+  }
+
+  // ================= SCROLL ANIMATIONS =================
   const elements = document.querySelectorAll('.animate');
+  const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in'];
 
-  const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in', 'rotate-in'];
-
-  // assign random animation
+  // assign random animation (excluding rotate-in which is too heavy for large blocks)
   elements.forEach(el => {
     const anim = animations[Math.floor(Math.random() * animations.length)];
     el.classList.add(anim);
@@ -234,17 +373,64 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-
-        const delay = Math.random() * 400 + index * 120;
-
+        // Reduced delay slightly for cleaner flow
+        const delay = Math.random() * 200 + index * 100;
         setTimeout(() => {
           entry.target.classList.add('show');
         }, delay);
-
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
 
   elements.forEach(el => observer.observe(el));
+
+  // ================= COUNTERS ANIMATION =================
+  function animateCounters() {
+    const counters = document.querySelectorAll('.stat-counter');
+
+    counters.forEach(counter => {
+      const target = parseInt(counter.dataset.target);
+      const duration = 2500; // slightly longer
+      const startTime = Date.now();
+
+      function update() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // easeOutQuart
+        const eased = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(eased * target);
+
+        if (target >= 1000) {
+          counter.textContent = current.toLocaleString('fr-FR') + (target === current ? '+' : '');
+        } else {
+          counter.textContent = current + (target === current && target > 10 ? '+' : '');
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          counter.textContent = target + (target > 5 ? "+" : "");
+        }
+      }
+
+      update();
+    });
+  }
+
+  // Trigger counters when visible
+  const statsSection = document.querySelector('.stat-counter');
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    statsObserver.observe(statsSection.closest('.bg-gradient-to-br'));
+  }
 </script>

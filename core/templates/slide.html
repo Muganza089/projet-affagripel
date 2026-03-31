@@ -9,21 +9,37 @@
               gap-4 lg:gap-6 animate">
 
     <!-- LOGO -->
-    <div class="flex-shrink-0 animate">
+    {% comment %} <div class="flex-shrink-0 animate">
       <img src="{% static 'images/logoclean.png' %}" class="h-40 sm:h-48 lg:h-64 object-contain mx-auto lg:mx-0">
-    </div>
+    </div> {% endcomment %}
+    <img src="{% static 'images/logoclean.png' %}"
+      class="h-40 sm:h-48 lg:h-64 object-contain mx-auto lg:mx-0 logo-flip">
 
     <!-- TEXTE -->
     <div class="flex flex-col justify-center text-white uppercase animate">
 
-      <span class="text-sm sm:text-lg lg:text-2xl brand-font font-extrabold tracking-tight leading-tight">
-        MINISTÈRE PROVINCIAL DES AFFAIRES FONCIÈRES, AGRICULTURE,
-      </span>
+      <div class="flex flex-col justify-center text-white uppercase animate">
 
-      <span class="text-sm sm:text-lg lg:text-2xl brand-font font-extrabold tracking-tight leading-tight">
-        PÊCHE, ÉLEVAGE ET DÉVELOPPEMENT RURAL
-      </span>
+        <span class="wave text-sm sm:text-lg lg:text-2xl brand-font font-extrabold tracking-tight leading-tight">
 
+          MINISTÈRE PROVINCIAL DES AFFAIRES
+          <span class="kw fonciere px-2 rounded">FONCIÈRES</span>,
+          <span class="kw agriculture px-2 rounded">AGRICULTURE</span>,
+
+        </span>
+
+        <span class="wave text-sm sm:text-lg lg:text-2xl brand-font font-extrabold tracking-tight leading-tight">
+
+          <span class="kw peche px-2 rounded">PÊCHE</span>,
+          <span class="kw elevage px-2 rounded">ÉLEVAGE</span>
+          ET
+          <span class="kw dev px-2 rounded">DÉVELOPPEMENT RURAL</span>
+
+        </span>
+
+      </div>
+      <!-- petite ligne décorative -->
+      <div class="animate mt-4 w-20 h-1 bg-green-500 rounded-full mx-auto md:mx-0"></div>
     </div>
 
   </div>
@@ -178,6 +194,59 @@
 
   {% endif %}
 
+  <!-- ================= PAGINATION ================= -->
+  {% if publications.has_other_pages %}
+  <div class="flex justify-center mt-10 mb-6 animate">
+    <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm bg-white" aria-label="Pagination">
+      
+      {% if publications.has_previous %}
+      <a href="?page=1" class="relative inline-flex items-center rounded-l-md px-3 py-2 text-sm font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:text-primary transition">
+        <i class="fa-solid fa-angles-left mr-1"></i>
+      </a>
+      <a href="?page={{ publications.previous_page_number }}" class="relative inline-flex items-center px-3 py-2 text-sm font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:text-primary transition">
+        Précédent
+      </a>
+      {% else %}
+      <span class="relative inline-flex items-center rounded-l-md px-3 py-2 text-sm font-semibold text-gray-300 ring-1 ring-inset ring-gray-200 cursor-not-allowed">
+        <i class="fa-solid fa-angles-left mr-1"></i>
+      </span>
+      <span class="relative inline-flex items-center px-3 py-2 text-sm font-semibold text-gray-300 ring-1 ring-inset ring-gray-200 cursor-not-allowed">
+        Précédent
+      </span>
+      {% endif %}
+
+      {% for num in publications.paginator.page_range %}
+        {% if publications.number == num %}
+          <span aria-current="page" class="relative z-10 inline-flex items-center bg-primary px-4 py-2 text-sm font-bold text-white ring-1 ring-inset ring-primary focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+            {{ num }}
+          </span>
+        {% elif num > publications.number|add:'-3' and num < publications.number|add:'3' %}
+          <a href="?page={{ num }}" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:text-primary transition">
+            {{ num }}
+          </a>
+        {% endif %}
+      {% endfor %}
+
+      {% if publications.has_next %}
+      <a href="?page={{ publications.next_page_number }}" class="relative inline-flex items-center px-3 py-2 text-sm font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:text-primary transition">
+        Suivant
+      </a>
+      <a href="?page={{ publications.paginator.num_pages }}" class="relative inline-flex items-center rounded-r-md px-3 py-2 text-sm font-semibold text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:text-primary transition">
+        <i class="fa-solid fa-angles-right ml-1"></i>
+      </a>
+      {% else %}
+      <span class="relative inline-flex items-center px-3 py-2 text-sm font-semibold text-gray-300 ring-1 ring-inset ring-gray-200 cursor-not-allowed">
+        Suivant
+      </span>
+      <span class="relative inline-flex items-center rounded-r-md px-3 py-2 text-sm font-semibold text-gray-300 ring-1 ring-inset ring-gray-200 cursor-not-allowed">
+        <i class="fa-solid fa-angles-right ml-1"></i>
+      </span>
+      {% endif %}
+      
+    </nav>
+  </div>
+  {% endif %}
+
 </section>
 
 <!-- ================= CSS ANIMATIONS ================= -->
@@ -237,8 +306,156 @@
     transform: rotate(0deg) scale(1);
   }
 </style>
+<style>
+  /* ================= FLIP LOGO ================= */
+  @keyframes smoothFlip {
+    0% {
+      transform: rotateY(0deg);
+    }
 
-<!-- ================= JS ANIMATIONS ================= -->
+    40% {
+      transform: rotateY(90deg);
+    }
+
+    50% {
+      transform: rotateY(0deg);
+    }
+
+    /* retour rapide */
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+
+  .logo-flip {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  /* ================= WAVE TEXT ================= */
+  @keyframes waveText {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    25% {
+      transform: translateY(-6px);
+    }
+
+    50% {
+      transform: translateY(0px);
+    }
+
+    75% {
+      transform: translateY(6px);
+    }
+  }
+
+  .wave span {
+    display: inline-block;
+    animation: waveText 2.5s ease-in-out infinite;
+  }
+
+  /* Décalage pour effet vague */
+
+  @keyframes waveText {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .wave span {
+    display: inline-block;
+
+  }
+</style>
+<style>
+  .fonciere {
+    background: white;
+    color: #1f2937;
+    /* gris foncé */
+  }
+
+  .agriculture {
+    background: #16a34a;
+    color: white;
+  }
+
+  .peche {
+    background: #6b7280;
+    color: white;
+  }
+
+  .elevage {
+    background: #92400e;
+    color: #fff;
+  }
+
+  .dev {
+    background: #facc15;
+    color: #1f2937;
+  }
+</style>
+<!-- ================= DECLENCHEMENT ANIMATION LOGO FLIP================= -->
+<script>
+  const logo = document.querySelector('.logo-flip');
+
+  setInterval(() => {
+    logo.style.animation = 'smoothFlip 1s ease-in-out';
+
+    // reset animation pour pouvoir la rejouer
+    setTimeout(() => {
+      logo.style.animation = 'none';
+    }, 800);
+
+  }, 4000);
+</script>
+<!-- ================= JS ANIMATIONS DES VAGUES ================= -->
+<script>
+  const waveElements = document.querySelectorAll('.wave');
+
+  waveElements.forEach(el => {
+    const text = el.innerText;
+    el.innerHTML = '';
+
+    text.split('').forEach((char, i) => {
+      const span = document.createElement('span');
+      span.innerText = char === ' ' ? '\u00A0' : char;
+
+      // delay vague
+      span.dataset.delay = i * 0.05;
+
+      el.appendChild(span);
+    });
+  });
+
+  function triggerWave() {
+    document.querySelectorAll('.wave span').forEach(span => {
+      span.style.animation = 'none';
+
+      setTimeout(() => {
+        span.style.animation = `waveText 0.8s ease-in-out`;
+        span.style.animationDelay = span.dataset.delay + 's';
+      }, 10);
+    });
+  }
+
+  // Lancer toutes les 7 secondes
+  setInterval(triggerWave, 5500);
+
+  // lancer une première fois au chargement
+  triggerWave();
+</script>
+
+<!-- ================= ANIMATIONS DES ELEMENTS ================= -->
 <script>
 
   const elements = document.querySelectorAll('.animate');

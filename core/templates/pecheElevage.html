@@ -1,151 +1,312 @@
 {% load static %}
 
-<section class="max-w-6xl mx-auto px-6 py-12 bg-[#f8f9fc]">
+<!-- ================= HERO BANNER ================= -->
+<!-- <div class="bg-primary px-6 py-10 flex items-center justify-center">
+  <div class="flex flex-col items-center text-center gap-4 animate">
 
-  <!-- TITRE PRINCIPAL -->
-  <h1 class="text-3xl md:text-4xl font-bold text-[#0d121b] mb-8 animate">
-    Pêche, Élevage et Pisciculture
-  </h1>
+   
+    <img src="{% static 'images/logoclean.png' %}"
+         class="h-40 sm:h-48 lg:h-56 object-contain logo-flip-peche">
 
-  <!-- ÉTAT DES LIEUX -->
-  <div class="space-y-12 bg-white p-8 rounded-lg shadow-sm border">
 
-    <!-- PÊCHE -->
-    <div class="animate">
-      <h2 class="text-2xl font-bold text-green-700 mb-4">1. Pêche</h2>
+    <div class="w-24 h-1 bg-cyan-400 rounded-full animate"></div>
 
-      <img src="{% static 'elevage/peche.png' %}" class="w-full h-64 object-cover rounded-lg mb-4 animate">
+  </div>
+</div> -->
 
-      <p class="text-gray-700 leading-relaxed animate">
+<section class="max-w-7xl mx-auto px-6 py-16 bg-[#f8f9fc] overflow-hidden">
+
+  <!-- ================= TITRE PRINCIPAL ================= -->
+  <div class="text-center mb-16 animate">
+    <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] text-cyan-700 mb-3
+                 bg-cyan-100 px-4 py-1 rounded-full">Secteur clé</span>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-[#001e40] font-['Manrope'] leading-tight">
+      Pêche, Élevage & Pisciculture
+    </h1>
+    <p class="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+      Exploitation, préservation et développement du potentiel halieutique et pastoral
+      de la Province du Lualaba.
+    </p>
+  </div>
+
+  <!-- ================= 1. PÊCHE ================= -->
+  <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+    <div class="order-2 lg:order-1 animate space-y-6">
+
+      <div class="flex items-center gap-3 mb-2">
+        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full
+                     bg-blue-100 text-blue-700 text-xl">
+          <i class="fa-solid fa-fish"></i>
+        </span>
+        <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope']">1. Pêche</h2>
+      </div>
+
+      <p class="text-gray-600 leading-relaxed text-[15px]">
         La Province du Lualaba est arrosée par le fleuve Congo, ses affluents, ainsi que
         plusieurs lacs et rivières riches en ressources halieutiques. On y retrouve diverses
-        espèces telles que la sardine <em>(Brycinus lateralis)</em>, le silure
-        <em>(Clarias sp., Oreochromis sp.)</em> et le tilapia <em>(Coptodon sp.)</em>.
+        espèces telles que :
       </p>
 
-      <p class="text-gray-700 leading-relaxed mt-4 animate">
-        Pour préserver ces ressources et favoriser la reproduction des espèces, le
-        Gouvernement provincial impose une période annuelle de fermeture de la pêche,
-        allant du <strong>1er décembre au 28 février</strong>, applicable à l’ensemble des cours
-        d’eau de la Province.
-      </p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-gray-100 shadow-sm">
+          <span class="text-blue-500 mt-1"><i class="fa-solid fa-water"></i></span>
+          <span class="text-gray-700">La sardine <em class="text-gray-500">(Brycinus lateralis)</em></span>
+        </li>
+        <li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-gray-100 shadow-sm">
+          <span class="text-blue-500 mt-1"><i class="fa-solid fa-water"></i></span>
+          <span class="text-gray-700">Le silure <em class="text-gray-500">(Clarias sp., Oreochromis sp.)</em></span>
+        </li>
+        <li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-gray-100 shadow-sm">
+          <span class="text-blue-500 mt-1"><i class="fa-solid fa-water"></i></span>
+          <span class="text-gray-700">Le tilapia <em class="text-gray-500">(Coptodon sp.)</em></span>
+        </li>
+      </ul>
+
+      <div class="p-5 bg-red-50 border-l-4 border-red-500 rounded-r-lg mt-6">
+        <div class="flex items-center gap-2 text-red-700 font-bold mb-1">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Préservation des espèces</span>
+        </div>
+        <p class="text-sm text-red-800 leading-relaxed">
+          Le Gouvernement provincial impose une période annuelle de fermeture de la pêche, du
+          <strong>1er décembre au 28 février</strong>, applicable à l’ensemble des cours d’eau.
+        </p>
+      </div>
+
     </div>
 
-    <!-- ÉLEVAGE -->
+    <!-- Image -->
+    <div class="order-1 lg:order-2 animate">
+      <div class="relative rounded-3xl overflow-hidden shadow-xl group">
+        <div class="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors duration-500 z-10">
+        </div>
+        <img src="{% static 'elevage/peche.png' %}"
+          class="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105">
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2. ÉLEVAGE ================= -->
+  <div
+    class="grid lg:grid-cols-2 gap-12 items-center mb-20 bg-white p-8 md:p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] ring-1 ring-gray-100">
+
+    <!-- Image -->
     <div class="animate">
-      <h2 class="text-2xl font-bold text-green-700 mb-4">2. Élevage</h2>
+      <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+        <img src="{% static 'elevage/elevage.png' %}"
+          class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#001e40] via-[#001e40]/60 to-transparent rounded-2xl"></div>
+    </div>
 
-      <img src="{% static 'elevage/elevage.png' %}" class="w-full h-64 object-cover rounded-lg mb-4 animate">
+    <div class="animate space-y-6">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="inline-flex items-center justify-center w-12 h-12 rounded-full
+                     bg-amber-100 text-amber-700 text-xl">
+          <i class="fa-solid fa-cow"></i>
+        </span>
+        <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope']">2. Élevage</h2>
+      </div>
 
-      <p class="text-gray-700 leading-relaxed animate">
-        Le Lualaba dispose de vastes pâturages riches en graminées, favorables à l’élevage
+      <p class="text-gray-600 leading-relaxed text-[15px]">
+        Le Lualaba dispose de vastes pâturages riches en graminées, extrêmement favorables à l’élevage
         du gros et du petit bétail : bovins, ovins, caprins, porcins, volailles, lapins
         et cobayes.
       </p>
 
-      <p class="text-gray-700 leading-relaxed mt-4 animate">
-        L’élevage bovin est pratiqué principalement de manière extensive.
-        Les caprins, ovins et porcins sont destinés à la commercialisation, tandis que
-        l’élevage des volailles reste essentiellement de subsistance.
-      </p>
+      <div class="grid grid-cols-2 gap-4 mt-6">
+        <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
+          <div class="text-amber-700 text-2xl mb-2"><i class="fa-solid fa-cow text-xl mr-2"></i><i
+              class="fa-solid fa-piggy-bank text-xl"></i></div>
+          <h4 class="font-bold text-[#001e40] mb-1">Commercialisation</h4>
+          <p class="text-sm text-gray-600">Bovins (extensif), caprins, ovins et porcins.</p>
+        </div>
+        <div class="bg-orange-50 p-4 rounded-xl border border-orange-100">
+          <div class="text-orange-700 text-2xl mb-2"><i class="fa-solid fa-crow"></i></div>
+          <h4 class="font-bold text-[#001e40] mb-1">Subsistance</h4>
+          <p class="text-sm text-gray-600">Élevage de volaille majoritairement familial.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- PISCICULTURE -->
-    <div class="animate">
-      <h2 class="text-2xl font-bold text-green-700 mb-4">3. Pisciculture</h2>
+  </div>
 
-      <img src="{% static 'elevage/pisciculture.png' %}" class="w-full h-64 object-cover rounded-lg mb-4 animate">
-
-      <p class="text-gray-700 leading-relaxed animate">
+  <!-- ================= 3. PISCICULTURE ================= -->
+  <div class="mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-12 animate">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-cyan-100 text-cyan-700 mb-4">
+        <i class="fa-solid fa-fish-fins text-xl"></i>
+      </div>
+      <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope'] mb-4">
+        3. Pisciculture
+      </h2>
+      <p class="text-gray-600 text-lg">
         De plus en plus de fermiers investissent dans la construction d’étangs piscicoles
-        à vocation commerciale. Malgré le fort potentiel halieutique, la population consomme
-        davantage des poissons importés (chinchards, tilapias), jugés moins coûteux que la
-        production locale.
+        à vocation commerciale.
       </p>
     </div>
 
+    <div class="relative rounded-3xl overflow-hidden shadow-xl animate mb-12 h-[350px] md:h-[450px]">
+      <img src="{% static 'elevage/pisciculture.png' %}" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#001e40] via-[#001e40]/60 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl max-w-2xl">
+          <p class="text-white leading-relaxed text-[15px]">
+            Malgré le très fort potentiel halieutique de la région, un défi majeur persiste :
+            la population consomme encore majoritairement des <strong>poissons importés</strong> (chinchards, tilapias),
+            qui sont jugés moins coûteux que la production piscicole locale.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- OPPORTUNITÉS & MENACES -->
-  <div class="mt-12 grid md:grid-cols-2 gap-8">
+  <!-- ================= ANALYSE STRATÉGIQUE ================= -->
+  <div class="bg-gradient-to-br from-[#001e40] via-[#003366] to-cyan-900
+              rounded-3xl p-8 md:p-12 mb-12 animate text-white shadow-xl">
 
-    <!-- OPPORTUNITÉS -->
-    <div class="bg-white p-8 border rounded-lg shadow-sm animate">
-      <h3 class="text-xl font-bold text-green-700 mb-4">Opportunités</h3>
-
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Forte demande en produits halieutiques.</li>
-        <li>Pisciculture en cages flottantes envisageable.</li>
-        <li>Partenariats régionaux et internationaux.</li>
-        <li>Disponibilité de partenaires au développement.</li>
-        <li>Potentiel pour une pisciculture semi-industrielle (Lulua, source du Congo).</li>
-        <li>Présence d’institutions académiques (FAU, universités).</li>
-        <li>Possibilité de financements du secteur minier.</li>
-      </ul>
+    <div class="text-center mb-10">
+      <span
+        class="inline-block text-xs font-bold uppercase tracking-widest text-cyan-300 mb-2 border border-cyan-300/30 px-3 py-1 rounded-full">Vision
+        globale</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold font-['Manrope']">
+        Analyse Stratégique : Pisciculture
+      </h2>
     </div>
 
-    <!-- MENACES -->
-    <div class="bg-white p-8 border rounded-lg shadow-sm animate">
-      <h3 class="text-xl font-bold text-red-700 mb-4">Menaces</h3>
+    <!-- Opp/Menaces -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
 
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li>Changement climatique.</li>
-        <li>Pollution des eaux.</li>
-        <li>Catastrophes naturelles.</li>
-        <li>Épizooties des poissons.</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- PISCICULTURE : ANALYSE STRATÉGIQUE -->
-  <div class="mt-12 bg-white p-8 border rounded-lg shadow-sm animate">
-    <h3 class="text-xl font-bold text-green-700 mb-6">
-      3.2. Pisciculture — Analyse stratégique
-    </h3>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- FORCES -->
-      <div class="animate">
-        <h4 class="font-semibold text-green-800 mb-3">Forces</h4>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Nombreux bas-fonds et sources d’eau.</li>
-          <li>Sols argileux adaptés.</li>
-          <li>Disponibilité d’espèces exploitables.</li>
-          <li>Intérêt croissant de la population.</li>
-          <li>Volonté politique manifeste.</li>
+      <!-- Opportunités -->
+      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 animate">
+        <div class="flex items-center gap-3 mb-4 text-green-300">
+          <i class="fa-solid fa-arrow-trend-up text-xl"></i>
+          <h3 class="text-xl font-bold">Opportunités</h3>
+        </div>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-green-400 mt-1"><i class="fa-solid fa-check text-xs"></i></span> Forte demande en produits
+            halieutiques.
+          </li>
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-green-400 mt-1"><i class="fa-solid fa-check text-xs"></i></span> Pisciculture en cages
+            flottantes envisageable.
+          </li>
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-green-400 mt-1"><i class="fa-solid fa-check text-xs"></i></span> Potentiel pour une
+            pisciculture semi-industrielle (Lulua, source du Congo).
+          </li>
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-green-400 mt-1"><i class="fa-solid fa-check text-xs"></i></span> Possibilité de
+            financements majeurs par le secteur minier.
+          </li>
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-green-400 mt-1"><i class="fa-solid fa-check text-xs"></i></span> Présence de partenaires
+            et d'institutions académiques (FAU).
+          </li>
         </ul>
       </div>
 
-      <!-- FAIBLESSES -->
-      <div class="animate">
-        <h4 class="font-semibold text-yellow-800 mb-3">Faiblesses</h4>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Manque de connaissances techniques.</li>
-          <li>Insuffisance d’intrants et de géniteurs de race.</li>
-          <li>Centres d’alevinage peu opérationnels.</li>
-          <li>Faible structuration des pisciculteurs.</li>
-          <li>Manque d’unités de transformation et conservation.</li>
-        </ul>
-      </div>
-
-      <!-- DÉFIS -->
-      <div class="animate">
-        <h4 class="font-semibold text-red-800 mb-3">Défis</h4>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Apparition de nouvelles maladies.</li>
-          <li>Effets du changement climatique.</li>
-          <li>Pollution des eaux.</li>
+      <!-- Menaces -->
+      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10 animate">
+        <div class="flex items-center gap-3 mb-4 text-red-300">
+          <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+          <h3 class="text-xl font-bold">Menaces</h3>
+        </div>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-red-400 mt-1"><i class="fa-solid fa-xmark text-xs"></i></span> Changement climatique.
+          </li>
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-red-400 mt-1"><i class="fa-solid fa-xmark text-xs"></i></span> Pollution des eaux.
+          </li>
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-red-400 mt-1"><i class="fa-solid fa-xmark text-xs"></i></span> Catastrophes naturelles.
+          </li>
+          <li class="flex items-start gap-2 text-white/80 text-sm">
+            <span class="text-red-400 mt-1"><i class="fa-solid fa-xmark text-xs"></i></span> Épizooties (maladies)
+            touchant les poissons.
+          </li>
         </ul>
       </div>
 
     </div>
+
+    <!-- SWOT (Forces, Faiblesses, Défis) -->
+    <div class="grid md:grid-cols-3 gap-6 bg-black/20 p-6 rounded-2xl border border-white/5">
+
+      <!-- Forces -->
+      <div class="animate">
+        <h4 class="font-bold text-green-300 mb-3 border-b border-green-300/30 pb-2">Forces</h4>
+        <ul class="space-y-2">
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div> Nombreux bas-fonds et
+            sources.
+          </li>
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div> Sols argileux adaptés.
+          </li>
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div> Disponibilité d'espèces
+            exploitables.
+          </li>
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div> Intérêt croissant et volonté
+            politique.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Faiblesses -->
+      <div class="animate">
+        <h4 class="font-bold text-amber-300 mb-3 border-b border-amber-300/30 pb-2">Faiblesses</h4>
+        <ul class="space-y-2">
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></div> Manque de connaissances
+            techniques.
+          </li>
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></div> Insuffisance d’intrants et
+            géniteurs.
+          </li>
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></div> Centres d’alevinage peu
+            opérationnels.
+          </li>
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></div> Faible structuration des
+            acteurs.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Défis -->
+      <div class="animate">
+        <h4 class="font-bold text-orange-300 mb-3 border-b border-orange-300/30 pb-2">Défis à relever</h4>
+        <ul class="space-y-2">
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></div> Gérer l'apparition de
+            nouvelles maladies.
+          </li>
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></div> Atténuer les effets du
+            changement climatique.
+          </li>
+          <li class="text-white/80 text-sm flex gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></div> Combattre la pollution des
+            eaux de surface.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
   </div>
 
 </section>
 
-<!-- ================= ANIMATIONS ================= -->
+<!-- ================= CSS ANIMATIONS ================= -->
 <style>
   .animate {
     opacity: 0;
@@ -156,55 +317,96 @@
     transform: translateY(60px);
   }
 
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .fade-left {
     transform: translateX(-60px);
+  }
+
+  .fade-left.show {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .fade-right {
     transform: translateX(60px);
   }
 
+  .fade-right.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   .zoom-in {
     transform: scale(0.8);
   }
 
-  .rotate-in {
-    transform: rotate(-10deg) scale(0.9);
+  .zoom-in.show {
+    opacity: 1;
+    transform: scale(1);
   }
 
-  .show {
-    opacity: 1;
-    transform: none;
+  /* ================= LOGO FLIP ================= */
+  @keyframes smoothFlipPeche {
+    0% {
+      transform: rotateY(0deg);
+    }
+
+    40% {
+      transform: rotateY(90deg);
+    }
+
+    50% {
+      transform: rotateY(0deg);
+    }
+
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+
+  .logo-flip-peche {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
   }
 </style>
 
+<!-- ================= JS SCRIPTS ================= -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  // ================= LOGO FLIP =================
+  const logoPeche = document.querySelector('.logo-flip-peche');
+  if (logoPeche) {
+    setInterval(() => {
+      logoPeche.style.animation = 'smoothFlipPeche 1s ease-in-out';
+      setTimeout(() => {
+        logoPeche.style.animation = 'none';
+      }, 800);
+    }, 4000);
+  }
 
-    const elements = document.querySelectorAll('.animate');
-    const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in', 'rotate-in'];
+  // ================= SCROLL ANIMATIONS =================
+  const elements = document.querySelectorAll('.animate');
+  const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in'];
 
-    elements.forEach(el => {
-      const anim = animations[Math.floor(Math.random() * animations.length)];
-      el.classList.add(anim);
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-
-          const delay = Math.random() * 400 + index * 120;
-
-          setTimeout(() => {
-            entry.target.classList.add('show');
-          }, delay);
-
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    elements.forEach(el => observer.observe(el));
-
+  elements.forEach(el => {
+    const anim = animations[Math.floor(Math.random() * animations.length)];
+    el.classList.add(anim);
   });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const delay = Math.random() * 200 + index * 100;
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
 </script>

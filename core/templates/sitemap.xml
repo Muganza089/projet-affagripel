@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://affagripel-lualaba.com/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- Section Agriculture -->
+    <url>
+        <loc>https://affagripel-lualaba.com/agriculture/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Section Pêche & Elevage -->
+    <url>
+        <loc>https://affagripel-lualaba.com/peche-et-elevage/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Section Développement Rural -->
+    <url>
+        <loc>https://affagripel-lualaba.com/developpement-rural/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Section Affaires Foncières -->
+    <url>
+        <loc>https://affagripel-lualaba.com/affaires-foncieres/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <!-- À Propos -->
+    <url>
+        <loc>https://affagripel-lualaba.com/a-propos/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <!-- Contact / Demande d'Audience -->
+    <url>
+        <loc>https://affagripel-lualaba.com/contact/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>

@@ -1,0 +1,216 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+
+{% block extrahead %}
+{{ block.super }}
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+#map {
+  height: 450px;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+.map-controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.map-controls button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #e5e7eb;
+}
+
+.active-mode {
+  background: #16a34a;
+  color: white;
+}
+</style>
+
+{% endblock %}
+
+{% block after_related_objects %}
+
+<h2 style="margin-top:30px;">📍 Sélection GPS</h2>
+
+<p style="color:#555;">
+  Cliquez sur la carte pour choisir la position.
+  Sélectionnez d’abord le type (ancienne ou nouvelle).
+</p>
+
+<div class="map-controls">
+  <button type="button" id="btnAncienne" class="active-mode">📍 Ancienne position</button>
+  <button type="button" id="btnNouvelle">🟢 Nouvelle position</button>
+</div>
+
+<div id="map"></div>
+
+<!-- ================= DONNÉES DJANGO ================= -->
+{% if original %}
+<script>
+  const ancienne_lat = "{{ original.ancienne_latitude|default:'' }}";
+  const ancienne_lng = "{{ original.ancienne_longitude|default:'' }}";
+  const nouvelle_lat = "{{ original.nouvelle_latitude|default:'' }}";
+  const nouvelle_lng = "{{ original.nouvelle_longitude|default:'' }}";
+</script>
+{% else %}
+<script>
+  const ancienne_lat = "";
+  const ancienne_lng = "";
+  const nouvelle_lat = "";
+  const nouvelle_lng = "";
+</script>
+{% endif %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ================= MODE =================
+  let mode = "ancienne";
+
+  const btnAncienne = document.getElementById("btnAncienne");
+  const btnNouvelle = document.getElementById("btnNouvelle");
+
+  btnAncienne.onclick = () => {
+    mode = "ancienne";
+    btnAncienne.classList.add("active-mode");
+    btnNouvelle.classList.remove("active-mode");
+  };
+
+  btnNouvelle.onclick = () => {
+    mode = "nouvelle";
+    btnNouvelle.classList.add("active-mode");
+    btnAncienne.classList.remove("active-mode");
+  };
+
+  // ================= COORDONNÉES EXISTANTES =================
+  const ancienneLat = parseFloat(document.getElementById("id_ancienne_latitude").value);
+  const ancienneLng = parseFloat(document.getElementById("id_ancienne_longitude").value);
+
+  const nouvelleLat = parseFloat(document.getElementById("id_nouvelle_latitude").value);
+  const nouvelleLng = parseFloat(document.getElementById("id_nouvelle_longitude").value);
+
+  // ================= INIT MAP =================
+  const map = L.map('map').setView(
+    (!isNaN(ancienneLat) && !isNaN(ancienneLng)) ? [ancienneLat, ancienneLng] : [-10.7148, 25.4667],
+    13
+  );
+
+// ================= LAYERS =================
+
+// 🗺️ Carte normale (OpenStreetMap)
+const normalLayer = L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  { attribution: '&copy; OpenStreetMap' }
+);
+
+// 🛰️ Satellite ESRI (principal)
+const satelliteLayer = L.tileLayer(
+  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  { attribution: 'Tiles © Esri' }
+);
+
+// 🛰️ Satellite + labels (routes + noms)
+const hybridLayer = L.layerGroup([
+  L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+  ),
+  L.tileLayer(
+    'https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}'
+  )
+]);
+
+// 🗺️ Carte terrain (bonus)
+const terrainLayer = L.tileLayer(
+  'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+  { attribution: '© OpenTopoMap' }
+);
+
+// Par défaut → satellite (plus utile pour toi)
+satelliteLayer.addTo(map);
+
+// ================= SWITCH =================
+const baseMaps = {
+  "🗺️ Carte": normalLayer,
+  "🛰️ Satellite": satelliteLayer,
+  "🌍 Hybride (sat + noms)": hybridLayer,
+  "⛰️ Relief": terrainLayer
+};
+
+L.control.layers(baseMaps).addTo(map);
+
+  // ================= MARKERS =================
+  let ancienneMarker = null;
+  let nouvelleMarker = null;
+
+  // ================= RESTAURER MARKERS =================
+  if (!isNaN(ancienneLat) && !isNaN(ancienneLng)) {
+    ancienneMarker = L.marker([ancienneLat, ancienneLng], {
+      icon: L.icon({
+        iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        iconSize: [32, 32]
+      })
+    }).addTo(map);
+  }
+
+  if (!isNaN(nouvelleLat) && !isNaN(nouvelleLng)) {
+    nouvelleMarker = L.marker([nouvelleLat, nouvelleLng], {
+      icon: L.icon({
+        iconUrl: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+        iconSize: [32, 32]
+      })
+    }).addTo(map);
+  }
+
+  // ================= CLICK =================
+  map.on('click', function(e) {
+
+    const lat = e.latlng.lat.toFixed(6);
+    const lng = e.latlng.lng.toFixed(6);
+
+    if (mode === "ancienne") {
+
+      if (ancienneMarker) map.removeLayer(ancienneMarker);
+
+      ancienneMarker = L.marker([lat, lng], {
+        icon: L.icon({
+          iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+          iconSize: [32, 32]
+        })
+      }).addTo(map);
+
+      document.getElementById("id_ancienne_latitude").value = lat;
+      document.getElementById("id_ancienne_longitude").value = lng;
+    }
+
+    if (mode === "nouvelle") {
+
+      if (nouvelleMarker) map.removeLayer(nouvelleMarker);
+
+      nouvelleMarker = L.marker([lat, lng], {
+        icon: L.icon({
+          iconUrl: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          iconSize: [32, 32]
+        })
+      }).addTo(map);
+
+      document.getElementById("id_nouvelle_latitude").value = lat;
+      document.getElementById("id_nouvelle_longitude").value = lng;
+    }
+
+    map.setView([lat, lng], 16);
+  });
+
+});
+</script>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-<section class="max-w-6xl mx-auto px-6 py-12">
+<section class="max-w-6xl mx-auto px-6 py-12 bg-primary">
 
   <!-- LIEN POUR OUVRIR LE FORMULAIRE -->
   <div class="mb-6">
@@ -68,6 +68,253 @@
     </div>
   </div>
 
+  <!-- ================= VERIFICATION DELOCALISATION ================= -->
+  <div class="mt-20 relative">
+
+    <!-- Carte principale -->
+    <div class="relative bg-white p-10 rounded-2xl border border-gray-200
+                shadow-[0_20px_60px_rgba(0,0,0,0.15),0_5px_20px_rgba(0,0,0,0.08)]
+                transform hover:-translate-y-1 transition-all duration-300">
+
+      <h2 class="text-2xl font-bold text-primary mb-3">
+        Vérifier la délocalisation d'une propriété foncière
+      </h2>
+      <p class="text-gray-500 mb-8 text-sm">
+        Entrez votre numéro d'identité nationale (11 chiffres) pour consulter vos propriétés délocalisées.
+      </p>
+
+      <form action="{% url 'aff_fonciere' %}" method="POST" class="flex flex-col md:flex-row gap-4 items-end">
+        {% csrf_token %}
+
+        <!-- Numéro d'identité nationale -->
+        <div class="flex-1 space-y-1 w-full">
+          <label class="block text-primary font-medium">
+            Numéro d'identité nationale
+          </label>
+          <input type="text" name="numero_identite"
+            placeholder="Ex: 12345678901"
+            maxlength="11"
+            pattern="[0-9]{11}"
+            title="Le numéro doit contenir exactement 11 chiffres"
+            required
+            value="{{ numero_recherche|default:'' }}"
+            class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50
+                   shadow-inner focus:bg-white focus:ring-2 focus:ring-blue-400
+                   focus:shadow-md transition-all text-lg tracking-widest font-mono">
+        </div>
+
+        <!-- Bouton -->
+        <div>
+          <button type="submit"
+            class="bg-gradient-to-br from-[#001e40] via-[#003366] to-green-800
+                   text-white font-semibold px-8 py-3
+                   rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.2)]
+                   hover:shadow-[0_15px_35px_rgba(0,0,0,0.3)]
+                   transform hover:-translate-y-0.5 transition-all duration-300
+                   flex items-center gap-2">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Vérifier
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ================= MESSAGES DJANGO ================= -->
+  {% if messages %}
+  <div class="mt-6">
+    {% for message in messages %}
+    <div class="p-4 rounded-lg mb-3 text-sm font-semibold flex items-center gap-3
+      {% if message.tags == 'success' %}bg-green-100 text-green-800 border border-green-300
+      {% elif message.tags == 'error' %}bg-red-100 text-red-800 border border-red-300
+      {% elif message.tags == 'info' %}bg-blue-100 text-blue-800 border border-blue-300
+      {% else %}bg-gray-100 text-gray-800 border border-gray-300{% endif %}">
+      {% if message.tags == 'error' %}
+        <i class="fa-solid fa-circle-xmark text-lg"></i>
+      {% elif message.tags == 'info' %}
+        <i class="fa-solid fa-circle-info text-lg"></i>
+      {% endif %}
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- ================= RESULTATS DELOCALISATION ================= -->
+  {% if recherche_effectuee and personne and delocalisations %}
+
+  <!-- Leaflet CSS & JS (chargé uniquement quand il y a des résultats) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <div class="mt-10">
+
+    <!-- Informations de la personne -->
+    <div class="bg-gradient-to-br from-[#001e40] via-[#003366] to-green-800
+                text-white p-6 rounded-t-2xl">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h3 class="text-2xl font-extrabold font-['Manrope']">
+            <i class="fa-solid fa-user mr-2"></i>
+            {{ personne.nom }} {{ personne.postnom }} {{ personne.prenom }}
+          </h3>
+          <p class="text-white/70 mt-1">
+            <i class="fa-solid fa-id-card mr-1"></i>
+            N° Identité : <span class="font-mono tracking-wider">{{ personne.numero_identite }}</span>
+          </p>
+        </div>
+        <div class="bg-white/20 backdrop-blur-sm px-5 py-3 rounded-lg text-center">
+          <p class="text-3xl font-extrabold">{{ delocalisations|length }}</p>
+          <p class="text-sm text-white/80">propriété{{ delocalisations|length|pluralize }} délocalisée{{ delocalisations|length|pluralize }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Liste des délocalisations -->
+    <div class="space-y-0">
+      {% for deloc in delocalisations %}
+      <div class="bg-white border border-gray-200 p-6
+                  {% if forloop.last %}rounded-b-2xl{% endif %}
+                  shadow-sm hover:shadow-md transition-shadow duration-200">
+
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+
+          <!-- Numéro + Type -->
+          <div class="flex-shrink-0">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full
+                         bg-gradient-to-br from-[#001e40] to-green-800 text-white font-bold text-lg">
+              {{ forloop.counter }}
+            </span>
+          </div>
+
+          <!-- Détails -->
+          <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <!-- Type de propriété -->
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Type de propriété</p>
+              <p class="text-gray-800 font-semibold flex items-center gap-2">
+                <i class="fa-solid fa-house text-[#003366]"></i>
+                {{ deloc.get_type_propriete_display }}
+              </p>
+            </div>
+
+            <!-- Type de délocalisation -->
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Type de délocalisation</p>
+              <p class="text-gray-800 font-semibold flex items-center gap-2">
+                {% if deloc.type_delocalisation == 'deplacement' %}
+                  <i class="fa-solid fa-truck-moving text-blue-600"></i>
+                {% else %}
+                  <i class="fa-solid fa-money-bill-wave text-green-600"></i>
+                {% endif %}
+                {{ deloc.get_type_delocalisation_display }}
+              </p>
+            </div>
+
+            <!-- Ancienne adresse -->
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Ancienne adresse</p>
+              <p class="text-gray-800 font-medium flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-red-500"></i>
+                {{ deloc.ancienne_adresse|default:"Non renseignée" }}
+              </p>
+              {% if deloc.ancienne_latitude and deloc.ancienne_longitude %}
+              <p class="text-xs text-gray-400">
+                GPS: {{ deloc.ancienne_latitude }}, {{ deloc.ancienne_longitude }}
+              </p>
+              {% endif %}
+            </div>
+
+            <!-- Nouvelle adresse (si déplacement) -->
+            {% if deloc.type_delocalisation == 'deplacement' %}
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Nouvelle adresse</p>
+              <p class="text-gray-800 font-medium flex items-center gap-2">
+                <i class="fa-solid fa-location-crosshairs text-green-600"></i>
+                {{ deloc.nouvelle_adresse|default:"Non renseignée" }}
+              </p>
+              {% if deloc.nouvelle_latitude and deloc.nouvelle_longitude %}
+              <p class="text-xs text-gray-400">
+                GPS: {{ deloc.nouvelle_latitude }}, {{ deloc.nouvelle_longitude }}
+              </p>
+              {% endif %}
+            </div>
+            {% endif %}
+
+            <!-- Compensation (si compensation) -->
+            {% if deloc.type_delocalisation == 'compensation' and deloc.montant_compensation %}
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Montant compensation</p>
+              <p class="text-green-700 font-bold text-lg flex items-center gap-2">
+                <i class="fa-solid fa-dollar-sign"></i>
+                {{ deloc.montant_compensation|floatformat:2 }} USD
+              </p>
+            </div>
+            {% endif %}
+
+            <!-- Date -->
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Date de la demande</p>
+              <p class="text-gray-600 font-medium flex items-center gap-2">
+                <i class="fa-solid fa-calendar-days text-gray-400"></i>
+                {{ deloc.date_demande|date:"d/m/Y à H:i" }}
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= CARTE MAP ================= -->
+        {% if deloc.ancienne_latitude and deloc.ancienne_longitude %}
+        <div class="mt-6 border-t border-gray-100 pt-6">
+
+          <h4 class="text-sm font-bold text-primary mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Localisation sur la carte
+          </h4>
+
+          <!-- Légende -->
+          <div class="flex flex-wrap gap-4 mb-3 text-xs">
+            <span class="flex items-center gap-1">
+              <span class="inline-block w-3 h-3 rounded-full bg-red-500"></span>
+              Ancienne position
+            </span>
+            {% if deloc.type_delocalisation == 'deplacement' and deloc.nouvelle_latitude and deloc.nouvelle_longitude %}
+            <span class="flex items-center gap-1">
+              <span class="inline-block w-3 h-3 rounded-full bg-green-500"></span>
+              Nouvelle position
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Map container -->
+          <div id="map-deloc-{{ forloop.counter }}"
+               class="w-full rounded-xl border border-gray-200 shadow-inner"
+               style="height: 400px; z-index: 0;"
+               data-anc-lat="{{ deloc.ancienne_latitude }}"
+               data-anc-lng="{{ deloc.ancienne_longitude }}"
+               data-anc-addr="{{ deloc.ancienne_adresse|default:'Ancienne position' }}"
+               {% if deloc.type_delocalisation == 'deplacement' and deloc.nouvelle_latitude and deloc.nouvelle_longitude %}
+               data-new-lat="{{ deloc.nouvelle_latitude }}"
+               data-new-lng="{{ deloc.nouvelle_longitude }}"
+               data-new-addr="{{ deloc.nouvelle_adresse|default:'Nouvelle position' }}"
+               {% endif %}
+          ></div>
+
+        </div>
+        {% endif %}
+
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+  {% endif %}
+
 </section>
 
 <!-- SCRIPT POUR OUVRIR / FERMER LE POPUP -->
@@ -85,10 +332,145 @@
     popup.classList.add('hidden');
   });
 
-  // Fermer le popup en cliquant en dehors du formulaire
   popup.addEventListener('click', (e) => {
     if (e.target === popup) {
       popup.classList.add('hidden');
     }
   });
 </script>
+
+<!-- ================= LEAFLET MAP INIT ================= -->
+{% if recherche_effectuee and personne and delocalisations %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Trouver tous les map containers
+  const mapContainers = document.querySelectorAll('[id^="map-deloc-"]');
+
+  mapContainers.forEach(function(container) {
+
+    const ancLat = parseFloat(container.dataset.ancLat);
+    const ancLng = parseFloat(container.dataset.ancLng);
+    const ancAddr = container.dataset.ancAddr || 'Ancienne position';
+
+    const newLat = parseFloat(container.dataset.newLat);
+    const newLng = parseFloat(container.dataset.newLng);
+    const newAddr = container.dataset.newAddr || 'Nouvelle position';
+
+    const hasAncienne = !isNaN(ancLat) && !isNaN(ancLng);
+    const hasNouvelle = !isNaN(newLat) && !isNaN(newLng);
+
+    if (!hasAncienne) return;
+
+    // Init map
+    const map = L.map(container.id).setView([ancLat, ancLng], 14);
+
+    // ================= LAYERS =================
+    const normalLayer = L.tileLayer(
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      { attribution: '&copy; OpenStreetMap' }
+    );
+
+    const satelliteLayer = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      { attribution: 'Tiles © Esri' }
+    );
+
+    const hybridLayer = L.layerGroup([
+      L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+      ),
+      L.tileLayer(
+        'https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}'
+      )
+    ]);
+
+    const terrainLayer = L.tileLayer(
+      'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+      { attribution: '© OpenTopoMap' }
+    );
+
+    // Par défaut → satellite
+    satelliteLayer.addTo(map);
+
+    const baseMaps = {
+      "🗺️ Carte": normalLayer,
+      "🛰️ Satellite": satelliteLayer,
+      "🌍 Hybride": hybridLayer,
+      "⛰️ Relief": terrainLayer
+    };
+
+    L.control.layers(baseMaps).addTo(map);
+
+    // ================= MARKERS =================
+    const bounds = [];
+
+    // Marqueur ancienne position (rouge)
+    if (hasAncienne) {
+      const ancMarker = L.marker([ancLat, ancLng], {
+        icon: L.icon({
+          iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        })
+      }).addTo(map);
+
+      ancMarker.bindPopup(
+        '<div style="text-align:center;">' +
+        '<b style="color:#dc2626;">📍 Ancienne position</b><br>' +
+        '<span style="color:#555;">' + ancAddr + '</span><br>' +
+        '<small style="color:#999;">GPS: ' + ancLat.toFixed(6) + ', ' + ancLng.toFixed(6) + '</small>' +
+        '</div>'
+      );
+
+      bounds.push([ancLat, ancLng]);
+    }
+
+    // Marqueur nouvelle position (vert)
+    if (hasNouvelle) {
+      const newMarker = L.marker([newLat, newLng], {
+        icon: L.icon({
+          iconUrl: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        })
+      }).addTo(map);
+
+      newMarker.bindPopup(
+        '<div style="text-align:center;">' +
+        '<b style="color:#16a34a;">🟢 Nouvelle position</b><br>' +
+        '<span style="color:#555;">' + newAddr + '</span><br>' +
+        '<small style="color:#999;">GPS: ' + newLat.toFixed(6) + ', ' + newLng.toFixed(6) + '</small>' +
+        '</div>'
+      );
+
+      bounds.push([newLat, newLng]);
+
+      // Ligne de liaison entre les deux positions
+      if (hasAncienne) {
+        L.polyline(
+          [[ancLat, ancLng], [newLat, newLng]],
+          {
+            color: '#003366',
+            weight: 3,
+            opacity: 0.7,
+            dashArray: '10, 8'
+          }
+        ).addTo(map);
+      }
+    }
+
+    // Ajuster la vue pour montrer tous les marqueurs
+    if (bounds.length > 1) {
+      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 16 });
+    } else if (bounds.length === 1) {
+      map.setView(bounds[0], 15);
+    }
+
+  });
+
+});
+</script>
+{% endif %}

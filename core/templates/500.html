@@ -1,0 +1,53 @@
+<div class="flex flex-col items-center justify-center min-h-[70vh] px-6 py-16 text-center bg-transparent">
+    <div class="relative w-full max-w-lg mb-8 mx-auto flex items-center justify-center group cursor-default">
+        <div class="absolute w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 group-hover:opacity-100 transition duration-1000 animate-blob"></div>
+        <div class="absolute w-64 h-64 bg-[#cbe7f5] rounded-full mix-blend-multiply filter blur-xl opacity-70 group-hover:opacity-100 transition duration-1000 animate-blob animation-delay-2000 -right-4"></div>
+        <div class="absolute w-64 h-64 bg-gray-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 group-hover:opacity-100 transition duration-1000 animate-blob animation-delay-4000 -bottom-8"></div>
+        
+        <div class="relative z-10 flex items-center justify-center">
+            <h1 class="text-[9rem] sm:text-[11rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#001e40] via-[#003366] to-purple-600 font-['Manrope'] drop-shadow-sm leading-none">
+                5<span class="inline-block animate-pulse text-purple-500">0</span>0
+            </h1>
+        </div>
+    </div>
+    
+    <div class="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-full font-semibold text-sm mb-6 border border-purple-200 shadow-sm">
+        <i class="fa-solid fa-server"></i>
+        <span>Erreur 500 - Erreur interne</span>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-extrabold text-[#001e40] font-['Manrope'] mb-4">
+        Le serveur rencontre un problème.
+    </h2>
+    
+    <p class="text-[#43474f] max-w-lg mx-auto text-lg mb-10 font-['Inter'] leading-relaxed">
+        Une erreur inattendue s'est produite de notre côté. Nos équipes travaillent pour résoudre le problème. Veuillez réessayer dans quelques instants.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md">
+        <button onclick="window.location.reload()" class="flex-1 bg-gradient-to-r from-[#001e40] to-[#003366] text-white px-8 py-3.5 rounded-xl font-bold hover:from-[#003366] hover:to-[#004080] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+            <i class="fa-solid fa-arrow-rotate-right"></i> Rafraîchir
+        </button>
+        <a href="{% url 'home' %}" class="flex-1 bg-white text-[#001e40] px-8 py-3.5 rounded-xl font-bold hover:bg-gray-50 border border-gray-200 hover:border-[#001e40]/30 transition-all duration-300 flex items-center justify-center gap-3 shadow-sm">
+            <i class="fa-solid fa-house"></i> Accueil
+        </a>
+    </div>
+    
+    <style>
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</div>

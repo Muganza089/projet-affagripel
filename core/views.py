@@ -150,3 +150,32 @@ def subscribe_newsletter(request):
             
     # Rediriger l'utilisateur vers la page d'où il vient (ou home par défaut)
     return redirect(request.META.get('HTTP_REFERER', 'home'))
+
+# ================= CUSTOM ERRORS =================
+def custom_404_view(request, exception=None):
+    return render(request, 'index.html', {
+        'content': '404',
+        'page_title': 'Page introuvable',
+        'page_description': "La page que vous recherchez n'existe pas."
+    }, status=404)
+
+def custom_401_view(request, exception=None):
+    return render(request, 'index.html', {
+        'content': '401',
+        'page_title': 'Non autorisé',
+        'page_description': "Authentification requise pour cette ressource."
+    }, status=401)
+
+def custom_403_view(request, exception=None):
+    return render(request, 'index.html', {
+        'content': '403',
+        'page_title': 'Accès interdit',
+        'page_description': "Vous n'avez pas les permissions nécessaires."
+    }, status=403)
+
+def custom_500_view(request, exception=None):
+    return render(request, 'index.html', {
+        'content': '500',
+        'page_title': 'Erreur interne du serveur',
+        'page_description': "Le serveur a rencontré un problème inattendu."
+    }, status=500)

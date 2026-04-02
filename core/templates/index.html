@@ -208,8 +208,14 @@
     {% include 'form_audience.html' %}
     {% elif content == 'aff_fonciere' %}
     {% include 'aff_fonciere.html' %}
+    {% elif content == '401' %}
+    {% include '401.html' %}
+    {% elif content == '403' %}
+    {% include '403.html' %}
+    {% elif content == '500' %}
+    {% include '500.html' %}
     {% else %}
-    <p class="text-red-500 font-semibold">Erreur : contenu inconnu ou manquant.</p>
+    {% include '404.html' %}
     {% endif %}
 
 
@@ -248,7 +254,7 @@
             </a>
           </li>
           <li>
-            <a class="hover:text-green-300 transition-colors flex items-center gap-3 w-max" href="tel:+243900000000">
+            <a class="hover:text-green-300 transition-colors flex items-center gap-3 w-max" href="tel:+243978390300">
               <i class="fa-solid fa-phone text-green-400 w-5 text-center"></i> +243 978390300
             </a>
           </li>

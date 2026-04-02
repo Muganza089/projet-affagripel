@@ -15,6 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
   <!-- Balises SEO Primordiales -->
   <title>{% if page_title %}{{ page_title }} | {% endif %}AFFAGRIPEL Lualaba</title>
   <meta name="description"
@@ -154,6 +155,14 @@
 </head>
 
 <body class="overflow-hidden">
+
+  <!-- ================= CURSEUR PERSONNALISÉ ================= -->
+  <div id="cursor" class="hidden md:block transition-opacity duration-300">
+    <div class="pupil"></div>
+    <div class="orbit o1"></div>
+    <div class="orbit o2"></div>
+    <div class="orbit o3"></div>
+  </div>
 
   <!-- ================= LOADER GLOBAL ================= -->
   <div id="global-loader"
@@ -410,6 +419,37 @@
           behavior: "smooth"
         });
       });
+    }
+  </script>
+
+  <!-- ================= LOGIQUE CURSEUR PERSONNALISÉ ================= -->
+  <script>
+    const customCursor = document.getElementById('cursor');
+    if (customCursor) {
+      document.addEventListener('mousemove', (e) => {
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
+      });
+      document.addEventListener('mousedown', () => customCursor.classList.add('boost'));
+      document.addEventListener('mouseup', () => customCursor.classList.remove('boost'));
+      
+      // Masquer le curseur s'il sort de l'écran
+      document.addEventListener('mouseleave', () => { customCursor.style.opacity = '0'; });
+      document.addEventListener('mouseenter', () => { customCursor.style.opacity = '1'; });
+      
+      // Améliorer UX (vitesse des satellites) lorsqu'on survole un lien
+      const initializeHoverEffects = () => {
+        const hoverElements = document.querySelectorAll('a, button, input, textarea, select, .cursor-pointer');
+        hoverElements.forEach(el => {
+          el.addEventListener('mouseenter', () => customCursor.classList.add('boost'));
+          el.addEventListener('mouseleave', () => customCursor.classList.remove('boost'));
+        });
+      };
+      
+      // Initialiser et re-initialiser en cas de changements dynamiques
+      initializeHoverEffects();
+      const observer = new MutationObserver(initializeHoverEffects);
+      observer.observe(document.body, { childList: true, subtree: true });
     }
   </script>
 </body>

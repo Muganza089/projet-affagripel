@@ -1,6 +1,4 @@
 */settings.py
-settings.py
-
 # Optionnel (recommandé)
 .env
 __pycache__/

@@ -4,15 +4,13 @@ import dj_database_url
 from django.core.management.utils import get_random_secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
 # SECURITY
 SECRET_KEY = "c%+_15#vjbllro0m%ywym!eapupmdy8^l3t@iv3jyjcea=$x*o"
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "162.254.37.75",
-    "affagripel-lualaba.com",
-    "www.affagripel-lualaba.com",
+    "*",
 ]
 
 # APPLICATIONS
@@ -97,17 +95,17 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
 # SECURITY SETTINGS
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_DOMAIN = ".affagripel-lualaba.com"
-CSRF_COOKIE_DOMAIN = ".affagripel-lualaba.com"
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_DOMAIN = ".affagripel-lualaba.com"
+# CSRF_COOKIE_DOMAIN = ".affagripel-lualaba.com"
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://affagripel-lualaba.com",
-    "https://www.affagripel-lualaba.com",
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://affagripel-lualaba.com",
+#     "https://www.affagripel-lualaba.com",
+# ]
 
 # DEFAULT PRIMARY KEY
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

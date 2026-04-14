@@ -6,7 +6,7 @@ from django.core.management.utils import get_random_secret_key
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
+SECRET_KEY = "c%+_15#vjbllro0m%ywym!eapupmdy8^l3t@iv3jyjcea=$x*o"
 DEBUG = False
 
 ALLOWED_HOSTS = [

@@ -1,0 +1,66 @@
+{% extends "admin/change_form.html" %}
+
+{% block after_field_sets %}
+{{ block.super }}
+
+<script>
+(function() {
+    // Mapping: valeur du select → id du champ numéro correspondant
+    const FIELD_MAP = {
+        'carte_electeur': 'id_numero_carte_electeur',
+        'passeport': 'id_numero_passeport',
+        'permis_conduire': 'id_numero_permis_conduire',
+        'attestation_naissance': 'id_numero_attestation_naissance',
+    };
+
+    // Tous les IDs de champs numéro
+    const ALL_FIELDS = Object.values(FIELD_MAP);
+
+    function getRow(fieldId) {
+        const field = document.getElementById(fieldId);
+        if (!field) return null;
+        // Django admin wraps each field in a .form-row div
+        return field.closest('.form-row');
+    }
+
+    function toggleFields() {
+        const selector = document.getElementById('id_type_piece_identite');
+        if (!selector) return;
+
+        const selectedValue = selector.value;
+
+        // Cacher tous les champs numéro
+        ALL_FIELDS.forEach(function(fieldId) {
+            const row = getRow(fieldId);
+            if (row) {
+                row.style.display = 'none';
+            }
+            // Vider le champ caché pour éviter la confusion
+            const input = document.getElementById(fieldId);
+            if (input && fieldId !== FIELD_MAP[selectedValue]) {
+                // Ne pas vider — laisser la valeur si déjà remplie
+            }
+        });
+
+        // Afficher seulement le champ correspondant au type sélectionné
+        if (selectedValue && FIELD_MAP[selectedValue]) {
+            const activeRow = getRow(FIELD_MAP[selectedValue]);
+            if (activeRow) {
+                activeRow.style.display = '';
+            }
+        }
+    }
+
+    // Attendre que le DOM soit prêt
+    document.addEventListener('DOMContentLoaded', function() {
+        const selector = document.getElementById('id_type_piece_identite');
+        if (selector) {
+            // Appliquer au chargement
+            toggleFields();
+            // Appliquer lors du changement
+            selector.addEventListener('change', toggleFields);
+        }
+    });
+})();
+</script>
+{% endblock %}

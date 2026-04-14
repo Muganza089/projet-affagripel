@@ -30,6 +30,12 @@
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+    <!-- Commission Principale de Délocalisation (CPD) -->
+    <url>
+        <loc>https://affagripel-lualaba.com/cpd/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <!-- À Propos -->
     <url>
         <loc>https://affagripel-lualaba.com/a-propos/</loc>

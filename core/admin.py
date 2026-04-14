@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Publication, Personne, Delocalisation, Contact, Audience, Newsletter
+from .models import Publication, Personne, Delocalisation, DelocalisationPlantation, Contact, Audience, Newsletter
 
 #================ PUBLICATIONS =================
 @admin.register(Publication)
@@ -61,6 +61,57 @@ class DelocalisationAdmin(admin.ModelAdmin):
 
         ("Meta", {
             "fields": ("date_demande",)
+        }),
+    )
+
+
+# ================= DELOCALISATION DES PLANTATIONS =================
+@admin.register(DelocalisationPlantation)
+class DelocalisationPlantationAdmin(admin.ModelAdmin):
+    change_form_template = "admin/cpd_plantation_change_form.html"
+
+    list_display = (
+        'nom', 'postnom', 'prenom',
+        'type_piece_identite',
+        'nature_culture', 'type_structure_maison',
+        'date_enregistrement'
+    )
+
+    list_filter = ('type_piece_identite', 'type_structure_maison', 'date_enregistrement')
+
+    search_fields = (
+        'nom', 'postnom', 'prenom',
+        'numero_carte_electeur', 'numero_passeport',
+        'numero_permis_conduire', 'numero_attestation_naissance',
+        'nature_culture'
+    )
+
+    readonly_fields = ('date_enregistrement',)
+
+    fieldsets = (
+        ("Identité (obligatoire)", {
+            "fields": ("nom", "postnom", "prenom", "photo")
+        }),
+        ("Pièce d'identité (obligatoire)", {
+            "description": "Choisissez le type de pièce, puis renseignez le numéro correspondant.",
+            "fields": (
+                "type_piece_identite",
+                "numero_carte_electeur",
+                "numero_passeport",
+                "numero_permis_conduire",
+                "numero_attestation_naissance",
+            )
+        }),
+        ("Plantation (facultatif)", {
+            "fields": ("superficie", "nature_culture"),
+            "classes": ("collapse",),
+        }),
+        ("Structure maison (facultatif)", {
+            "fields": ("superficie_maison", "type_structure_maison"),
+            "classes": ("collapse",),
+        }),
+        ("Méta", {
+            "fields": ("date_enregistrement",)
         }),
     )
 

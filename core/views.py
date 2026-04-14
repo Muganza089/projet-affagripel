@@ -53,10 +53,19 @@ def apropos(request):
     })
 
 def aff_fonciere(request):
-    context = {
+    return render(request, 'index.html', {
         'content': 'aff_fonciere',
-        'page_title': 'Affaires Foncières & Délocalisation',
-        'page_description': 'Consultez les procédures de délocalisation et d\'indemnisation foncière via la Fondation JMK pour la Province du Lualaba.'
+        'page_title': 'Affaires Foncières',
+        'page_description': 'Lotissements, sociétés foncières et immobilières de la Province du Lualaba.'
+    })
+
+
+# ================= COMMISSION PRINCIPALE DE DÉLOCALISATION (CPD) =================
+def cpd(request):
+    context = {
+        'content': 'cpd',
+        'page_title': 'Commission Principale de Délocalisation (CPD)',
+        'page_description': 'Demandez un accompagnement, signalez ou vérifiez une délocalisation auprès de la Commission Principale de Délocalisation du Lualaba.'
     }
 
     if request.method == 'POST':

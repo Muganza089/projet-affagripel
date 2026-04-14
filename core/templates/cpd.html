@@ -1,0 +1,747 @@
+{% load static %}
+
+<section class="max-w-7xl mx-auto px-6 py-12 bg-[#f8f9fc]">
+
+  <!-- ================= HERO COVER ================= -->
+  <div class="mb-16 relative animate overflow-hidden rounded-3xl shadow-lg">
+
+    <!-- GRADIENT BACKGROUND (pas d'image, effet pur gradient) -->
+    <div class="w-full h-[400px] bg-gradient-to-br from-[#001e40] via-[#003366] to-green-900 relative">
+      <!-- Overlay pattern -->
+      <div class="absolute inset-0 opacity-10"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.15&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+      </div>
+      <!-- Decorative icons -->
+      <i class="fa-solid fa-gavel absolute top-12 right-16 text-[120px] text-white/5"></i>
+      <i class="fa-solid fa-people-group absolute bottom-12 left-16 text-[80px] text-white/5"></i>
+    </div>
+
+    <!-- CONTENU (TITRE) -->
+    <div class="absolute inset-0 flex items-end pb-4 border-b-4 border-green-500">
+      <div class="p-8 md:p-12 max-w-4xl animate">
+        <div class="flex items-center gap-3 mb-4">
+          <span
+            class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm text-white text-2xl">
+            <i class="fa-solid fa-gavel"></i>
+          </span>
+          <span
+            class="text-xs font-bold tracking-widest uppercase text-green-400 font-['Inter'] bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
+            Commission Principale
+          </span>
+        </div>
+        <h1
+          class="text-white text-3xl md:text-5xl lg:text-5xl font-extrabold font-['Manrope'] leading-tight tracking-tight drop-shadow-lg mb-4">
+          Commission Principale <br><span class="text-green-400">de Délocalisation (CPD)</span>
+        </h1>
+        <p class="text-white/70 text-sm md:text-base max-w-2xl font-['Inter'] leading-relaxed">
+          Organe officiel chargé de la gestion, du suivi et de la vérification des opérations de délocalisation
+          dans la Province du Lualaba.
+        </p>
+        <!-- petite ligne décorative -->
+        <div class="animate mt-4 w-24 h-1.5 bg-green-500 rounded-full"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= PRESENTATION ================= -->
+  <div
+    class="bg-white p-8 md:p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] ring-1 ring-gray-100 mb-16 animate relative overflow-hidden">
+
+    <div class="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+    </div>
+
+    <div class="relative z-10 grid lg:grid-cols-5 gap-10 items-center">
+      <div class="lg:col-span-3 space-y-6">
+        <div class="flex items-center gap-3 mb-2">
+          <span
+            class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-700 text-xl">
+            <i class="fa-solid fa-landmark"></i>
+          </span>
+          <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope']">Rôle de la CPD</h2>
+        </div>
+
+        <p class="text-gray-600 leading-relaxed text-[15px]">
+          La <strong class="text-[#001e40]">Commission Principale de Délocalisation (CPD)</strong> est l'organe
+          responsable de la gestion de toutes les opérations de délocalisation des populations affectées par les
+          projets d'infrastructures et d'exploitation dans la Province du Lualaba.
+        </p>
+
+        <ul class="space-y-3 mt-4">
+          <li class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100">
+            <span class="text-green-500 mt-1"><i class="fa-solid fa-check-circle"></i></span>
+            <span class="text-gray-700 text-sm">Accompagnement des familles affectées par les délocalisations.</span>
+          </li>
+          <li class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100">
+            <span class="text-blue-500 mt-1"><i class="fa-solid fa-check-circle"></i></span>
+            <span class="text-gray-700 text-sm">Enregistrement et suivi des signalements de délocalisation.</span>
+          </li>
+          <li class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-100">
+            <span class="text-amber-500 mt-1"><i class="fa-solid fa-check-circle"></i></span>
+            <span class="text-gray-700 text-sm">Vérification transparente du statut de chaque propriété délocalisée.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <div class="bg-gradient-to-br from-[#001e40] to-green-900 p-8 rounded-2xl text-white text-center shadow-lg">
+          <i class="fa-solid fa-gavel text-5xl text-green-400 mb-4"></i>
+          <h3 class="text-xl font-extrabold mb-2 text-white font-['Manrope']">Transparence & Justice</h3>
+          <p class="text-white/80 font-medium text-sm">Chaque citoyen a le droit de vérifier, signaler et être
+            accompagné dans tout processus de délocalisation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 3 ACTIONS PRINCIPALES ================= -->
+  <div class="mb-16">
+    <div class="text-center mb-10 animate">
+      <h2 class="text-3xl font-extrabold text-[#001e40] font-['Manrope'] mb-4">
+        Services de la Commission
+      </h2>
+      <p class="text-gray-500">Sélectionnez une action pour accéder au service correspondant.</p>
+      <div class="w-16 h-1 bg-green-500 rounded-full mx-auto mt-4"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- 1. DEMANDER UN ACCOMPAGNEMENT -->
+      <div id="card-accompagnement"
+        class="group bg-white p-8 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] ring-1 ring-gray-100 hover:-translate-y-2 transition-all duration-300 animate cursor-pointer relative overflow-hidden"
+        onclick="document.getElementById('section-accompagnement').scrollIntoView({behavior:'smooth'})">
+
+        <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2
+          group-hover:scale-150 transition-transform duration-500"></div>
+
+        <div class="relative z-10">
+          <div
+            class="w-16 h-16 bg-green-100 text-green-700 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
+            <i class="fa-solid fa-hands-holding-child"></i>
+          </div>
+          <h3 class="text-xl font-extrabold text-[#001e40] font-['Manrope'] mb-3">Demander un accompagnement</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Faites une demande formelle d'accompagnement si vous
+            êtes concerné par une opération de délocalisation.</p>
+          <div
+            class="flex items-center gap-2 text-green-600 font-semibold text-sm group-hover:gap-4 transition-all duration-300">
+            <span>Accéder</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SIGNALER UNE DÉLOCALISATION -->
+      <div id="card-signalement"
+        class="group bg-white p-8 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] ring-1 ring-gray-100 hover:-translate-y-2 transition-all duration-300 animate cursor-pointer relative overflow-hidden"
+        onclick="document.getElementById('section-signalement').scrollIntoView({behavior:'smooth'})">
+
+        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2
+          group-hover:scale-150 transition-transform duration-500"></div>
+
+        <div class="relative z-10">
+          <div
+            class="w-16 h-16 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <h3 class="text-xl font-extrabold text-[#001e40] font-['Manrope'] mb-3">Signaler une délocalisation</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Signalez toute opération de délocalisation irrégulière
+            ou non conforme aux procédures légales.</p>
+          <div
+            class="flex items-center gap-2 text-amber-600 font-semibold text-sm group-hover:gap-4 transition-all duration-300">
+            <span>Accéder</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. VÉRIFIER UNE DÉLOCALISATION -->
+      <div id="card-verification"
+        class="group bg-white p-8 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] ring-1 ring-gray-100 hover:-translate-y-2 transition-all duration-300 animate cursor-pointer relative overflow-hidden"
+        onclick="document.getElementById('section-verification').scrollIntoView({behavior:'smooth'})">
+
+        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2
+          group-hover:scale-150 transition-transform duration-500"></div>
+
+        <div class="relative z-10">
+          <div
+            class="w-16 h-16 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </div>
+          <h3 class="text-xl font-extrabold text-[#001e40] font-['Manrope'] mb-3">Vérifier une délocalisation</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Vérifiez le statut d'une propriété délocalisée à l'aide
+            de votre numéro d'identité nationale.</p>
+          <div
+            class="flex items-center gap-2 text-blue-600 font-semibold text-sm group-hover:gap-4 transition-all duration-300">
+            <span>Accéder</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= SECTION 1 : ACCOMPAGNEMENT ================= -->
+  <div id="section-accompagnement"
+    class="bg-green-50 p-8 md:p-12 rounded-3xl border border-green-100 mb-12 animate relative overflow-hidden">
+
+    <i class="fa-solid fa-hands-holding-child absolute -bottom-10 -right-10 text-9xl text-green-500 opacity-5"></i>
+
+    <div class="flex items-center gap-3 mb-6 relative z-10">
+      <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-700 text-xl">
+        <i class="fa-solid fa-hands-holding-child"></i>
+      </span>
+      <h2 class="text-2xl font-extrabold text-green-900 font-['Manrope']">Demander un accompagnement de délocalisation
+      </h2>
+    </div>
+
+    <p class="text-green-900/80 text-sm mb-6 bg-white/50 p-4 rounded-xl relative z-10">
+      Si vous êtes concerné par une opération de délocalisation, vous pouvez formuler une demande
+      d'accompagnement auprès de la CPD. Un agent sera désigné pour vous guider tout au long du processus.
+    </p>
+
+    <!-- Formulaire d'accompagnement -->
+    <form class="space-y-4 relative z-10 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-green-100">
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Nom complet</label>
+          <input type="text" placeholder="Votre nom complet"
+            class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-400 focus:shadow-md transition-all text-sm">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Numéro de téléphone</label>
+          <input type="tel" placeholder="+243 ..."
+            class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-400 focus:shadow-md transition-all text-sm">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1">Numéro d'identité nationale</label>
+        <input type="text" placeholder="Ex: 12345678901" maxlength="11" pattern="[0-9]{11}"
+          class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-400 focus:shadow-md transition-all text-sm font-mono tracking-widest">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1">Adresse de la propriété concernée</label>
+        <input type="text" placeholder="Quartier, avenue, numéro..."
+          class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-400 focus:shadow-md transition-all text-sm">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1">Description de la situation</label>
+        <textarea rows="3" placeholder="Décrivez votre situation et le type d'accompagnement souhaité..."
+          class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-green-400 focus:shadow-md transition-all text-sm"></textarea>
+      </div>
+
+      <div>
+        <button type="submit"
+          class="bg-gradient-to-br from-green-600 to-green-800 text-white font-semibold px-8 py-3 rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.3)] transform hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i>
+          Envoyer la demande
+        </button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- ================= SECTION 2 : SIGNALEMENT ================= -->
+  <div id="section-signalement"
+    class="bg-amber-50 p-8 md:p-12 rounded-3xl border border-amber-100 mb-12 animate relative overflow-hidden">
+
+    <i class="fa-solid fa-triangle-exclamation absolute -bottom-10 -right-10 text-9xl text-amber-500 opacity-5"></i>
+
+    <div class="flex items-center gap-3 mb-6 relative z-10">
+      <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-700 text-xl">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </span>
+      <h2 class="text-2xl font-extrabold text-amber-900 font-['Manrope']">Signaler une délocalisation</h2>
+    </div>
+
+    <p class="text-amber-900/80 text-sm mb-6 bg-white/50 p-4 rounded-xl relative z-10">
+      Si vous êtes témoin ou victime d'une délocalisation non conforme, irrégulière ou abusive, vous pouvez
+      la signaler ici. Votre signalement sera traité en toute confidentialité par la Commission.
+    </p>
+
+    <!-- Formulaire de signalement -->
+    <form class="space-y-4 relative z-10 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-amber-100">
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Nom complet du déclarant</label>
+          <input type="text" placeholder="Votre nom complet"
+            class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-amber-400 focus:shadow-md transition-all text-sm">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Numéro de téléphone</label>
+          <input type="tel" placeholder="+243 ..."
+            class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-amber-400 focus:shadow-md transition-all text-sm">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1">Pièce d'identité (scan ou photo)</label>
+        <input type="file" accept="image/*,.pdf"
+          class="w-full p-2 rounded-lg border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-amber-400 transition-all text-sm">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1">Lieu de la délocalisation signalée</label>
+        <input type="text" placeholder="Quartier, avenue, commune..."
+          class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-amber-400 focus:shadow-md transition-all text-sm">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1">Description détaillée du signalement</label>
+        <textarea rows="4" placeholder="Décrivez les faits avec le plus de détails possible..."
+          class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-amber-400 focus:shadow-md transition-all text-sm"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1">Documents justificatifs (optionnel)</label>
+        <input type="file" multiple
+          class="w-full p-2 rounded-lg border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-amber-400 transition-all text-sm">
+        <p class="text-xs text-gray-500 mt-1">Vous pouvez sélectionner plusieurs fichiers.</p>
+      </div>
+
+      <div>
+        <button type="submit"
+          class="bg-gradient-to-br from-amber-500 to-amber-700 text-white font-semibold px-8 py-3 rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.3)] transform hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i>
+          Envoyer le signalement
+        </button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- ================= SECTION 3 : VÉRIFICATION (déplacé depuis aff_fonciere) ================= -->
+  <div id="section-verification" class="mt-8 relative animate">
+
+    <!-- Carte principale -->
+    <div class="relative bg-white p-10 rounded-3xl border border-gray-200
+                shadow-[0_20px_60px_rgba(0,0,0,0.15),0_5px_20px_rgba(0,0,0,0.08)]
+                transform hover:-translate-y-1 transition-all duration-300">
+
+      <div class="flex items-center gap-3 mb-4">
+        <span
+          class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-700 text-xl">
+          <i class="fa-solid fa-magnifying-glass-location"></i>
+        </span>
+        <h2 class="text-2xl font-bold text-[#001e40] font-['Manrope']">
+          Vérifier la délocalisation d'une propriété foncière
+        </h2>
+      </div>
+
+      <p class="text-gray-500 mb-8 text-sm">
+        Entrez votre numéro d'identité nationale (11 chiffres) pour consulter vos propriétés délocalisées.
+      </p>
+
+      <form action="{% url 'cpd' %}" method="POST" class="flex flex-col md:flex-row gap-4 items-end">
+        {% csrf_token %}
+
+        <!-- Numéro d'identité nationale -->
+        <div class="flex-1 space-y-1 w-full">
+          <label class="block text-[#001e40] font-medium">
+            Numéro d'identité nationale
+          </label>
+          <input type="text" name="numero_identite" placeholder="Ex: 12345678901" maxlength="11" pattern="[0-9]{11}"
+            title="Le numéro doit contenir exactement 11 chiffres" required
+            value="{{ numero_recherche|default:'' }}"
+            class="w-full p-3 rounded-lg border border-gray-300 bg-gray-50
+                   shadow-inner focus:bg-white focus:ring-2 focus:ring-blue-400
+                   focus:shadow-md transition-all text-lg tracking-widest font-mono">
+        </div>
+
+        <!-- Bouton -->
+        <div>
+          <button type="submit"
+            class="bg-gradient-to-br from-[#001e40] via-[#003366] to-green-800
+                   text-white font-semibold px-8 py-3
+                   rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.2)]
+                   hover:shadow-[0_15px_35px_rgba(0,0,0,0.3)]
+                   transform hover:-translate-y-0.5 transition-all duration-300
+                   flex items-center gap-2">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Vérifier
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ================= MESSAGES DJANGO ================= -->
+  {% if messages %}
+  <div class="mt-6">
+    {% for message in messages %}
+    <div class="p-4 rounded-lg mb-3 text-sm font-semibold flex items-center gap-3
+      {% if message.tags == 'success' %}bg-green-100 text-green-800 border border-green-300
+      {% elif message.tags == 'error' %}bg-red-100 text-red-800 border border-red-300
+      {% elif message.tags == 'info' %}bg-blue-100 text-blue-800 border border-blue-300
+      {% else %}bg-gray-100 text-gray-800 border border-gray-300{% endif %}">
+      {% if message.tags == 'error' %}
+        <i class="fa-solid fa-circle-xmark text-lg"></i>
+      {% elif message.tags == 'info' %}
+        <i class="fa-solid fa-circle-info text-lg"></i>
+      {% endif %}
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- ================= RESULTATS DELOCALISATION ================= -->
+  {% if recherche_effectuee and personne and delocalisations %}
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <div class="mt-10">
+
+    <!-- Informations de la personne -->
+    <div class="bg-gradient-to-br from-[#001e40] via-[#003366] to-green-800
+                text-white p-6 rounded-t-2xl">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h3 class="text-2xl font-extrabold font-['Manrope']">
+            <i class="fa-solid fa-user mr-2"></i>
+            {{ personne.nom }} {{ personne.postnom }} {{ personne.prenom }}
+          </h3>
+          <p class="text-white/70 mt-1">
+            <i class="fa-solid fa-id-card mr-1"></i>
+            N° Identité : <span class="font-mono tracking-wider">{{ personne.numero_identite }}</span>
+          </p>
+        </div>
+        <div class="bg-white/20 backdrop-blur-sm px-5 py-3 rounded-lg text-center">
+          <p class="text-3xl font-extrabold">{{ delocalisations|length }}</p>
+          <p class="text-sm text-white/80">propriété{{ delocalisations|length|pluralize }} délocalisée{{ delocalisations|length|pluralize }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Liste des délocalisations -->
+    <div class="space-y-0">
+      {% for deloc in delocalisations %}
+      <div class="bg-white border border-gray-200 p-6
+                  {% if forloop.last %}rounded-b-2xl{% endif %}
+                  shadow-sm hover:shadow-md transition-shadow duration-200">
+
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
+
+          <!-- Numéro + Type -->
+          <div class="flex-shrink-0">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full
+                         bg-gradient-to-br from-[#001e40] to-green-800 text-white font-bold text-lg">
+              {{ forloop.counter }}
+            </span>
+          </div>
+
+          <!-- Détails -->
+          <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <!-- Type de propriété -->
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Type de propriété</p>
+              <p class="text-gray-800 font-semibold flex items-center gap-2">
+                <i class="fa-solid fa-house text-[#003366]"></i>
+                {{ deloc.get_type_propriete_display }}
+              </p>
+            </div>
+
+            <!-- Type de délocalisation -->
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Type de délocalisation</p>
+              <p class="text-gray-800 font-semibold flex items-center gap-2">
+                {% if deloc.type_delocalisation == 'deplacement' %}
+                  <i class="fa-solid fa-truck-moving text-blue-600"></i>
+                {% else %}
+                  <i class="fa-solid fa-money-bill-wave text-green-600"></i>
+                {% endif %}
+                {{ deloc.get_type_delocalisation_display }}
+              </p>
+            </div>
+
+            <!-- Ancienne adresse -->
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Ancienne adresse</p>
+              <p class="text-gray-800 font-medium flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-red-500"></i>
+                {{ deloc.ancienne_adresse|default:"Non renseignée" }}
+              </p>
+              {% if deloc.ancienne_latitude and deloc.ancienne_longitude %}
+              <p class="text-xs text-gray-400">
+                GPS: {{ deloc.ancienne_latitude }}, {{ deloc.ancienne_longitude }}
+              </p>
+              {% endif %}
+            </div>
+
+            <!-- Nouvelle adresse (si déplacement) -->
+            {% if deloc.type_delocalisation == 'deplacement' %}
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Nouvelle adresse</p>
+              <p class="text-gray-800 font-medium flex items-center gap-2">
+                <i class="fa-solid fa-location-crosshairs text-green-600"></i>
+                {{ deloc.nouvelle_adresse|default:"Non renseignée" }}
+              </p>
+              {% if deloc.nouvelle_latitude and deloc.nouvelle_longitude %}
+              <p class="text-xs text-gray-400">
+                GPS: {{ deloc.nouvelle_latitude }}, {{ deloc.nouvelle_longitude }}
+              </p>
+              {% endif %}
+            </div>
+            {% endif %}
+
+            <!-- Compensation (si compensation) -->
+            {% if deloc.type_delocalisation == 'compensation' and deloc.montant_compensation %}
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Montant compensation</p>
+              <p class="text-green-700 font-bold text-lg flex items-center gap-2">
+                <i class="fa-solid fa-dollar-sign"></i>
+                {{ deloc.montant_compensation|floatformat:2 }} USD
+              </p>
+            </div>
+            {% endif %}
+
+            <!-- Date -->
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Date de la demande</p>
+              <p class="text-gray-600 font-medium flex items-center gap-2">
+                <i class="fa-solid fa-calendar-days text-gray-400"></i>
+                {{ deloc.date_demande|date:"d/m/Y à H:i" }}
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= CARTE MAP ================= -->
+        {% if deloc.ancienne_latitude and deloc.ancienne_longitude %}
+        <div class="mt-6 border-t border-gray-100 pt-6">
+
+          <h4 class="text-sm font-bold text-[#001e40] mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Localisation sur la carte
+          </h4>
+
+          <!-- Légende -->
+          <div class="flex flex-wrap gap-4 mb-3 text-xs">
+            <span class="flex items-center gap-1">
+              <span class="inline-block w-3 h-3 rounded-full bg-red-500"></span>
+              Ancienne position
+            </span>
+            {% if deloc.type_delocalisation == 'deplacement' and deloc.nouvelle_latitude and deloc.nouvelle_longitude %}
+            <span class="flex items-center gap-1">
+              <span class="inline-block w-3 h-3 rounded-full bg-green-500"></span>
+              Nouvelle position
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Map container -->
+          <div id="map-deloc-{{ forloop.counter }}"
+               class="w-full rounded-xl border border-gray-200 shadow-inner"
+               style="height: 400px; z-index: 0;"
+               data-anc-lat="{{ deloc.ancienne_latitude }}"
+               data-anc-lng="{{ deloc.ancienne_longitude }}"
+               data-anc-addr="{{ deloc.ancienne_adresse|default:'Ancienne position' }}"
+               {% if deloc.type_delocalisation == 'deplacement' and deloc.nouvelle_latitude and deloc.nouvelle_longitude %}
+               data-new-lat="{{ deloc.nouvelle_latitude }}"
+               data-new-lng="{{ deloc.nouvelle_longitude }}"
+               data-new-addr="{{ deloc.nouvelle_adresse|default:'Nouvelle position' }}"
+               {% endif %}
+          ></div>
+
+        </div>
+        {% endif %}
+
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+  {% endif %}
+
+</section>
+
+
+<!-- ================= CSS ANIMATIONS ================= -->
+<style>
+  .animate {
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .fade-up { transform: translateY(60px); }
+  .fade-up.show { opacity: 1; transform: translateY(0); }
+
+  .fade-left { transform: translateX(-60px); }
+  .fade-left.show { opacity: 1; transform: translateX(0); }
+
+  .fade-right { transform: translateX(60px); }
+  .fade-right.show { opacity: 1; transform: translateX(0); }
+
+  .zoom-in { transform: scale(0.8); }
+  .zoom-in.show { opacity: 1; transform: scale(1); }
+</style>
+
+<!-- ================= JS SCRIPTS ================= -->
+<script>
+  // ================= SCROLL ANIMATIONS =================
+  const elements = document.querySelectorAll('.animate');
+  const animations = ['fade-up', 'fade-left', 'fade-right', 'zoom-in'];
+
+  elements.forEach(el => {
+    if(el.classList.contains('absolute') || el.closest('.absolute')) {
+       el.classList.add('fade-up');
+    } else {
+       const anim = animations[Math.floor(Math.random() * animations.length)];
+       el.classList.add(anim);
+    }
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const delay = Math.random() * 200 + index * 100;
+        setTimeout(() => {
+          entry.target.classList.add('show');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+<!-- ================= LEAFLET MAP INIT ================= -->
+{% if recherche_effectuee and personne and delocalisations %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const mapContainers = document.querySelectorAll('[id^="map-deloc-"]');
+
+  mapContainers.forEach(function(container) {
+
+    const ancLat = parseFloat(container.dataset.ancLat);
+    const ancLng = parseFloat(container.dataset.ancLng);
+    const ancAddr = container.dataset.ancAddr || 'Ancienne position';
+
+    const newLat = parseFloat(container.dataset.newLat);
+    const newLng = parseFloat(container.dataset.newLng);
+    const newAddr = container.dataset.newAddr || 'Nouvelle position';
+
+    const hasAncienne = !isNaN(ancLat) && !isNaN(ancLng);
+    const hasNouvelle = !isNaN(newLat) && !isNaN(newLng);
+
+    if (!hasAncienne) return;
+
+    const map = L.map(container.id).setView([ancLat, ancLng], 14);
+
+    const normalLayer = L.tileLayer(
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      { attribution: '&copy; OpenStreetMap' }
+    );
+
+    const satelliteLayer = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      { attribution: 'Tiles © Esri' }
+    );
+
+    const hybridLayer = L.layerGroup([
+      L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+      ),
+      L.tileLayer(
+        'https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}'
+      )
+    ]);
+
+    const terrainLayer = L.tileLayer(
+      'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+      { attribution: '© OpenTopoMap' }
+    );
+
+    satelliteLayer.addTo(map);
+
+    const baseMaps = {
+      "🗺️ Carte": normalLayer,
+      "🛰️ Satellite": satelliteLayer,
+      "🌍 Hybride": hybridLayer,
+      "⛰️ Relief": terrainLayer
+    };
+
+    L.control.layers(baseMaps).addTo(map);
+
+    const bounds = [];
+
+    if (hasAncienne) {
+      const ancMarker = L.marker([ancLat, ancLng], {
+        icon: L.icon({
+          iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        })
+      }).addTo(map);
+
+      ancMarker.bindPopup(
+        '<div style="text-align:center;">' +
+        '<b style="color:#dc2626;">📍 Ancienne position</b><br>' +
+        '<span style="color:#555;">' + ancAddr + '</span><br>' +
+        '<small style="color:#999;">GPS: ' + ancLat.toFixed(6) + ', ' + ancLng.toFixed(6) + '</small>' +
+        '</div>'
+      );
+
+      bounds.push([ancLat, ancLng]);
+    }
+
+    if (hasNouvelle) {
+      const newMarker = L.marker([newLat, newLng], {
+        icon: L.icon({
+          iconUrl: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        })
+      }).addTo(map);
+
+      newMarker.bindPopup(
+        '<div style="text-align:center;">' +
+        '<b style="color:#16a34a;">🟢 Nouvelle position</b><br>' +
+        '<span style="color:#555;">' + newAddr + '</span><br>' +
+        '<small style="color:#999;">GPS: ' + newLat.toFixed(6) + ', ' + newLng.toFixed(6) + '</small>' +
+        '</div>'
+      );
+
+      bounds.push([newLat, newLng]);
+
+      if (hasAncienne) {
+        L.polyline(
+          [[ancLat, ancLng], [newLat, newLng]],
+          {
+            color: '#003366',
+            weight: 3,
+            opacity: 0.7,
+            dashArray: '10, 8'
+          }
+        ).addTo(map);
+      }
+    }
+
+    if (bounds.length > 1) {
+      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 16 });
+    } else if (bounds.length === 1) {
+      map.setView(bounds[0], 15);
+    }
+
+  });
+
+});
+</script>
+{% endif %}

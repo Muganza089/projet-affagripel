@@ -14,6 +14,7 @@ urlpatterns = [
     path('contact', contact, name='contact'),
     path('demandeAudience', demandeAudience, name='demandeAudience'),
     path('aff_fonciere', aff_fonciere, name='aff_fonciere'),
+    path('cpd', cpd, name='cpd'),
     path('newsletter/subscribe/', subscribe_newsletter, name='subscribe_newsletter'),
     
     # Fichiers SEO statiques au niveau de la racine

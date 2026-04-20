@@ -64,8 +64,8 @@ def aff_fonciere(request):
 def cpd(request):
     context = {
         'content': 'cpd',
-        'page_title': 'Commission Principale de Délocalisation (CPD)',
-        'page_description': 'Demandez un accompagnement, signalez ou vérifiez une délocalisation auprès de la Commission Principale de Délocalisation du Lualaba.'
+        'page_title': 'Commission Provinciale de Délocalisation (CPD)',
+        'page_description': 'Demandez un accompagnement, signalez ou vérifiez une délocalisation auprès de la Commission Provinciale de Délocalisation du Lualaba.'
     }
 
     if request.method == 'POST':

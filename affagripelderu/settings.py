@@ -10,9 +10,7 @@ SESSION_ENGINE = "django.contrib.sessions.backends.db"
 SECRET_KEY = "c%+_15#vjbllro0m%ywym!eapupmdy8^l3t@iv3jyjcea=$x*o"
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    "*",
-]
+ALLOWED_HOSTS = ["*"]
 
 # APPLICATIONS
 INSTALLED_APPS = [
@@ -110,18 +108,18 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
 # SECURITY SETTINGS
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SAMESITE = "Lax"
-CSRF_COOKIE_SAMESITE = "Lax"
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SAMESITE = "Lax"
+# CSRF_COOKIE_SAMESITE = "Lax"
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://affagripel-lualaba.com",
-    "https://www.affagripel-lualaba.com",
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://affagripel-lualaba.com",
+#     "https://www.affagripel-lualaba.com",
+# ]
 
 # DEFAULT PRIMARY KEY
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

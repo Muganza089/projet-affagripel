@@ -1,0 +1,29 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools-items %}
+  {{ block.super }}
+  <li>
+    <a href="export-excel/{{ request.META.QUERY_STRING|default:'' }}{% if request.META.QUERY_STRING %}{% else %}{% endif %}"
+       class="export-excel-btn"
+       id="export-excel-link"
+       style="background: #16a34a; color: #fff; padding: 6px 16px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s;"
+       onmouseover="this.style.background='#15803d'"
+       onmouseout="this.style.background='#16a34a'">
+      📥 Exporter en Excel
+    </a>
+  </li>
+{% endblock %}
+
+{% block extrahead %}
+  {{ block.super }}
+  <script>
+  // Transmet les filtres/recherche actuels dans l'URL d'export
+  document.addEventListener('DOMContentLoaded', function() {
+      const exportLink = document.getElementById('export-excel-link');
+      if (exportLink) {
+          const qs = window.location.search;
+          exportLink.href = 'export-excel/' + qs;
+      }
+  });
+  </script>
+{% endblock %}

@@ -173,21 +173,30 @@ class DelocalisationPlantation(models.Model):
         verbose_name="Numéro d'attestation de naissance"
     )
 
+    # ========= SITE OU ADRESSE =========
+    site_adresse = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="Site ou adresse",
+        help_text="Le site ou l'adresse du champ"
+    )
+
     # ========= CHAMPS FACULTATIFS =========
     superficie = models.DecimalField(
         max_digits=10,
         decimal_places=2,
         blank=True,
         null=True,
-        verbose_name="Superficie (en m²)",
-        help_text="Superficie de la plantation en mètres carrés"
+        verbose_name="Superficie du champs (en m²)",
+        help_text="Superficie du champs en mètres carrés"
     )
     nature_culture = models.CharField(
         max_length=255,
         blank=True,
         null=True,
         verbose_name="Nature de culture",
-        help_text="Type de culture pratiquée sur la plantation"
+        help_text="Type de culture pratiquée sur le champ"
     )
 
     # --- Structure maison ---
@@ -196,7 +205,7 @@ class DelocalisationPlantation(models.Model):
         decimal_places=2,
         blank=True,
         null=True,
-        verbose_name="Superficie de la maison (en m²)"
+        verbose_name="Superficie parcelle (en m²)"
     )
     type_structure_maison = models.CharField(
         max_length=1,
@@ -212,8 +221,8 @@ class DelocalisationPlantation(models.Model):
     )
 
     class Meta:
-        verbose_name = "CPD plantation agricole"
-        verbose_name_plural = "CPD plantations agricoles"
+        verbose_name = "CPD (Commission Prov. de Délocalisation)"
+        verbose_name_plural = "CPD (Commission Prov. de Délocalisation)"
         ordering = ['-date_enregistrement']
 
     def __str__(self):

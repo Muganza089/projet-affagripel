@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 import dj_database_url
+import os
 from django.core.management.utils import get_random_secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -57,12 +58,26 @@ TEMPLATES = [
 WSGI_APPLICATION = 'affagripelderu.wsgi.application'
 
 # DATABASE
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+
+if os.getenv("ENVIRONMENT") == "production":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'affagripel',
+            'USER': 'django_user',
+            'PASSWORD': os.getenv("DB_PASSWORD"),
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # PASSWORD VALIDATION
 AUTH_PASSWORD_VALIDATORS = [

@@ -27,7 +27,14 @@ SECRET_KEY = os.environ.get(
     "c%+_15#vjbllro0m%ywym!eapupmdy8^l3t@iv3jyjcea=$x*o",  # fallback dev
 )
 DEBUG = env_bool("DJANGO_DEBUG", "False")
-ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1")
+ALLOWED_HOSTS = [
+    "affagripel-lualaba.com",
+    "www.affagripel-lualaba.com",
+    "server1.affagripel-lualaba.com",
+    "162.254.37.75",
+    "127.0.0.1",
+    "localhost",
+]
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
@@ -212,6 +219,20 @@ else:
         f"EMAIL_MODE='{EMAIL_MODE}' inconnu. "
         "Valeurs acceptées : console, file, mailpit, smtp."
     )
+# SECURITY SETTINGS
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = "Lax"
+CSRF_COOKIE_SAMESITE = "Lax"
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://affagripel-lualaba.com",
+    "https://www.affagripel-lualaba.com",
+]
+
 
 # from pathlib import Path
 # import os

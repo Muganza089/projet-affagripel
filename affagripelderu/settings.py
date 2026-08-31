@@ -220,18 +220,18 @@ else:
         "Valeurs acceptées : console, file, mailpit, smtp."
     )
 # SECURITY SETTINGS
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SAMESITE = "Lax"
-CSRF_COOKIE_SAMESITE = "Lax"
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SAMESITE = "Lax"
+# CSRF_COOKIE_SAMESITE = "Lax"
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://affagripel-lualaba.com",
-    "https://www.affagripel-lualaba.com",
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://affagripel-lualaba.com",
+#     "https://www.affagripel-lualaba.com",
+# ]
 
 
 # from pathlib import Path

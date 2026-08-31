@@ -5,7 +5,7 @@ from .models import ContactMessage, DevisRequest
 TRACABILITE = ("source_origin", "ip_address", "user_agent", "created_at", "updated_at")
 
 
-@admin.register(DevisRequest)
+# @admin.register(DevisRequest)
 class DevisRequestAdmin(admin.ModelAdmin):
     list_display = ("created_at", "nom", "entreprise", "service", "email", "statut")
     list_filter = ("statut", "service", "created_at")
@@ -30,7 +30,7 @@ class DevisRequestAdmin(admin.ModelAdmin):
         return False        # les devis ne se créent que par l'API
 
 
-@admin.register(ContactMessage)
+# @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ("created_at", "nom", "sujet", "email", "statut")
     list_filter = ("statut", "created_at")
